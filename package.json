@@ -1,44 +1,39 @@
 {
-  "name": "@arvinxu/npm-template",
-  "version": "1.5.0",
+  "name": "dumi-theme-antd-style",
+  "version": "0.0.0",
   "description": "a npm develop template",
   "keywords": [
     "npm",
     "template"
   ],
-  "homepage": "https://github.com/arvinxx/npm-template",
+  "homepage": "https://github.com/arvinxx/dumi-theme-antd-style",
   "bugs": {
-    "url": "https://github.com/arvinxx/npm-template/issues/new"
+    "url": "https://github.com/arvinxx/dumi-theme-antd-style/issues/new"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arvinxx/npm-template.git"
+    "url": "https://github.com/arvinxx/dumi-theme-antd-style.git"
   },
   "license": "MIT",
   "author": "arvinxx(arvinx@foxmail.com)",
   "sideEffects": false,
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "types": "lib/index.d.ts",
   "files": [
-    "lib",
-    "es"
+    "dist"
   ],
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
     "ci": "npm run lint && npm run type-check",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
-    "dev": "dumi dev",
-    "docs:build": "dumi build",
+    "dev": "npm run start --prefix=example",
+    "docs:build": "npm run build --prefix=example",
     "doctor": "father doctor",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && npm run setup",
+    "prepare": "husky install && father link-dev-theme",
     "prepublishOnly": "father doctor && npm run build",
     "prettier": "prettier -c --write \"**/**\"",
     "release": "semantic-release",
-    "setup": "dumi setup",
-    "start": "dumi dev",
+    "start": "npm run dev",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage  --passWithNoTests",
     "test:update": "jest --update-snapshot",
@@ -57,6 +52,23 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "dependencies": {
+    "@ant-design/icons": "^5",
+    "@babel/runtime": "^7",
+    "@floating-ui/react": "^0.17",
+    "animated-scroll-to": "^2",
+    "antd-style": "alpha",
+    "chroma-js": "^2",
+    "copy-to-clipboard": "^3",
+    "fast-deep-equal": "^3",
+    "lodash": "^4",
+    "polished": "^4",
+    "rc-footer": "^0.6",
+    "react-layout-kit": "^1",
+    "react-syntax-highlighter": "^15",
+    "use-merge-value": "^1",
+    "zustand": "^4"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17",
     "@testing-library/jest-dom": "^5",
@@ -73,10 +85,13 @@
     "concurrently": "^7",
     "cross-env": "^7",
     "dumi": "^2",
+    "dumi-assets-types": "^1",
     "eslint": "^8",
     "eslint-import-resolver-alias": "^1",
     "eslint-import-resolver-typescript": "^2",
     "father": "^4",
+    "father-plugin-dumi-theme": "^1.0.0-rc.1",
+    "history": "^5",
     "husky": "^8",
     "jest": "^29",
     "jest-environment-jsdom": "^29",
@@ -92,6 +107,12 @@
     "ts-jest": "^29",
     "ts-node": "^10",
     "typescript": "^4"
+  },
+  "peerDependencies": {
+    "antd": "^5",
+    "dumi": "^2.0.0",
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "publishConfig": {
     "access": "public",

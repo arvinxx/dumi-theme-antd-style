@@ -17,8 +17,8 @@ const config: Config.InitialOptions = {
     '!src/.umi-production/**',
   ],
   moduleNameMapper: {
-    '@arvinxu/npm-template/(.*)$': '<rootDir>/src/$1',
-    '@arvinxu/npm-template': '<rootDir>/src',
+    'dumi-theme-antd-style/(.*)$': '<rootDir>/src/$1',
+    'dumi-theme-antd-style': '<rootDir>/src',
     '@/(.*)$': '<rootDir>/src/$1',
   },
   // if you require some es-module npm package, please uncomment below line and insert your package name
