@@ -4,18 +4,8 @@ import { Link } from 'dumi';
 import { CSSProperties, type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
+import { Feature } from '../../types';
 import { useStyles } from './style';
-
-export interface Feature {
-  title: string;
-  description?: string;
-  avatar?: string;
-  link?: string;
-  imageStyle?: any;
-  row?: number;
-  column?: number;
-  center?: boolean;
-}
 
 interface FeaturesProps {
   items: Feature[];

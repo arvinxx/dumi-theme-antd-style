@@ -1,10 +1,11 @@
-import { Link } from '@@/exports';
 import { Drawer, Menu } from 'antd';
+import { Link } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { uniq } from 'lodash';
 import { useState } from 'react';
 import { Center } from 'react-layout-kit';
-import { activePathSel, useSiteStore } from '../../store/useSiteStore';
+
+import { activePathSel, useSiteStore } from '../../store';
 import { FillRect, useStyles } from './style';
 
 const Burger = () => {

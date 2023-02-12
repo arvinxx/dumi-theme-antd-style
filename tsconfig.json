@@ -9,9 +9,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
+      "@@/*": ["example/.dumi/tmp/*"],
       "@/*": ["src"],
-      "dumi/theme/*": ["./.dumi/tmp/dumi/theme/*"],
+      "dumi/theme/*": ["example/.dumi/tmp/dumi/theme/*"],
       "dumi-theme-antd-style": ["src"],
       "dumi-theme-antd-style/*": ["src/*", "*"]
     }

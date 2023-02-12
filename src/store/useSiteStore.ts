@@ -1,5 +1,6 @@
 import { AtomAsset } from 'dumi-assets-types';
 import {
+  ILocale,
   ILocalesConfig,
   INavItem,
   IPreviewerProps,
@@ -13,11 +14,10 @@ import type { Location } from 'history';
 import { ComponentType } from 'react';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { Feature } from '../components/Features';
 
 export type NavData = (INavItem & { children?: INavItem[] | undefined })[];
 
-export interface SiteState {
+export interface ISiteData {
   pkg: Partial<Record<keyof typeof PICKED_PKG_FIELDS, any>>;
   entryExports: Record<string, any>;
   demos: Record<
@@ -36,15 +36,16 @@ export interface SiteState {
   setLoading: (status: boolean) => void;
 }
 
-interface Store {
-  siteData: SiteState;
+export interface SiteStore {
+  siteData: ISiteData;
   sidebar: ISidebarGroup[];
   routeMeta: IRouteMeta;
   navData: NavData;
   location: Location;
+  locale: ILocale;
 }
 
-const initialState: Store = {
+const initialState: SiteStore = {
   siteData: {
     // @ts-ignore
     setLoading: undefined,
@@ -75,9 +76,11 @@ const initialState: Store = {
     // @ts-ignore
     frontmatter: {},
   },
+
+  locale: { id: 'zh-CN', name: '中文', suffix: '' },
 };
 
-export const useSiteStore = create<Store>()(
+export const useSiteStore = create<SiteStore>()(
   devtools(
     () => ({
       ...initialState,
@@ -85,30 +88,3 @@ export const useSiteStore = create<Store>()(
     { name: 'dumi-theme-antd-style' },
   ),
 );
-
-export const isApiPageSel = (s: Store) => s.location.pathname.startsWith('/api');
-export const isHeroPageSel = (s: Store) => !!s.routeMeta.frontmatter.hero;
-
-/**
- * Title 选择器
- * 选择逻辑：如果是 hero 页面，使用 hero 配置的 title，否则使用 siteData 中的 title
- * @param s
- */
-export const titleSel = (s: Store) =>
-  s.siteData.themeConfig.title || s.routeMeta.frontmatter.hero?.title;
-
-/**
- * Features 选择器
- */
-export const featuresSel = (s: Store): Feature[] =>
-  isHeroPageSel(s) && s.siteData.themeConfig.features;
-
-export const activePathSel = (s: Store) => {
-  if (s.location.pathname === '/') return '/';
-
-  const item = s.navData
-    .filter((i) => i.link !== '/')
-    .find((i) => s.location.pathname.startsWith(i.activePath!));
-
-  return item?.activePath || '';
-};

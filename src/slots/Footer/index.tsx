@@ -12,7 +12,7 @@ import {
   TwitterOutlined,
   ZhihuOutlined,
 } from '@ant-design/icons';
-import { useSiteStore } from '../../store/useSiteStore';
+import { useSiteStore } from '../../store';
 import { useStyles } from './style';
 
 const Footer: FC = () => {

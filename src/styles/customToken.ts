@@ -2,7 +2,8 @@ import type { GetCustomToken } from 'antd-style';
 import { rgba } from 'polished';
 
 declare module 'antd-style' {
-  type CustomToken = SiteToken;
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface CustomToken extends SiteToken {}
 }
 
 interface SiteToken {

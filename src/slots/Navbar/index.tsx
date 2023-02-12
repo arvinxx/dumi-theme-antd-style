@@ -4,7 +4,7 @@ import { history, Link } from 'dumi';
 import NavbarExtra from 'dumi/theme-default/slots/NavbarExtra';
 import { memo, type FC } from 'react';
 import { shallow } from 'zustand/shallow';
-import { activePathSel, useSiteStore } from '../../store/useSiteStore';
+import { activePathSel, useSiteStore } from '../../store';
 
 const useStyles = createStyles(({ css, responsive, token, stylish, prefixCls }) => {
   const prefix = `.${prefixCls}-tabs`;

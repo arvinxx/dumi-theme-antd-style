@@ -7,18 +7,24 @@ import Footer from 'dumi/theme/slots/Footer';
 import Header from 'dumi/theme/slots/Header';
 import Hero from 'dumi/theme/slots/Hero';
 
-const Home: FC = memo(() => (
-  <>
-    <Helmet>
-      <title>Ant Design Style - 应用级 CSS in JS 解决方案</title>
-    </Helmet>
-    <Flexbox align={'center'} gap={80}>
-      <Header />
-      <Hero />
-      <Features />
-      <Footer />
-    </Flexbox>
-  </>
-));
+import { siteTitleSel, useSiteStore } from '../../store';
+
+const Home: FC = memo(() => {
+  const siteTitle = useSiteStore(siteTitleSel);
+
+  return (
+    <>
+      <Helmet>
+        <title>{siteTitle}</title>
+      </Helmet>
+      <Flexbox align={'center'} gap={80}>
+        <Header />
+        <Hero />
+        <Features />
+        <Footer />
+      </Flexbox>
+    </>
+  );
+});
 
 export default Home;

@@ -2,7 +2,8 @@ import { GetCustomStylish } from 'antd-style';
 import { rgba } from 'polished';
 
 declare module 'antd-style' {
-  type CustomStylish = SiteStylish;
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface CustomStylish extends SiteStylish {}
 }
 
 export interface SiteStylish {

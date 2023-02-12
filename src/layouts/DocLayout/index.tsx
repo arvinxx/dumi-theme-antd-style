@@ -9,7 +9,7 @@ import { StoreUpdater } from '../../components/StoreUpdater';
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
 
-import { isHeroPageSel, useSiteStore } from '../../store/useSiteStore';
+import { isHeroPageSel, useSiteStore } from '../../store';
 import { GlobalStyle } from './styles';
 
 const DocLayout: FC = memo(() => {

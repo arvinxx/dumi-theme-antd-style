@@ -6,12 +6,12 @@ import { Center, Flexbox } from 'react-layout-kit';
 
 import HeroButton from './HeroButton';
 
-import { titleSel, useSiteStore } from '../../store/useSiteStore';
+import { heroTitleSel, useSiteStore } from '../../store';
 import { useStyles } from './style';
 
 const Hero: FC = () => {
   const frontmatter = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
-  const title = useSiteStore(titleSel);
+  const title = useSiteStore(heroTitleSel);
 
   const { styles, cx } = useStyles();
 

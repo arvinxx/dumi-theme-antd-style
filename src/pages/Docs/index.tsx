@@ -1,8 +1,9 @@
-import { Helmet, useOutlet } from 'dumi';
+import { useResponsive } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { memo, type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
+import { Helmet, useOutlet } from 'dumi';
 import Content from 'dumi/theme/slots/Content';
 import Footer from 'dumi/theme/slots/Footer';
 import Header from 'dumi/theme/slots/Header';
@@ -11,8 +12,7 @@ import Toc from 'dumi/theme/slots/Toc';
 
 import { ApiHeader } from '../../components/ApiHeader';
 
-import { useResponsive } from 'antd-style';
-import { isApiPageSel, useSiteStore } from '../../store/useSiteStore';
+import { isApiPageSel, siteTitleSel, useSiteStore } from '../../store';
 import { useStyles } from './styles';
 
 const Docs: FC = memo(() => {
@@ -20,12 +20,19 @@ const Docs: FC = memo(() => {
   const { mobile } = useResponsive();
   const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const isApiPage = useSiteStore(isApiPageSel);
+  const siteTitle = useSiteStore(siteTitleSel);
 
   const { styles, theme } = useStyles();
 
   return (
     <div className={styles.layout}>
-      <Helmet>{fm.title && <title> {fm.title} - Ant Design Style</title>}</Helmet>
+      <Helmet>
+        {fm.title && (
+          <title>
+            {fm.title} - {siteTitle}
+          </title>
+        )}
+      </Helmet>
       <Header />
 
       <Toc />

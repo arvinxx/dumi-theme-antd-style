@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { shallow } from 'zustand/shallow';
 
 import FeatureBlock from '../../components/Features';
-import { featuresSel, useSiteStore } from '../../store/useSiteStore';
+import { featuresSel, useSiteStore } from '../../store';
 
 const Features: FC = () => {
   const features = useSiteStore(featuresSel, shallow);

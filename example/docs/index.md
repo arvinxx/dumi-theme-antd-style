@@ -1,6 +1,6 @@
 ---
 hero:
-  title: dumi-theme-antd-style
+  title: Dumi Theme - <b>Ant Design Style</b>
   description: a npm develop template
   actions:
     - text: 快速上手
