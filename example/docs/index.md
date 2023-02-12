@@ -1,6 +1,6 @@
 ---
 hero:
-  title: @arvinxu/npm-template
+  title: dumi-theme-antd-style
   description: a npm develop template
   actions:
     - text: 快速上手
@@ -9,4 +9,4 @@ hero:
       link: /usage
 ---
 
-<embed src="../README.md"></embed>
+<embed src="../../README.md"></embed>

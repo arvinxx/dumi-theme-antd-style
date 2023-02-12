@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "dumi build",
+    "preview": "dumi preview",
+    "start": "dumi dev"
+  }
+}
