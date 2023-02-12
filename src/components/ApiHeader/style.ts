@@ -3,7 +3,7 @@ import { createStyles, styled } from 'antd-style';
 
 export const Label = styled(Typography.Text)`
   width: 100px;
-`;
+` as any;
 
 export const useStyles = createStyles(({ css, token, responsive: r, stylish }) => ({
   title: css`
