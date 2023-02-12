@@ -2,6 +2,7 @@
   "scripts": {
     "build": "dumi build",
     "preview": "dumi preview",
+    "setup": "dumi setup",
     "start": "dumi dev"
   }
 }
