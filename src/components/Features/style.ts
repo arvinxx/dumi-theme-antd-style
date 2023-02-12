@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style';
-import chroma from 'chroma-js';
+import { rgba } from 'polished';
 
 export const useStyles = createStyles(({ token, responsive, css, stylish, isDarkMode }) => ({
   container: css`
@@ -72,9 +72,9 @@ export const useStyles = createStyles(({ token, responsive, css, stylish, isDark
       opacity: 0.5;
       background: linear-gradient(
         135deg,
-        ${chroma(token.gradientColor2).alpha(0.3).hex()},
-        ${chroma(token.gradientColor2).alpha(0.3).hex()} 50%,
-        ${chroma(token.gradientColor1).alpha(0.3).hex()}
+        ${rgba(token.gradientColor2, 0.3)},
+        ${rgba(token.gradientColor2, 0.3)} 50%,
+        ${rgba(token.gradientColor1, 0.3)}
       );
     }
   `,

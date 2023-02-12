@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style';
-import chroma from 'chroma-js';
+import { rgba } from 'polished';
 
 export const useStyles = createStyles(({ token, prefixCls, responsive, css }) => {
   const fixHeight = 36;
@@ -39,7 +39,7 @@ export const useStyles = createStyles(({ token, prefixCls, responsive, css }) =>
       width: 100%;
       z-index: 200;
       background: transparent;
-      background: ${chroma(token.colorBgContainer).alpha(0.8).css()};
+      background: ${rgba(token.colorBgContainer, 0.8)};
     `,
     expand: css`
       backdrop-filter: blur(6px);
