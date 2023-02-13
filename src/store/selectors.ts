@@ -1,4 +1,4 @@
-import { Feature } from '../types';
+import { AnchorItem, Feature } from '../types';
 import { SiteStore } from './useSiteStore';
 
 export const isApiPageSel = (s: SiteStore) => s.location.pathname.startsWith('/api');
@@ -42,3 +42,21 @@ export const activePathSel = (s: SiteStore) => {
 
   return item?.activePath || '';
 };
+
+/**
+ * toc 锚点选择器
+ * @param s
+ */
+export const tocAnchorItemSel = (s: SiteStore) =>
+  s.routeMeta.toc.reduce<AnchorItem[]>((result, item) => {
+    if (item.depth === 2) {
+      result.push({ ...item });
+    } else if (item.depth === 3) {
+      const parent = result[result.length - 1];
+      if (parent) {
+        parent.children = parent.children || [];
+        parent.children.push({ ...item });
+      }
+    }
+    return result;
+  }, []);

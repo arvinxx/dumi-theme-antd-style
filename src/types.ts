@@ -14,3 +14,9 @@ export type Features =
   | {
       [key: string]: Feature[];
     };
+
+export interface AnchorItem {
+  id: string;
+  title: string;
+  children?: AnchorItem[];
+}
