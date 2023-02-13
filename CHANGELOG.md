@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.2.1...v0.2.2) (2023-02-13)
+
+### 🐛 Bug Fixes
+
+- 修正导入依赖问题 ([e927e16](https://github.com/arvinxx/dumi-theme-antd-style/commit/e927e16))
+
 ## [0.2.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.2.0...v0.2.1) (2023-02-13)
 
 ### 🐛 Bug Fixes
