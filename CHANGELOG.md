@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.3.0...v0.3.1) (2023-02-13)
+
+### 🐛 Bug Fixes
+
+- 修正缺少默认导出的问题 ([764c68a](https://github.com/arvinxx/dumi-theme-antd-style/commit/764c68a))
+
 # [0.3.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.2.2...v0.3.0) (2023-02-13)
 
 ### ✨ Features
