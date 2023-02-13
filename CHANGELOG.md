@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.6.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.2...v0.6.0) (2023-02-13)
+
+### ✨ Features
+
+- 使用 shiki 优化高亮语法显示 ([7bc49bf](https://github.com/arvinxx/dumi-theme-antd-style/commit/7bc49bf))
+
 ## [0.5.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.1...v0.5.2) (2023-02-13)
 
 ### 🐛 Bug Fixes
