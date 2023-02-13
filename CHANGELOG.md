@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.4.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.3.1...v0.4.0) (2023-02-13)
+
+### ✨ Features
+
+- 导出 Toc 组件 ([5c7cdc3](https://github.com/arvinxx/dumi-theme-antd-style/commit/5c7cdc3))
+
 ## [0.3.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.3.0...v0.3.1) (2023-02-13)
 
 ### 🐛 Bug Fixes
