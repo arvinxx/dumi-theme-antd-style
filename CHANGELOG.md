@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.3.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.2.2...v0.3.0) (2023-02-13)
+
+### ✨ Features
+
+- 导出 Footer、Hero、Feature 组件 ([6d3b425](https://github.com/arvinxx/dumi-theme-antd-style/commit/6d3b425))
+
 ## [0.2.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.2.1...v0.2.2) (2023-02-13)
 
 ### 🐛 Bug Fixes
