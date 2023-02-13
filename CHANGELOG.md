@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.1...v0.5.2) (2023-02-13)
+
+### 🐛 Bug Fixes
+
+- 修正默认的语法高亮不准确的问题 ([e225dfb](https://github.com/arvinxx/dumi-theme-antd-style/commit/e225dfb))
+
 ## [0.5.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.0...v0.5.1) (2023-02-13)
 
 ### 🐛 Bug Fixes
