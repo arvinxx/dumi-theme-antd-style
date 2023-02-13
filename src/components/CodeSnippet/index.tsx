@@ -4,7 +4,7 @@ import { useResponsive } from 'antd-style';
 import copy from 'copy-to-clipboard';
 import { FC } from 'react';
 
-import Highlighter from '../Highlighter';
+import { Prism as Highlighter } from '../Highlighter';
 
 import { useCopied } from '../../hooks/useCopied';
 import { useStyles } from './style';

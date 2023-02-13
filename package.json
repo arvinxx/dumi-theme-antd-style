@@ -68,6 +68,7 @@
     "rc-footer": "^0.6",
     "react-layout-kit": "^1",
     "react-syntax-highlighter": "^15",
+    "shiki-es": "^0.2.0",
     "use-merge-value": "^1",
     "zustand": "^4"
   },
