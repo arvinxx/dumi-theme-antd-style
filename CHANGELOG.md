@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.0...v0.5.1) (2023-02-13)
+
+### 🐛 Bug Fixes
+
+- 兼容 frontmatter 与 themeConfig ([4be5091](https://github.com/arvinxx/dumi-theme-antd-style/commit/4be5091))
+
 # [0.5.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.4.0...v0.5.0) (2023-02-13)
 
 ### ✨ Features
