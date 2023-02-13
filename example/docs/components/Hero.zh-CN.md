@@ -1,7 +1,10 @@
 ---
-order: 2
-title: Hero
+order: 1
+title: Hero 头图
 apiHeader: true
+group:
+  title: 风格化组件
+  order: 2
 ---
 
 :::info

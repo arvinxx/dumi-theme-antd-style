@@ -1,7 +1,8 @@
 ---
-order: 3
-title: Features
+order: 2
+title: Features 特性
 apiHeader: true
+group: 风格化组件
 ---
 
 :::info
