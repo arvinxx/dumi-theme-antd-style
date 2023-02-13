@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.5.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.4.0...v0.5.0) (2023-02-13)
+
+### ✨ Features
+
+- 导出 DumiSiteProvider ([01a3292](https://github.com/arvinxx/dumi-theme-antd-style/commit/01a3292))
+
 # [0.4.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.3.1...v0.4.0) (2023-02-13)
 
 ### ✨ Features
