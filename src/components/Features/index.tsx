@@ -7,7 +7,7 @@ import { Center, Flexbox } from 'react-layout-kit';
 import { Feature } from '../../types';
 import { useStyles } from './style';
 
-interface FeaturesProps {
+export interface FeaturesProps {
   items: Feature[];
   style?: CSSProperties;
 }
