@@ -26,7 +26,7 @@
     "ci": "npm run lint && npm run type-check",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
     "dev": "npm run start --prefix=example",
-    "docs:build": "npm run build --prefix=example",
+    "docs:build": "npm run build && npm run build --prefix=example",
     "doctor": "father doctor",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && father link-dev-theme",
