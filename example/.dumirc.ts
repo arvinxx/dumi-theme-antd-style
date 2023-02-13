@@ -1,4 +1,6 @@
 import { defineConfig } from 'dumi';
+import path from 'path';
+
 import { homepage } from '../package.json';
 
 import { features } from './config/features';
@@ -12,6 +14,7 @@ export default defineConfig({
       'zh-CN': 'Ant Design Style 文档站主题包',
       'en-US': 'dumi2 theme similar to antd v5 website',
     },
+
     // actions: {
     //   'zh-CN': [
     //     {
@@ -46,4 +49,7 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文', suffix: '' },
     { id: 'en-US', name: 'English', suffix: '-en' },
   ],
+  alias: {
+    'dumi-theme-antd-style': path.join(__dirname, '../src'),
+  },
 });
