@@ -1,19 +1,15 @@
-import isEqual from 'fast-deep-equal';
 import { type FC } from 'react';
 
 import HeroComp from '../../components/Hero';
 
-import { heroTitleSel, useSiteStore } from '../../store';
+import { heroActionsSel, heroDescSel, heroTitleSel, useSiteStore } from '../../store';
 
 const Hero: FC = () => {
-  const frontmatter = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const title = useSiteStore(heroTitleSel);
+  const description = useSiteStore(heroDescSel);
+  const actions = useSiteStore(heroActionsSel);
 
-  const hero = frontmatter.hero!;
-
-  return (
-    <HeroComp title={title!} actions={frontmatter.hero!.actions!} description={hero.description} />
-  );
+  return <HeroComp title={title!} actions={actions} description={description} />;
 };
 
 export default Hero;
