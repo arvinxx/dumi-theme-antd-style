@@ -14,31 +14,30 @@ export default defineConfig({
       'zh-CN': 'Ant Design Style 文档站主题包',
       'en-US': 'dumi2 theme similar to antd v5 website',
     },
-
-    // actions: {
-    //   'zh-CN': [
-    //     {
-    //       type: 'primary',
-    //       text: '开始使用',
-    //       link: '/guide/introduce',
-    //     },
-    //     {
-    //       text: '配置',
-    //       link: '/config/base',
-    //     },
-    //   ],
-    //   'en-US': [
-    //     {
-    //       type: 'primary',
-    //       text: 'Start',
-    //       link: '/guide/introduce-en',
-    //     },
-    //     {
-    //       text: 'Config',
-    //       link: '/config/base-en',
-    //     },
-    //   ],
-    // },
+    actions: {
+      'zh-CN': [
+        {
+          type: 'primary',
+          text: '开始使用',
+          link: '/guide',
+        },
+        {
+          text: '配置',
+          link: '/config',
+        },
+      ],
+      'en-US': [
+        {
+          type: 'primary',
+          text: 'Start',
+          link: '/guide-en',
+        },
+        {
+          text: 'Config',
+          link: '/config-en',
+        },
+      ],
+    },
     features,
   },
 

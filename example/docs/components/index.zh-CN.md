@@ -3,6 +3,7 @@ order: 1
 title: 概览
 nav:
   title: 组件
+  order: 3
 ---
 
 # 主题组件
