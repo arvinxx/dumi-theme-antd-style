@@ -10,7 +10,7 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
     padding: 24px 48px;
     border-radius: 10px;
     background-color: ${token.colorBgContainer};
-    box-shadow: ${token.boxShadowSecondary};
+    box-shadow: ${token.boxShadowTertiary};
 
     ${responsive.mobile} {
       padding: 8px 16px;
