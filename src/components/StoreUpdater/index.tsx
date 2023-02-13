@@ -1,5 +1,11 @@
-import { useLocation } from '@@/exports';
-import { useLocale, useNavData, useRouteMeta, useSidebarData, useSiteData } from 'dumi';
+import {
+  useLocale,
+  useLocation,
+  useNavData,
+  useRouteMeta,
+  useSidebarData,
+  useSiteData,
+} from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { memo, useEffect } from 'react';
 import { SiteStore, useSiteStore } from '../../store/useSiteStore';
