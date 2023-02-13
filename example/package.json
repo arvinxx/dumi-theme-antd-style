@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "dumi build",
+    "postinstall": "npm run setup",
     "preview": "dumi preview",
     "setup": "dumi setup",
     "start": "dumi dev"

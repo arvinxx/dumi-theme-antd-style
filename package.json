@@ -28,7 +28,6 @@
     "dev": "npm run start --prefix=example",
     "docs:build": "npm run build --prefix=example",
     "doctor": "father doctor",
-    "postinstall": "npm run setup --prefix=example",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && father link-dev-theme",
     "prepublishOnly": "father doctor && npm run build",
