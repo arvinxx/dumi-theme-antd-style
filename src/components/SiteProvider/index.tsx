@@ -9,7 +9,7 @@ export default ({ children }: PropsWithChildren) => {
   const themeMode = useThemeStore((s) => s.themeMode);
 
   return (
-    <StyleProvider prefix={'site'}>
+    <StyleProvider speedy={process.env.NODE_ENV === 'production'} prefix={'site'}>
       <ThemeProvider
         prefixCls={'site'}
         themeMode={themeMode}
