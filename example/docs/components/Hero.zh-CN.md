@@ -1,19 +1,20 @@
 ---
 order: 1
 title: Hero 头图
-apiHeader: true
+atomId: Hero
+description: 风格化头图
 group:
   title: 风格化组件
   order: 2
 ---
 
-:::info
-只有包裹在 `DumiSiteProvider` 里面才能正常使用。
-:::
-
 ## Demo
 
 <code src="./demos/Hero"></code>
+
+:::info
+只有包裹在 `DumiSiteProvider` 里面才能正常使用。
+:::
 
 ## API
 

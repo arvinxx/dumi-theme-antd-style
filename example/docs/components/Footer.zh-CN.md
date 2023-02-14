@@ -1,6 +1,7 @@
 ---
 title: Footer 页脚
-apiHeader: true
+atomId: Footer
+description: 页面布局的页脚，基于 rc-footer 封装
 group:
   title: 布局
 ---

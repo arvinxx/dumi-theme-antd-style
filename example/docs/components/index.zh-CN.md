@@ -1,9 +1,10 @@
 ---
 order: 1
 title: 概览
+apiHeader: false
 nav:
   title: 组件
-  order: 3
+  order: 4
 ---
 
 # 主题组件

@@ -1,6 +1,7 @@
 ---
 title: Toc 目录
-apiHeader: true
+atomId: Toc
+description: 页面目录组件
 group:
   title: 布局
 ---

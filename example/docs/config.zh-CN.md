@@ -81,26 +81,22 @@ export default defineConfig({
 
 该配置底层使用本主题包的 Feature 组件，详见 [Features](/components/features) 文档。
 
-### sidebarGroupModePath
+## 高级配置
 
-- 类型：`Array<string | RegExp>`
+### apiHeader
+
+- 类型：``
 - 默认值：`[]`
 
 ```ts
-export default {
+export default defineConfig({
   themeConfig: {
-    antdTheme: {
-      sidebarGroupModePath: [
-        // 匹配以 /config 开头的路由
-        '/config',
-        // 支持正则匹配
-        /\/guide\//,
-      ],
+    apiHeader: {
+      // 组件库包名，可以从 package.json 中引入名称
+      pkg: 'dumi-theme-antd-style',
+      // 匹配路由，默认为 /api 或 /components
+      match: ['/api', '/components'],
     },
   },
-};
+});
 ```
-
-左侧导航栏是否需要作为分组处理，参考 antd [menuitemgrouptype][antd-menuitemgrouptype-url]。
-
-[antd-menuitemgrouptype-url]: https://ant.design/components/menu-cn#menuitemgrouptype---

@@ -1,17 +1,18 @@
 ---
 order: 2
 title: Features 特性
-apiHeader: true
+description: 首页的特性组件
+atomId: Features
 group: 风格化组件
 ---
-
-:::info
-只有包裹在 `DumiSiteProvider` 里面才能正常使用。
-:::
 
 ## Demo
 
 <code src="./demos/Features"></code>
+
+:::info
+只有包裹在 `DumiSiteProvider` 里面才能正常使用。
+:::
 
 ## API
 

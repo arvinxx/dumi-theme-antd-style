@@ -1,7 +1,7 @@
 ---
 order: 2
 title: DumiSiteProvider 主题容器
-apiHeader: true
+atomId: DumiSiteProvider
 group:
   title: 其他
   order: 100

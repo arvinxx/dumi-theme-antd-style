@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 import path from 'path';
 
-import { homepage } from '../package.json';
+import { homepage, name } from '../package.json';
 
 import { features } from './config/features';
 
@@ -39,8 +39,11 @@ export default defineConfig({
       ],
     },
     features,
+
     apiHeader: {
-      match: ['/components'],
+      pkg: name,
+      sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
+      docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
     },
   },
 

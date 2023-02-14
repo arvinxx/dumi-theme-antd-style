@@ -5,8 +5,5 @@
     "preview": "dumi preview",
     "setup": "dumi setup",
     "start": "dumi dev"
-  },
-  "devDependencies": {
-    "react-json-tree": "^0.18"
   }
 }
