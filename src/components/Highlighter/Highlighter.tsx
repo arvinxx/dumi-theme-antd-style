@@ -4,20 +4,14 @@ import { memo, useMemo, useState } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { useStyles } from './Highlighter.style';
+
+import type { HighlighterProps } from './index';
 import { Prism } from './Prism';
 import { useShiki } from './useShiki';
 
-export interface HighlighterProps {
-  children: string;
-  language: string;
-  /**
-   * 语法高亮器类型
-   * @default 'shiki'
-   */
-  type?: 'shiki' | 'prism';
-}
+type SyntaxHighlighterProps = Pick<HighlighterProps, 'language' | 'type' | 'children'>;
 
-const Highlighter = memo<HighlighterProps>(({ children, language }) => {
+const SyntaxHighlighter = memo<SyntaxHighlighterProps>(({ children, language, type = 'shiki' }) => {
   const { styles, theme } = useStyles();
   const { isDarkMode } = useThemeMode();
   const [loading, setLoading] = useState(false);
@@ -25,25 +19,35 @@ const Highlighter = memo<HighlighterProps>(({ children, language }) => {
   const { codeToHtml } = useShiki({ onLoadingChange: setLoading });
 
   const html = useMemo(
-    () => codeToHtml(children, language, isDarkMode) || '',
+    () => codeToHtml(children.trim(), language, isDarkMode) || '',
     [codeToHtml, children, isDarkMode, language],
   );
 
-  // const highlighter = type === 'prism' ? Prism : Highlighter;
-  return (
-    <Flexbox className={styles.container}>
-      {loading ? (
-        <Prism language={language}>{children}</Prism>
-      ) : (
-        <div dangerouslySetInnerHTML={{ __html: html }} className={styles.shiki} />
-      )}
-      {loading && (
-        <Center className={styles.loading}>
-          <Loading spin style={{ color: theme.colorTextTertiary }} />
-        </Center>
-      )}
-    </Flexbox>
-  );
+  switch (type) {
+    case 'prism':
+      return (
+        <Flexbox className={styles.prism}>
+          <Prism language={language}>{children}</Prism>
+        </Flexbox>
+      );
+    default:
+    case 'shiki':
+      return (
+        <>
+          {loading ? (
+            <Prism language={language}>{children}</Prism>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: html }} className={styles.shiki} />
+          )}
+          {loading && (
+            <Center horizontal gap={8} className={styles.loading}>
+              <Loading spin style={{ color: theme.colorTextTertiary }} />
+              shiki 着色器准备中...
+            </Center>
+          )}
+        </>
+      );
+  }
 });
 
-export default Highlighter;
+export default SyntaxHighlighter;

@@ -49,7 +49,7 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
       }
 
       // inline code
-      > :not(.source-code) code {
+      > :not([data-code-type='highlighter']) code {
         padding: 2px 6px;
 
         color: ${token.colorPrimaryText};

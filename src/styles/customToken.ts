@@ -24,6 +24,7 @@ interface SiteToken {
   gradientIconDefault: string;
 
   colorSolid: string;
+  fontFamilyHighlighter: string;
 }
 
 export const getCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token }) => {
@@ -38,6 +39,8 @@ export const getCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token })
     sidebarWidth: 240,
     tocWidth: 176,
     contentMaxWidth: 1152,
+    fontFamilyHighlighter:
+      "'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace",
 
     colorSolid,
 

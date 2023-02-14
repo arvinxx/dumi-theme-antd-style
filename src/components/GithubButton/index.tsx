@@ -9,7 +9,7 @@ const GithubButton: FC = () => {
 
   return (
     repoUrl && (
-      <Tooltip showArrow={false} title={'Github'}>
+      <Tooltip arrow={false} title={'Github'}>
         <a href={repoUrl} target={'_blank'} rel="noreferrer">
           <Button icon={<GithubFilled />} />
         </a>
