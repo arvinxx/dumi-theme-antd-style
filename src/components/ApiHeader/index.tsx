@@ -6,7 +6,10 @@ import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';
 import BundlephobiaFilled from './BundlephobiaFilled';
+import Graph from './Graph';
 import NpmFilled from './NpmFilled';
+import PackagePhobia from './PackagePhobia';
+import Unpkg from './Unpkg';
 
 import { Label, useStyles } from './style';
 
@@ -49,13 +52,32 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
         label: 'NPM',
         icon: <NpmFilled />,
         children: 'NPM',
-        url: `https://www.npmjs.com/package/${pkg}?activeTab=explore`,
+        url: `https://www.npmjs.com/package/${pkg}`,
       },
       {
-        label: 'BundlePhobia',
+        label: '预览产物',
+        icon: <Unpkg />,
+        children: 'UNPKG',
+        url: `https://unpkg.com/browse/${pkg}/`,
+      },
+      {
+        label: '查阅产物体积',
         icon: <BundlephobiaFilled />,
         children: 'BundlePhobia',
         url: `https://bundlephobia.com/package/${pkg}`,
+      },
+      {
+        label: '查阅安装包体积',
+        icon: <PackagePhobia />,
+        children: 'PackagePhobia',
+        url: `https://packagephobia.com/result?p=${pkg}`,
+      },
+
+      {
+        label: '分析依赖图',
+        icon: <Graph />,
+        children: 'Anvaka Graph',
+        url: `https://npm.anvaka.com/#/view/2d/${pkg}`,
       },
     ];
 
@@ -78,9 +100,15 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
           </Flexbox>
           <Divider dashed style={{ margin: '2px 0' }} />
           <Flexbox horizontal={!mobile} gap={mobile ? 24 : 0} distribution={'space-between'}>
-            <Space split={<Divider type={'vertical'} />}>
+            <Space split={<Divider type={'vertical'} />} wrap>
               {packages.map((item) => (
-                <a key={item.url} href={item.url} target={'_blank'} rel="noreferrer">
+                <a
+                  key={item.url}
+                  href={item.url}
+                  target={'_blank'}
+                  rel="noreferrer"
+                  title={item.label}
+                >
                   <Flexbox horizontal align={'center'} gap={8} className={styles.text}>
                     <>{item.icon}</>
                     <>{item.children}</>
