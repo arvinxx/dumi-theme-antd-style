@@ -37,7 +37,10 @@ export const apiHeaderSel = (s: SiteStore): ApiHeader => {
   const sourceUrl =
     sourceUrlMatch === false || typeof sourceUrlMatch === 'undefined' || !fm.atomId
       ? undefined
-      : sourceUrlMatch.replace('{github}', REPO_BASE).replace('{atomId}', fm.atomId);
+      : sourceUrlMatch
+          .replace('{github}', REPO_BASE)
+          .replace('{atomId}', fm.atomId)
+          .replace('{title}', fm.title);
 
   const docUrl =
     docUrlMatch === false || typeof docUrlMatch === 'undefined' || !fm.atomId
@@ -45,9 +48,9 @@ export const apiHeaderSel = (s: SiteStore): ApiHeader => {
       : docUrlMatch
           .replace('{github}', REPO_BASE)
           .replace('{atomId}', fm.atomId)
+          .replace('{title}', fm.title)
           .replace('{locale}', localeId);
 
-  console.log(docUrl);
   return { pkg, sourceUrl, docUrl };
 };
 
