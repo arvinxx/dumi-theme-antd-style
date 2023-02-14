@@ -17,6 +17,10 @@ group:
 
 <code src="./demos/Highlighter/Shiki"></code>
 
+#### 自定义主题
+
+<code src="./demos/Highlighter/ShikiTheme"></code>
+
 ## Prism 语法高亮器
 
 ### JS
