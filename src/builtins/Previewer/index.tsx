@@ -6,6 +6,7 @@ const useStyles = createStyles(
   ({ css, token, prefixCls }) => css`
     .dumi-default-previewer {
       border-color: ${token.colorBorderSecondary};
+
       &-demo {
         &[data-iframe]::before {
           background: ${token.colorBgElevated};
@@ -18,6 +19,10 @@ const useStyles = createStyles(
             border-radius: 0;
           }
         }
+      }
+
+      &-actions:not(:last-child) {
+        border-color: ${token.colorBorderSecondary};
       }
     }
   `,

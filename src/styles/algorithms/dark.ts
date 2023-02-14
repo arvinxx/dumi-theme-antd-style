@@ -3,7 +3,7 @@ import { MappingAlgorithm } from 'antd-style';
 
 // 这一版的暗色浅色系列已经差不多了
 const primaryColors = [
-  '#001736',
+  '#ffffff',
   '#002653',
   '#003572',
   '#004593',
@@ -40,5 +40,16 @@ export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorLink: primaryColors[6],
     colorLinkHover: primaryColors[5],
     colorLinkActive: primaryColors[7],
+
+    colorInfoBg: primaryColors[1],
+    colorInfoBgHover: primaryColors[2],
+    colorInfoBorder: primaryColors[3],
+    colorInfoBorderHover: primaryColors[4],
+    colorInfoHover: primaryColors[5],
+    colorInfo: primaryColors[6],
+    colorInfoActive: primaryColors[7],
+    colorInfoTextHover: primaryColors[8],
+    colorInfoText: primaryColors[9],
+    colorInfoTextActive: primaryColors[10],
   };
 };
