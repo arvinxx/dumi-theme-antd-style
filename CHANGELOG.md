@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.1...v0.7.2) (2023-02-14)
+
+### 🐛 Bug Fixes
+
+- 修正文本前后缀空格截断的问题，并补充截取的 props ([079bd86](https://github.com/arvinxx/dumi-theme-antd-style/commit/079bd86))
+
 ## [0.7.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.0...v0.7.1) (2023-02-14)
 
 # [0.7.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.6.1...v0.7.0) (2023-02-14)
