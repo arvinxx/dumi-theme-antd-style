@@ -48,6 +48,11 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
         opacity: ${isDarkMode ? 0.8 : 1};
       }
 
+      > [data-code-type='highlighter'] {
+        pre {
+          margin: 8px 0 !important;
+        }
+      }
       // inline code
       > :not([data-code-type='highlighter']) code {
         padding: 2px 6px;
