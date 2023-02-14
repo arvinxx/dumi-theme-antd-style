@@ -74,7 +74,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
             <Label type={'secondary'} style={{ display: 'flex', alignItems: 'center' }}>
               引入方法
             </Label>
-            <Code>{`import { ${componentName} } from "${pkg}";`}</Code>
+            <Code>{`import { ${componentName} } from '${pkg}';`}</Code>
           </Flexbox>
           <Divider dashed style={{ margin: '2px 0' }} />
           <Flexbox horizontal={!mobile} gap={mobile ? 24 : 0} distribution={'space-between'}>
