@@ -1,6 +1,6 @@
 ---
 order: 2
-title: DumiSiteProvider 主题包容器
+title: DumiSiteProvider 主题容器
 apiHeader: true
 group:
   title: 其他
