@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.3...v0.7.4) (2023-02-14)
+
+### 🐛 Bug Fixes
+
+- 修正预览器引入造成的循环问题 ([078f3ce](https://github.com/arvinxx/dumi-theme-antd-style/commit/078f3ce))
+
 ## [0.7.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.2...v0.7.3) (2023-02-14)
 
 ## [0.7.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.1...v0.7.2) (2023-02-14)
