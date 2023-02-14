@@ -52,10 +52,13 @@ export const useStyles = createStyles(({ css, responsive, token }) => ({
   `,
 
   content: css`
-    max-width: ${token.contentMaxWidth}px;
+    max-width: 960px;
     width: 100%;
     margin: 0 24px;
 
+    ${responsive.desktop} {
+      max-width: ${token.contentMaxWidth}px;
+    }
 
     ${responsive.mobile} {
       margin: 0;
