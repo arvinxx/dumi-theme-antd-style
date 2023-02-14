@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.8.0...v0.8.1) (2023-02-14)
+
+### 🐛 Bug Fixes
+
+- 修正 title 无法替换的问题 ([e5fe591](https://github.com/arvinxx/dumi-theme-antd-style/commit/e5fe591))
+
 # [0.8.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.4...v0.8.0) (2023-02-14)
 
 ### ✨ Features
