@@ -11,7 +11,7 @@ export const useStyles = createStyles(({ token, css, cx, prefixCls }) => {
         position: relative;
 
         pre {
-          margin: 8px 0 !important;
+          margin: 0 !important;
         }
 
         &:hover {

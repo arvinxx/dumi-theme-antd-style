@@ -8,7 +8,7 @@ export const useStyles = createStyles(({ css, token, cx, prefixCls }) => {
       `${prefix}-shiki`,
       css`
         .shiki {
-          overflow: scroll;
+          overflow-x: scroll;
 
           .line {
             font-family: ${token.fontFamilyHighlighter};
@@ -21,7 +21,7 @@ export const useStyles = createStyles(({ css, token, cx, prefixCls }) => {
 
     loading: css`
       position: absolute;
-      bottom: 8px;
+      top: 8px;
       right: 12px;
       color: ${token.colorTextTertiary};
     `,

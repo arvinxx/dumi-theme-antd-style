@@ -1,8 +1,9 @@
 import { CheckOutlined, CopyOutlined } from '@ant-design/icons';
 import { Button, ConfigProvider, Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, memo } from 'react';
 
+import { ShikiSyntaxTheme } from 'dumi-theme-antd-style/components/Highlighter/useShiki';
 import { useCopied } from '../../hooks/useCopied';
 import SyntaxHighlighter from './Highlighter';
 import { LanguageKeys } from './language';
@@ -29,58 +30,64 @@ export interface HighlighterProps {
    */
   trim?: string;
   style?: CSSProperties;
+  syntaxThemes?: {
+    shiki?: Partial<ShikiSyntaxTheme>;
+  };
 }
 
-export const Highlighter: FC<HighlighterProps> = ({
-  children,
-  language,
-  background = true,
-  type,
-  className,
-  style,
-  trim = true,
-}) => {
-  const { copied, setCopied } = useCopied();
-  const { styles, theme, cx } = useStyles();
-  const container = cx(styles.container, background && styles.withBackground, className);
+export const Highlighter: FC<HighlighterProps> = memo(
+  ({
+    children,
+    language,
+    background = true,
+    type,
+    className,
+    style,
+    trim = true,
+    syntaxThemes,
+  }) => {
+    const { copied, setCopied } = useCopied();
+    const { styles, theme, cx } = useStyles();
+    const container = cx(styles.container, background && styles.withBackground, className);
 
-  return (
-    <div
-      // 用于标记是 markdown 中的代码块，避免和普通 code 的样式混淆
-      data-code-type="highlighter"
-      className={container}
-      style={style}
-    >
-      <ConfigProvider theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
-        <Tooltip
-          placement={'left'}
-          arrow={false}
-          title={
-            copied ? (
-              <>
-                <CheckOutlined style={{ color: theme.colorSuccess }} /> 复制成功
-              </>
-            ) : (
-              '复制'
-            )
-          }
-        >
-          <Button
-            icon={<CopyOutlined />}
-            className={styles.button}
-            onClick={() => {
-              copy(children);
-              setCopied();
-            }}
-          />
-        </Tooltip>
-      </ConfigProvider>
+    return (
+      <div
+        // 用于标记是 markdown 中的代码块，避免和普通 code 的样式混淆
+        data-code-type="highlighter"
+        className={container}
+        style={style}
+      >
+        <ConfigProvider theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
+          <Tooltip
+            placement={'left'}
+            arrow={false}
+            title={
+              copied ? (
+                <>
+                  <CheckOutlined style={{ color: theme.colorSuccess }} /> 复制成功
+                </>
+              ) : (
+                '复制'
+              )
+            }
+          >
+            <Button
+              icon={<CopyOutlined />}
+              className={styles.button}
+              onClick={() => {
+                copy(children);
+                setCopied();
+              }}
+            />
+          </Tooltip>
+        </ConfigProvider>
 
-      <SyntaxHighlighter language={language} type={type}>
-        {trim ? children.trim() : children}
-      </SyntaxHighlighter>
-    </div>
-  );
-};
+        <SyntaxHighlighter language={language} type={type} syntaxThemes={syntaxThemes}>
+          {trim ? children.trim() : children}
+        </SyntaxHighlighter>
+      </div>
+    );
+  },
+);
 
 export default Highlighter;
