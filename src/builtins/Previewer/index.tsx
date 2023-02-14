@@ -3,16 +3,25 @@ import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 
 const useStyles = createStyles(
-  ({ css, prefixCls }) => css`
-    .dumi-default-previewer-meta {
-      .${prefixCls}-highlighter {
-        pre {
-          border-radius: 0;
+  ({ css, token, prefixCls }) => css`
+    .dumi-default-previewer {
+      border-color: ${token.colorBorderSecondary};
+      &-demo {
+        &[data-iframe]::before {
+          background: ${token.colorBgElevated};
+        }
+      }
+      &-meta {
+        .${prefixCls}-highlighter {
+          pre {
+            border-radius: 0;
+          }
         }
       }
     }
   `,
 );
+
 export default (props: IPreviewerProps) => {
   const { styles } = useStyles();
 
