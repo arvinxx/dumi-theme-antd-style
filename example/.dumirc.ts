@@ -57,4 +57,12 @@ export default defineConfig({
   alias: {
     'dumi-theme-antd-style': path.join(__dirname, '../src'),
   },
+
+  styles: [
+    `html, body { background: transparent;  }
+
+  @media (prefers-color-scheme: dark) {
+    html, body { background: #0E1116; }
+  }`,
+  ],
 });

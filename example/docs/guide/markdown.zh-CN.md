@@ -1,10 +1,10 @@
 ---
 order: 4
-title: Markdown 解析
+title: Markdown 高亮
 group: 特性
 ---
 
-# Markdown 解析
+# Markdown 高亮
 
 本主题包内建了两种语法高亮器供你使用：
 
