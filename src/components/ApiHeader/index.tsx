@@ -5,6 +5,7 @@ import { FC, memo, ReactNode } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';
+import BundlephobiaFilled from './BundlephobiaFilled';
 import NpmFilled from './NpmFilled';
 
 import { Label, useStyles } from './style';
@@ -32,24 +33,31 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
 
     const items = [
       sourceUrl && {
-        label: '源码',
         icon: <GithubFilled />,
         children: '查看源码',
         url: sourceUrl,
       },
       docsUrl && {
-        label: '文档',
         icon: <EditOutlined />,
         children: '编辑文档',
         url: docsUrl,
       },
+    ].filter((i) => i) as Item[];
+
+    const packages = [
       {
-        label: '产物',
+        label: 'NPM',
         icon: <NpmFilled />,
-        children: pkg,
+        children: 'NPM',
         url: `https://www.npmjs.com/package/${pkg}?activeTab=explore`,
       },
-    ].filter((i) => i) as Item[];
+      {
+        label: 'BundlePhobia',
+        icon: <BundlephobiaFilled />,
+        children: 'BundlePhobia',
+        url: `https://bundlephobia.com/package/${pkg}`,
+      },
+    ];
 
     return (
       <Flexbox>
@@ -61,7 +69,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
             </Typography.Text>
           </div>
         )}
-        <Flexbox style={{ marginTop: 24 }} gap={mobile ? 16 : 24}>
+        <Flexbox style={{ marginTop: 16 }} gap={mobile ? 16 : 24}>
           <Flexbox horizontal={!mobile} gap={mobile ? 12 : 0}>
             <Label type={'secondary'} style={{ display: 'flex', alignItems: 'center' }}>
               引入方法
@@ -69,26 +77,29 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
             <Code>{`import { ${componentName} } from "${pkg}";`}</Code>
           </Flexbox>
           <Divider dashed style={{ margin: '2px 0' }} />
-          <Space
-            direction={mobile ? 'vertical' : 'horizontal'}
-            split={mobile ? undefined : <Divider type={'vertical'} />}
-            size={24}
-            className={styles.meta}
-          >
-            {items.map((item) => (
-              <Space size={24} key={item.label}>
-                <Label type={'secondary'}>{item.label}</Label>
-                {
-                  <a href={item.url} target={'_blank'} rel="noreferrer">
-                    <Flexbox horizontal align={'center'} gap={8} className={styles.text}>
-                      <>{item.icon}</>
-                      <>{item.children}</>
-                    </Flexbox>
-                  </a>
-                }
-              </Space>
-            ))}
-          </Space>
+          <Flexbox horizontal={!mobile} gap={mobile ? 24 : 0} distribution={'space-between'}>
+            <Space split={<Divider type={'vertical'} />}>
+              {packages.map((item) => (
+                <a key={item.url} href={item.url} target={'_blank'} rel="noreferrer">
+                  <Flexbox horizontal align={'center'} gap={8} className={styles.text}>
+                    <>{item.icon}</>
+                    <>{item.children}</>
+                  </Flexbox>
+                </a>
+              ))}
+            </Space>
+
+            <Space split={<Divider type={'vertical'} />} className={styles.meta}>
+              {items.map((item) => (
+                <a key={item.label} href={item.url} target={'_blank'} rel="noreferrer">
+                  <Flexbox horizontal align={'center'} gap={8} className={styles.text}>
+                    <>{item.icon}</>
+                    <>{item.children}</>
+                  </Flexbox>
+                </a>
+              ))}
+            </Space>
+          </Flexbox>
         </Flexbox>
       </Flexbox>
     );
