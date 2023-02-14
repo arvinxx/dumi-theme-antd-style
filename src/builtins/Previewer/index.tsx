@@ -12,6 +12,7 @@ const useStyles = createStyles(
         }
       }
       &-meta {
+        border-color: ${token.colorBorderSecondary};
         .${prefixCls}-highlighter {
           pre {
             border-radius: 0;
