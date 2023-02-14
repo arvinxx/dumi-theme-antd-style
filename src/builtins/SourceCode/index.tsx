@@ -3,7 +3,7 @@ import { Button, ConfigProvider, Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
 import { FC } from 'react';
 
-import { Shiki } from '../../components/Highlighter';
+import { Highlighter } from '../../components/Highlighter';
 import { useCopied } from '../../hooks/useCopied';
 import { useStyles } from './style';
 
@@ -43,8 +43,7 @@ const SourceCode: FC<SourceCodeProps> = ({ children, lang }) => {
         </Tooltip>
       </ConfigProvider>
 
-      <Shiki language={lang}>{children}</Shiki>
-      {/*<Prism language={lang}>{children}</Prism>*/}
+      <Highlighter language={lang}>{children}</Highlighter>
     </div>
   );
 };

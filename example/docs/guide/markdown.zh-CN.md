@@ -1,6 +1,7 @@
 ---
 order: 4
 title: Markdown 解析
+group: 特性
 ---
 
 # Markdown 解析
@@ -14,32 +15,22 @@ title: Markdown 解析
 
 **Shiki**，一个基于 TextMate 语法的代码高亮器。它直接生成带样式的包裹元素，所以不需要引入额外的 CSS 文件。因为基于 TextMate 语法，所以生成的高亮区块非常准确，效果类似于 VS Code。同时这也意味着 shiki 可以支持任意 vscode 主题包。Shiki 也提供了 [很多预设主题](https://github.com/shikijs/shiki/blob/main/docs/themes.md)。不过 Shiki 需要通过 TextMate 主题来自定义高亮，这相对来说会比较麻烦。
 
-你可以参考以下描述来选择使用哪种高亮器：
+你自行选择使用哪种高亮器：
 
-Prism 更容易自定义样式
-Shiki 生成的高亮区块更加准确
-默认情况下本主题包使用 Prism，你可以在 frontmatter 中修改设置：
+- Prism 更容易自定义样式
+- Shiki 生成的高亮区块更加准确
+
+默认情况下本主题包使用 shiki，你可以在 frontmatter 中修改设置：
 
 ```markdown
 ---
-highlighter: shiki
+highlighter: prism
 ---
 ```
 
-## 开发状态
+## shiki 高亮示例
 
-`dumi-theme-antd-style` 默认采用
-
-## 开发
-
-```bash
-$ pnpm install
-
-# start dumi server
-$ pnpm run start
-```
-
-### Typescript 高亮
+### TSX 高亮
 
 ```tsx | pure
 import { ReactElement, useMemo } from 'react';

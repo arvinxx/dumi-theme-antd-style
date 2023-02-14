@@ -30,6 +30,7 @@ export const useStyles = createStyles(({ token, css, cx }) => {
         position: absolute;
         right: 8px;
         top: 8px;
+        z-index: 50;
       `,
     ),
   };

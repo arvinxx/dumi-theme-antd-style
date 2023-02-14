@@ -14,6 +14,7 @@ export const languageMap = {
   markdown: markdown,
   less: less,
   typescript: typescript,
+  ts: typescript,
   tsx: tsx,
   diff: diff,
   bash: bash,
