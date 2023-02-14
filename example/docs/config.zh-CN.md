@@ -85,10 +85,19 @@ export default defineConfig({
 
 ### apiHeader
 
-- 类型：``
-- 默认值：`[]`
+搭配组件文档中的 atomId 字段
+
+- 类型：`ApiHeaderConfig | false`
+- 默认值：`undefined`
 
 ```ts
+interface ApiHeaderConfig {
+  pkg: string;
+  match?: string[];
+  sourceUrl?: string | false;
+  docUrl?: string | false;
+}
+
 export default defineConfig({
   themeConfig: {
     apiHeader: {
@@ -96,7 +105,16 @@ export default defineConfig({
       pkg: 'dumi-theme-antd-style',
       // 匹配路由，默认为 /api 或 /components
       match: ['/api', '/components'],
+      // github 会匹配 themeConfig.github 字段
+      sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
+      docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
     },
   },
 });
 ```
+
+sourceUrl 和 docUrl 可以尝试匹配的动态字段有：
+
+- `github`: 在 themeConfig 中配置的 github 字段；
+- `atomId`: 在 markdown 文件中标记的 atomId ；
+- `title`: 在 markdown 文件中标记的 title 字段 ；
