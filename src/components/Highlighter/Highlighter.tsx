@@ -19,7 +19,7 @@ const SyntaxHighlighter = memo<SyntaxHighlighterProps>(({ children, language, ty
   const { codeToHtml } = useShiki({ onLoadingChange: setLoading });
 
   const html = useMemo(
-    () => codeToHtml(children.trim(), language, isDarkMode) || '',
+    () => codeToHtml(children, language, isDarkMode) || '',
     [codeToHtml, children, isDarkMode, language],
   );
 

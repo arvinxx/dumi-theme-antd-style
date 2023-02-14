@@ -23,6 +23,11 @@ export interface HighlighterProps {
    */
   background?: boolean;
   className?: string;
+  /**
+   * 是否移除前置与后置的空格
+   * @default true
+   */
+  trim?: string;
   style?: CSSProperties;
 }
 
@@ -33,6 +38,7 @@ export const Highlighter: FC<HighlighterProps> = ({
   type,
   className,
   style,
+  trim = true,
 }) => {
   const { copied, setCopied } = useCopied();
   const { styles, theme, cx } = useStyles();
@@ -71,7 +77,7 @@ export const Highlighter: FC<HighlighterProps> = ({
       </ConfigProvider>
 
       <SyntaxHighlighter language={language} type={type}>
-        {children}
+        {trim ? children.trim() : children}
       </SyntaxHighlighter>
     </div>
   );
