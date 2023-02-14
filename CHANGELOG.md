@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.8.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.4...v0.8.0) (2023-02-14)
+
+### ✨ Features
+
+- 主题包支持配置 ApiHeader，为组件增加头部引导 ([53d8aaf](https://github.com/arvinxx/dumi-theme-antd-style/commit/53d8aaf))
+- 增加 ApiHeader 组件导出 ([f597ab0](https://github.com/arvinxx/dumi-theme-antd-style/commit/f597ab0))
+
 ## [0.7.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.7.3...v0.7.4) (2023-02-14)
 
 ### 🐛 Bug Fixes
