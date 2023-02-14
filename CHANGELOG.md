@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.7.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.6.1...v0.7.0) (2023-02-14)
+
+### ✨ Features
+
+- 完善并导出 Highlighter 语法高亮组件 ([4c524d7](https://github.com/arvinxx/dumi-theme-antd-style/commit/4c524d7))
+
 ## [0.6.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.6.0...v0.6.1) (2023-02-14)
 
 # [0.6.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.5.2...v0.6.0) (2023-02-13)
