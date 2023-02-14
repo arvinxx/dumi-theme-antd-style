@@ -1,7 +1,6 @@
 import { createStyles } from 'antd-style';
 import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
-// @ts-ignore
-import Previewer from 'dumi/theme-original/builtins/Previewer';
+import Previewer from 'dumi/theme-default/builtins/Previewer';
 
 const useStyles = createStyles(
   ({ css, prefixCls }) => css`
