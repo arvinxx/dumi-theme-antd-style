@@ -39,6 +39,9 @@ export default defineConfig({
       ],
     },
     features,
+    apiHeader: {
+      match: ['/components'],
+    },
   },
 
   favicons: [
