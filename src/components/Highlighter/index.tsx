@@ -3,6 +3,7 @@ import { Button, ConfigProvider, Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
 import { CSSProperties, FC, memo } from 'react';
 
+import { PrismSyntaxTheme } from 'dumi-theme-antd-style/components/Highlighter/Prism';
 import { ShikiSyntaxTheme } from 'dumi-theme-antd-style/components/Highlighter/useShiki';
 import { useCopied } from '../../hooks/useCopied';
 import SyntaxHighlighter from './Highlighter';
@@ -32,7 +33,12 @@ export interface HighlighterProps {
   style?: CSSProperties;
   syntaxThemes?: {
     shiki?: Partial<ShikiSyntaxTheme>;
+    prism?: Partial<PrismSyntaxTheme>;
   };
+  /**
+   * 是否可拷贝
+   */
+  copyable?: boolean;
 }
 
 export const Highlighter: FC<HighlighterProps> = memo(
@@ -45,6 +51,7 @@ export const Highlighter: FC<HighlighterProps> = memo(
     style,
     trim = true,
     syntaxThemes,
+    copyable = true,
   }) => {
     const { copied, setCopied } = useCopied();
     const { styles, theme, cx } = useStyles();
@@ -57,32 +64,38 @@ export const Highlighter: FC<HighlighterProps> = memo(
         className={container}
         style={style}
       >
-        <ConfigProvider theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
-          <Tooltip
-            placement={'left'}
-            arrow={false}
-            title={
-              copied ? (
-                <>
-                  <CheckOutlined style={{ color: theme.colorSuccess }} /> 复制成功
-                </>
-              ) : (
-                '复制'
-              )
-            }
-          >
-            <Button
-              icon={<CopyOutlined />}
-              className={styles.button}
-              onClick={() => {
-                copy(children);
-                setCopied();
-              }}
-            />
-          </Tooltip>
-        </ConfigProvider>
+        {copyable && (
+          <ConfigProvider theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
+            <Tooltip
+              placement={'left'}
+              arrow={false}
+              title={
+                copied ? (
+                  <>
+                    <CheckOutlined style={{ color: theme.colorSuccess }} /> 复制成功
+                  </>
+                ) : (
+                  '复制'
+                )
+              }
+            >
+              <Button
+                icon={<CopyOutlined />}
+                className={styles.button}
+                onClick={() => {
+                  copy(children);
+                  setCopied();
+                }}
+              />
+            </Tooltip>
+          </ConfigProvider>
+        )}
 
-        <SyntaxHighlighter language={language} type={type} syntaxThemes={syntaxThemes}>
+        <SyntaxHighlighter
+          language={language?.toLowerCase()}
+          type={type}
+          syntaxThemes={syntaxThemes}
+        >
           {trim ? children.trim() : children}
         </SyntaxHighlighter>
       </div>

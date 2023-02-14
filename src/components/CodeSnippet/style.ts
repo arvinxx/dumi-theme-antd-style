@@ -10,11 +10,11 @@ export const useStyles = createStyles(
       }
       pre {
         background: none !important;
-        padding: 0 !important;
+        padding: 2px 8px !important;
         margin: 0;
       }
       code[class*='language-'] {
-        background: none;
+        background: none !important;
       }
     `,
 );

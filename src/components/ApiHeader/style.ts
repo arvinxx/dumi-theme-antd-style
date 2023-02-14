@@ -2,7 +2,7 @@ import { Typography } from 'antd';
 import { createStyles, styled } from 'antd-style';
 
 export const Label = styled(Typography.Text)`
-  width: 100px;
+  width: 80px;
 ` as any;
 
 export const useStyles = createStyles(({ css, token, responsive: r, stylish }) => ({
@@ -20,4 +20,5 @@ export const useStyles = createStyles(({ css, token, responsive: r, stylish }) =
   text: css`
     ${stylish.clickableText}
   `,
+  meta: css``,
 }));

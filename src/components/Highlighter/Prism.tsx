@@ -9,17 +9,30 @@ Object.entries(languageMap).forEach(([key, value]) => {
   SyntaxHighlighter.registerLanguage(key, value);
 });
 
+export interface PrismSyntaxTheme {
+  dark: { [key: string]: React.CSSProperties };
+  light: { [key: string]: React.CSSProperties };
+}
 export interface HighlighterProps {
   children: string;
   language: string;
+  theme?: Partial<PrismSyntaxTheme>;
 }
 
-export const Prism = memo<HighlighterProps>(({ children, language }) => {
+const defaultTheme: PrismSyntaxTheme = {
+  dark: oneDark,
+  light: oneLight,
+};
+
+export const Prism = memo<HighlighterProps>(({ children, language, theme }) => {
   const { isDarkMode, lineHeight } = useTheme();
+
+  const Theme = { ...defaultTheme, ...theme };
+
   return (
     <SyntaxHighlighter
       language={language}
-      style={isDarkMode ? oneDark : oneLight}
+      style={isDarkMode ? Theme.dark : Theme.light}
       customStyle={{ borderRadius: 8, lineHeight: lineHeight }}
     >
       {children}

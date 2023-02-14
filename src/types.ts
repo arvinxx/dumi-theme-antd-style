@@ -9,6 +9,13 @@ export interface Feature {
   center?: boolean;
 }
 
+export interface ApiHeaderConfig {
+  pkg: string;
+  match: ['/components'];
+  sourceUrl?: string | false;
+  docUrl?: string | false;
+}
+
 export type Features =
   | Feature[]
   | {

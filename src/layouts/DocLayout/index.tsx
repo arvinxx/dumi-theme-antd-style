@@ -3,7 +3,7 @@ import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { memo, StrictMode, useEffect, type FC } from 'react';
 
-import SiteProvider from '../../components/SiteProvider';
+import SiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
 
 import Docs from '../../pages/Docs';

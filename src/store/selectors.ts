@@ -1,13 +1,58 @@
-import { AnchorItem, Feature } from '../types';
+import { AnchorItem, ApiHeaderConfig, Feature } from '../types';
 import { SiteStore } from './useSiteStore';
 
-export const isApiPageSel = (s: SiteStore) => s.location.pathname.startsWith('/api');
+/**
+ * 判断是否需要 ApiHeader
+ * @param s
+ */
+export const isApiPageSel = (s: SiteStore) => {
+  const fm = s.routeMeta.frontmatter;
+
+  if (s.siteData.themeConfig.apiHeader === false || fm.apiHeader === false) return false;
+
+  const baseMatch = ['/api', '/components', ...(s.siteData.themeConfig.apiHeader?.match || [])];
+
+  return baseMatch.some((path) => s.location.pathname.startsWith(path));
+};
+
 export const isHeroPageSel = (s: SiteStore) => !!s.routeMeta.frontmatter.hero;
 
-export const localeIdSel = (s: SiteStore) => s.locale.id;
+interface ApiHeader {
+  pkg: string;
+  sourceUrl?: string;
+  docUrl?: string;
+}
+
+export const apiHeaderSel = (s: SiteStore): ApiHeader => {
+  const REPO_BASE = s.siteData.themeConfig.github;
+  const fm = s.routeMeta.frontmatter;
+  const localeId = s.locale.id;
+
+  const {
+    pkg,
+    sourceUrl: sourceUrlMatch,
+    docUrl: docUrlMatch,
+  } = (s.siteData.themeConfig.apiHeader || {}) as ApiHeaderConfig;
+
+  const sourceUrl =
+    sourceUrlMatch === false || typeof sourceUrlMatch === 'undefined' || !fm.atomId
+      ? undefined
+      : sourceUrlMatch.replace('{github}', REPO_BASE).replace('{atomId}', fm.atomId);
+
+  const docUrl =
+    docUrlMatch === false || typeof docUrlMatch === 'undefined' || !fm.atomId
+      ? undefined
+      : docUrlMatch
+          .replace('{github}', REPO_BASE)
+          .replace('{atomId}', fm.atomId)
+          .replace('{locale}', localeId);
+
+  console.log(docUrl);
+  return { pkg, sourceUrl, docUrl };
+};
 
 const localeValueSel = (s: SiteStore, value: any) => {
-  if (value[localeIdSel(s)]) return value[localeIdSel(s)];
+  if (value[s.locale.id]) return value[s.locale.id];
 
   return value;
 };

@@ -4,8 +4,9 @@ import { useResponsive } from 'antd-style';
 import copy from 'copy-to-clipboard';
 import { FC } from 'react';
 
-import { Prism as Highlighter } from '../Highlighter';
+import { Highlighter } from '../Highlighter';
 
+import { vs, vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { useCopied } from '../../hooks/useCopied';
 import { useStyles } from './style';
 
@@ -34,7 +35,20 @@ const CodeSnippet: FC<{ children: string }> = ({ children }) => {
           setCopied();
         }}
       >
-        <Highlighter language={'javaScript'}>{children}</Highlighter>
+        <Highlighter
+          background={false}
+          type={'prism'}
+          copyable={false}
+          syntaxThemes={{
+            prism: {
+              dark: vscDarkPlus,
+              light: vs,
+            },
+          }}
+          language={'js'}
+        >
+          {children}
+        </Highlighter>
       </div>
     </Tooltip>
   );
