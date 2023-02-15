@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.0...v0.9.1) (2023-02-15)
+
+### 🐛 Bug Fixes
+
+- 优化 ApiHeader 组件的 pkg 字段兜底逻辑 ([9d3ad37](https://github.com/arvinxx/dumi-theme-antd-style/commit/9d3ad37))
+- 没有配置 logo 字段时不展示 Logo 图 ([ff7e0be](https://github.com/arvinxx/dumi-theme-antd-style/commit/ff7e0be))
+
 # [0.9.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.8.12...v0.9.0) (2023-02-15)
 
 ### ✨ Features
