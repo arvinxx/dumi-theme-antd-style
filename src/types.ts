@@ -1,12 +1,23 @@
+export type ImageContainerType = 'light' | 'primary' | 'soon';
 export interface IFeature {
   title: string;
   description?: string;
-  avatar?: string;
   link?: string;
-  imageStyle?: any;
+  /**
+   * 图片 url
+   */
+  image?: string;
+  /**
+   * 图片容器样式类型
+   */
+  imageType?: ImageContainerType;
+
   row?: number;
   column?: number;
-  center?: boolean;
+  /**
+   * 在背后显示 hero 的流动色
+   */
+  hero?: boolean;
 }
 
 export interface ApiHeaderConfig {

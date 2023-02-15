@@ -8,12 +8,12 @@ import { IFeature } from '../../types';
 import { useStyles } from './Item.style';
 
 const FeatureItem: FC<IFeature> = ({
-  imageStyle,
+  imageType,
   row,
   column,
-  center,
+  hero,
   description,
-  avatar,
+  image,
   title,
   link,
 }) => {
@@ -35,15 +35,15 @@ const FeatureItem: FC<IFeature> = ({
       }}
     >
       <div className={styles.cell}>
-        {avatar && (
-          <Center image-style={imageStyle} className={styles.imgContainer}>
-            <img className={styles.img} src={avatar} alt={title} />
+        {image && (
+          <Center image-style={imageType} className={styles.imgContainer}>
+            <img className={styles.img} src={image} alt={title} />
           </Center>
         )}
         {title && (
           <Flexbox as={'h3'} horizontal gap={8} align={'center'} className={styles.title}>
             {title}
-            {imageStyle === 'soon' ? (
+            {imageType === 'soon' ? (
               <Tag
                 color={theme.isDarkMode ? 'pink-inverse' : 'cyan-inverse'}
                 // style={{ border: 'none' }}
@@ -64,7 +64,7 @@ const FeatureItem: FC<IFeature> = ({
           </div>
         )}
       </div>
-      {center && <div className={styles.blur} />}
+      {hero && <div className={styles.blur} />}
     </div>
   );
 };
