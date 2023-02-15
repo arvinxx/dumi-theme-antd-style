@@ -39,7 +39,19 @@
 
 ## 简介
 
-这是一个开发 npm 项目的模板，工程框架选型如下：
+dumi-theme-antd-style 是为 dumi2 打造的一款文档站主题包。提供了更加美观、易用的文档站体验。
+
+![亮色模式](https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*P966Q7N2r08AAAAAAAAAAAAADoN6AQ/fmt.webp)
+![暗色模式](https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*PW92S7Qh8l4AAAAAAAAAAAAADoN6AQ/fmt.webp)
+
+### 特性
+
+- 💠 **现代化主题风格** ： 本主题包采用了流动色、毛玻璃、光影质感、自然动效等现代化的设计表现手法，将界面以更加简约、美观的方式呈现，使得文档更加直观、易读、易用；
+- 🌓 **亮暗色主题模式一键切换**： 基于 antd v5 自定义了亮色与暗色主题算法，默认提供美观易用的亮暗色主题。用户可以根据自己的喜好选择主题模式，在不同的光线环境下都能获得良好的阅读体验。
+- 💅 **基于 Ant Design 与 CSSinJS**： 本主题包使用 antd 作为基础组件库，并使用了 CSSinJS 实现样式方案，帮助更好地控制样式的细节，提高样式的复用性和可维护性。底层使用了 [antd-style](https://https://github.com/ant-design/antd-style) 样式库，在书写样式上更加灵活、可读、易于维护。
+- 🪄 **精美的语法高亮**： 本主题包提供准确、精美的语法高亮特性。底层采用了现代化的语法高亮库 Shiki 与 Prism，并提供了丰富的代码高亮方案，帮助用户更好地阅读代码；
+- 🧩 **组件灵活复用**： 本主题包为本地主题定制提供了很高的灵活度，默认导出了主题包中的精品组件，可以将组件作为独立的模块进行复用，开发者可以在 dumi 本地主题包中自由组合使用；
+- 📱 **移动端适配良好**： 本主题包对移动端适配良好，基于 CSSinJS 的灵活样式方案，多套布局实现轻而易举。用户多端操作体验一致且顺滑；
 
 ## 快速上手
 
@@ -53,23 +65,11 @@ pnpm i dumi-theme-antd-style -D
 
 ### 使用
 
-基于该仓库模板可以快速创建一个 npm 包的工程化脚手架。
+安装完毕后，使用 dumi 启动站点，dumi 会自动加载主题，即可开始使用。
 
-## 使用介绍
-
-### Step1. 使用该模板创建一个新的仓库
-
-点击右上角 `use this template` -> `create a new reposity` 按钮，创建一个新的仓库。
-
-### Step2. 初始化项目信息
-
-使用编辑器全局替换 `dumi-theme-antd-style` 为你的包名（例如 `antd-style`），执行 `pnpm i` 安装依赖。
-
-### Step3. 开始开发
+配置详情查看 [文档配置](https://dumi-theme-antd-style.arvinx.app/config)。
 
 ## 迭代记录
-
-2022.12.17 - 基于蚂蚁研发技术栈配置完成最新的 npm 研发脚手架
 
 详情：[CHANGELOG](./CHANGELOG.md)
 
