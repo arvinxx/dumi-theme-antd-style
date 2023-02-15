@@ -118,3 +118,51 @@ sourceUrl 和 docUrl 可以尝试匹配的动态字段有：
 - `github`: 在 themeConfig 中配置的 github 字段；
 - `atomId`: 在 markdown 文件中标记的 atomId ；
 - `title`: 在 markdown 文件中标记的 title 字段 ；
+
+### syntaxTheme
+
+配置代码高亮主题
+
+- 类型：`HighlighterSyntaxTheme`
+- 默认值：`undefined`
+
+```ts
+// 类型定义
+export interface HighlighterSyntaxTheme {
+  shiki?: Partial<ShikiSyntaxTheme>;
+  prism?: Partial<PrismSyntaxTheme>;
+}
+
+export interface ShikiSyntaxTheme {
+  dark: Theme;
+  light: Theme;
+}
+
+export interface PrismSyntaxTheme {
+  dark: { [key: string]: React.CSSProperties };
+  light: { [key: string]: React.CSSProperties };
+}
+```
+
+```ts
+// 配置方式
+import { HighlighterSyntaxTheme } from 'dumi-theme-antd-style';
+import { vs, vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+export default defineConfig({
+  themeConfig: {
+    syntaxTheme: {
+      // shiki 的主题可以直接配置字符串
+      shiki: {
+        dark: 'dark-plus',
+        light: 'github-light',
+      },
+      // prism 的主题配置需要引入对象
+      prism: {
+        dark: vscDarkPlus,
+        light: vs,
+      },
+    } as HighlighterSyntaxTheme,
+  },
+});
+```
