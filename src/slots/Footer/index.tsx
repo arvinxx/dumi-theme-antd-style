@@ -8,10 +8,10 @@ import {
 } from '@ant-design/icons';
 import { Divider } from 'antd';
 import { useResponsive } from 'antd-style';
+import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { Link } from 'dumi';
 import Foot from '../../components/Footer';
 import { useSiteStore } from '../../store';
 import { useStyles } from './style';
@@ -132,7 +132,7 @@ const Footer: FC = () => {
             {
               icon: <IssuesCloseOutlined />,
               title: '讨论',
-              url: 'https://github.com/ant-design/antd-style/issues',
+              url: `${themeConfig.github}/issues`,
               openExternal: true,
             },
           ],
