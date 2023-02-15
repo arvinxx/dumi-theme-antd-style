@@ -11,6 +11,11 @@ import { LanguageKeys } from './language';
 import { useStyles } from './style';
 export { Prism } from './Prism';
 
+export interface HighlighterSyntaxTheme {
+  shiki?: Partial<ShikiSyntaxTheme>;
+  prism?: Partial<PrismSyntaxTheme>;
+}
+
 export interface HighlighterProps {
   children: string;
   language: LanguageKeys | string;
@@ -31,10 +36,7 @@ export interface HighlighterProps {
    */
   trim?: string;
   style?: CSSProperties;
-  syntaxThemes?: {
-    shiki?: Partial<ShikiSyntaxTheme>;
-    prism?: Partial<PrismSyntaxTheme>;
-  };
+  syntaxThemes?: HighlighterSyntaxTheme;
   /**
    * 是否可拷贝
    */

@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react';
 
+export type { HighlighterSyntaxTheme } from './components/Highlighter';
+
 export type ImageContainerType = 'light' | 'primary' | 'soon';
 
 export interface IFeature {
