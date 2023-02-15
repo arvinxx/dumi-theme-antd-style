@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.7](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.6...v0.9.7) (2023-02-15)
+
+### 👷 构建系统
+
+- 导出 HighlighterSyntaxTheme 类型 ([f92f8fb](https://github.com/arvinxx/dumi-theme-antd-style/commit/f92f8fb))
+
 ## [0.9.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.5...v0.9.6) (2023-02-15)
 
 ### 🐛 修复
