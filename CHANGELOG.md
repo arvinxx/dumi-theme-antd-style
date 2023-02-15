@@ -1,4 +1,4 @@
-# Changelog
+# 更新日志
 
 ## [0.9.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.4...v0.9.5) (2023-02-15)
 
