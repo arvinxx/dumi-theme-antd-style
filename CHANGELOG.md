@@ -1,3 +1,11 @@
+# Changelog
+
+## [0.9.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.5...v0.9.6) (2023-02-15)
+
+### 🐛 修复
+
+- 修正 heroTitle 选取时有逻辑丢失的问题 ([33b2a1d](https://github.com/arvinxx/dumi-theme-antd-style/commit/33b2a1d))
+
 # 更新日志
 
 ## [0.9.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.4...v0.9.5) (2023-02-15)
