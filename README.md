@@ -39,7 +39,7 @@
 
 ## 简介
 
-dumi-theme-antd-style 是为 dumi2 打造的一款文档站主题包。提供了更加美观、易用的文档站体验。
+dumi-theme-antd-style 是为 dumi2 打造的一款文档站主题包，提供了更加美观、易用的研发与阅读体验
 
 ![亮色模式](https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*P966Q7N2r08AAAAAAAAAAAAADoN6AQ/fmt.webp)
 ![暗色模式](https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*PW92S7Qh8l4AAAAAAAAAAAAADoN6AQ/fmt.webp)
