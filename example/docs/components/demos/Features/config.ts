@@ -38,7 +38,7 @@ export const antdStyleItems: IFeature[] = [
       'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
     imageType: 'light',
     row: 7,
-    center: true,
+    hero: true,
   },
   {
     title: '复合样式 —— Stylish',

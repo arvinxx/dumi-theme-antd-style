@@ -1,12 +1,14 @@
 ---
 order: 4
-title: Markdown 高亮
+title: SyntaxHighlighter 代码高亮
 group: 特性
 ---
 
-# Markdown 高亮
+# SyntaxHighlighter 代码高亮
 
-本主题包内建了两种语法高亮器供你使用：
+## 主题包内置的代码高亮器
+
+本主题包内建了两种代码高亮器供你使用：
 
 - Prism
 - Shiki

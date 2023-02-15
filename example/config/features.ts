@@ -3,87 +3,59 @@ import { IFeatures } from 'dumi-theme-antd-style';
 export const features: IFeatures = {
   'zh-CN': [
     {
-      title: '现代化风格',
-      image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*MvKkQqXEyfQAAAAAAAAAAAAADoN6AQ/original',
+      title: '现代化主题风格',
+      image: '💠',
       description:
-        'Ant Design Style 采用 styled-component 和 emotion 双样式引擎，兼具丰富的写法能力与性能表现',
-      imageType: 'light',
-      row: 8,
+        '基于近年流行的风格趋势研究，本主题包采用了流动色、毛玻璃、光影质感、自然动效等现代化的设计表现手法，将界面以更加简约、美观的方式呈现，使得文档更加直观、易读、易用',
     },
     {
-      title: '暗色模式一键切换',
+      title: '亮暗色主题模式一键切换',
       link: '/guide/theme',
       description:
-        '本文档基于 antd v5 cssinjs 动态主题配置与暗色主题算法封装，默认提供美观易用的亮暗色主题',
+        '本文档基于 antd v5 自定义了亮色与暗色主题算法，默认提供美观易用的亮暗色主题。用户可以根据自己的喜好选择主题模式，在不同的光线环境下都能获得良好的阅读体验。',
       image:
         'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*8KE7T7l39J0AAAAAAAAAAAAADoN6AQ/original',
       imageType: 'primary',
     },
     {
-      title: '主题灵活扩展',
+      title: '基于 Ant Design 与 CSSinJS',
       description:
-        'Ant Design Style 提供自定义 token 与 自定义 stylish 的功能，当 antd 默认的 token 不能满足样式诉求时，可以灵活扩展出自己的主题体系，并在 CSS in JS 中自由消费。',
-      link: '/guide/custom-theme',
-      image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*6sjjRa7lLhAAAAAAAAAAAAAADoN6AQ/original',
-      imageType: 'primary',
-      row: 8,
-    },
-    {
-      title: 'Ant Design Token System',
-      link: '/guide/switch-theme',
-      description: '默认集成 Ant Design V5 的 Token System，主题定制轻而易举，token 消费灵活易用',
+        '本主题包使用 antd 作为基础组件库，并使用了 CSSinJS 实现样式方案，帮助更好地控制样式的细节，提高样式的复用性和可维护性。底层使用了 antd-style 样式库，在书写样式上更加灵活、可读、易于维护。<quotient>本主题包算是开发 antd-style 时的一个副产物</quotient>',
+      link: '/guide/style',
+      imageType: 'light',
       image:
         'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
-      imageType: 'light',
-      row: 7,
-      hero: true,
-    },
-    {
-      title: '复合样式 —— Stylish',
-      description:
-        'Ant Design Style 提供了复合样式的能力，我们称它为 Stylish。Stylish 可以通过组合多个原子 token 来组织形成复杂的交互样式，实现极高的复用度。<quotient> 感觉很熟悉？没错，它和 tailwindcss 的思想高度一致，但 stylish 将会具有更加明确的设计语义，维护也会更加轻松。</quotient>',
-      link: '/guide/stylish',
-      image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*_in2RLf5pY8AAAAAAAAAAAAADoN6AQ/original',
-      imageType: 'primary',
       row: 9,
     },
     {
-      title: 'less 平滑迁移',
+      title: '精美的语法高亮',
       description:
-        '旧项目需要迁移？使用 antd-style 可以将项目中的 less 较低成本地迁移到 CSS in JS，并获得更好的用户体验与开发体验。',
-      link: '/guide/migrate-from-less',
+        '本主题包提供准确、精美的语法高亮特性。底层采用了现代化的语法高亮库 Shiki 与 Prism，并提供了丰富的代码高亮方案，帮助用户更好地阅读代码 <quotient>后续会考虑支持代码块片段高亮、关键词高亮等特性</quotient>',
+      link: '/guide/syntax-highlighter',
       image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*5H2ySLO-X4cAAAAAAAAAAAAADoN6AQ/original',
+        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*9iAFQaSgf8sAAAAAAAAAAAAADoN6AQ/original',
       imageType: 'primary',
-    },
-    {
-      title: '微应用良好兼容',
-      description:
-        'Ant Design Style 默认兼容 qiankun 微应用（但会牺牲一点性能）。同时并为不需要微应用的使用场景提供性能优化选项。',
-      image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*tZNeQIUYx_4AAAAAAAAAAAAADoN6AQ/original',
-      imageType: 'primary',
-      row: 6,
-    },
-    {
-      title: '应用案例',
-      description:
-        '展示使用 Ant Design Style 的组件、应用的各种案例，帮助开发者快速上手。<quotient> 本文档同样使用 Ant Design Style 构建样式，可以作为静态站点类的参考。</quotient>',
-      link: '/case',
-      image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*5H2ySLO-X4cAAAAAAAAAAAAADoN6AQ/original',
-      imageType: 'soon',
+
       row: 8,
     },
     {
-      title: '响应式轻松适配',
+      title: '组件灵活复用',
       description:
-        'Ant Design Style 将为响应式应用提供便捷的工具函数，帮助开发者快速完成响应式主题开发。',
+        '本主题包为本地主题定制提供了很高的灵活度，默认导出了主题包中的精品组件，可以将组件作为独立的模块进行复用，开发者可以在 dumi 本地主题包中自由组合使用',
       image:
-        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*5H2ySLO-X4cAAAAAAAAAAAAADoN6AQ/original',
+        'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*6sjjRa7lLhAAAAAAAAAAAAAADoN6AQ/original',
+
+      imageType: 'primary',
+      link: '/components',
+      row: 8,
+      hero: true,
+    },
+    {
+      title: '移动端适配良好',
+      description:
+        '本主题包对移动端适配良好，基于 CSSinJS 的灵活样式方案，多套布局实现轻而易举。用户多端操作体验一致且顺滑',
+      image: '📱',
+      imageType: 'light',
       row: 6,
     },
   ],

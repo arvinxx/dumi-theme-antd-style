@@ -1,6 +1,7 @@
 ---
 order: 2
-title: 开发
+title: 进展
+group: 介绍
 ---
 
 # 开发说明
