@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.3...v0.9.4) (2023-02-15)
+
+### 🐛 Bug Fixes
+
+- 修正国际化问题 ([7b561c7](https://github.com/arvinxx/dumi-theme-antd-style/commit/7b561c7))
+
 ## [0.9.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.2...v0.9.3) (2023-02-15)
 
 ### 🐛 Bug Fixes
