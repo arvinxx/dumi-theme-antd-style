@@ -2,8 +2,7 @@ import isEqual from 'fast-deep-equal';
 import { memo, useState, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import LangSwitch from 'dumi/theme-default/slots/LangSwitch';
-
+import LangSwitch from 'dumi/theme/slots/LangSwitch';
 import Logo from 'dumi/theme/slots/Logo';
 import Navbar from 'dumi/theme/slots/Navbar';
 import SearchBar from 'dumi/theme/slots/SearchBar';

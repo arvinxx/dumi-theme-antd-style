@@ -18,7 +18,7 @@ import {
   useRole,
   useTypeahead,
 } from '@floating-ui/react';
-import { FC, ReactNode, useEffect, useRef, useState } from 'react';
+import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import useControlledState from 'use-merge-value';
 
 import SelectItem from './SelectItem';
@@ -35,7 +35,8 @@ export interface NativeSelectProps {
   prefixCls?: string;
   onChange?: (index: number) => void;
   renderValue?: (index: number) => ReactNode;
-  renderItem: (item: OptionType, index: number) => ReactNode;
+  renderItem?: (item: OptionType, index: number) => ReactNode;
+  style?: CSSProperties;
 }
 
 const NativeSelect: FC<NativeSelectProps> = ({
@@ -45,6 +46,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
   onChange,
   renderValue,
   renderItem,
+  style,
 }) => {
   const cls = prefixCls ?? 'native-select';
   const [selectedIndex, setSelectedIndex] = useControlledState<number>(0, { value, onChange });
@@ -151,6 +153,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
         type={'button'}
         ref={refs.setReference}
         className={styles.button}
+        style={style}
         {...getReferenceProps({
           onTouchStart() {
             setTouch(true);
