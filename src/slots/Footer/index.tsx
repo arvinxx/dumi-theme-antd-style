@@ -207,14 +207,16 @@ const Footer: FC = () => {
         mobile ? (
           <Center className={styles.container}>
             Copyright © 2022-{new Date().getFullYear()}
-            <Flexbox align={'center'} horizontal>
-              {themeConfig.footer}
-            </Flexbox>
+            <Flexbox
+              align={'center'}
+              horizontal
+              dangerouslySetInnerHTML={{ __html: themeConfig.footer }}
+            ></Flexbox>
           </Center>
         ) : (
           <Center horizontal>
             Copyright © 2022-{new Date().getFullYear()} <Divider type={'vertical'} />
-            {themeConfig.footer}
+            <span dangerouslySetInnerHTML={{ __html: themeConfig.footer }} />
           </Center>
         )
       }
