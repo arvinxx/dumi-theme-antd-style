@@ -70,7 +70,9 @@ const localeValueSel = (s: SiteStore, value: any) => {
  * 选择逻辑：优先使用 hero 配置的 title， 再兜底到 themeConfig 中的 name
  */
 export const heroTitleSel = (s: SiteStore) =>
-  s.routeMeta.frontmatter.hero?.title || s.siteData.themeConfig.name;
+  s.routeMeta.frontmatter.hero?.title ||
+  localeValueSel(s, s.siteData.themeConfig.title) ||
+  s.siteData.themeConfig.name;
 
 /**
  * Hero description 选择器
