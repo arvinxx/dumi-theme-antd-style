@@ -11,12 +11,14 @@ import { useResponsive } from 'antd-style';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
+import { Link } from 'dumi';
 import Foot from '../../components/Footer';
 import { useSiteStore } from '../../store';
 import { useStyles } from './style';
 
 const Footer: FC = () => {
-  const { themeConfig } = useSiteStore((s) => s.siteData);
+  const { themeConfig, pkg } = useSiteStore((s) => s.siteData);
+
   const { styles, theme } = useStyles();
   const { mobile } = useResponsive();
   if (!themeConfig.footer) return null;
@@ -116,14 +118,15 @@ const Footer: FC = () => {
             {
               icon: <GithubOutlined />,
               title: 'GitHub',
-              url: 'https://github.com/ant-design/antd-style',
+              // @ts-ignore
+              url: themeConfig.github || pkg.homepage,
               openExternal: true,
             },
             {
               icon: <HistoryOutlined />,
               title: '更新日志',
               url: '/changelog',
-              // LinkComponent: Link,
+              LinkComponent: Link,
             },
 
             {
@@ -205,13 +208,13 @@ const Footer: FC = () => {
           <Center className={styles.container}>
             Copyright © 2022-{new Date().getFullYear()}
             <Flexbox align={'center'} horizontal>
-              Made with ❤️ by 蚂蚁集团 - AFX & 数字科技
+              {themeConfig.footer}
             </Flexbox>
           </Center>
         ) : (
           <Center horizontal>
             Copyright © 2022-{new Date().getFullYear()} <Divider type={'vertical'} />
-            Made with ❤️ by 蚂蚁集团 - AFX & 数字科技
+            {themeConfig.footer}
           </Center>
         )
       }

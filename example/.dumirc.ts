@@ -45,6 +45,7 @@ export default defineConfig({
       sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
       docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
     },
+    footer: 'Made with ❤️ by 蚂蚁集团 - AFX & 数字科技',
   },
 
   favicons: [
