@@ -58,6 +58,8 @@ export const apiHeaderSel = (s: SiteStore): ApiHeader => {
 };
 
 const localeValueSel = (s: SiteStore, value: any) => {
+  if (!value) return;
+
   if (value[s.locale.id]) return value[s.locale.id];
 
   return value;
