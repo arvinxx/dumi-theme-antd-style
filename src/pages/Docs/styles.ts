@@ -10,7 +10,7 @@ export const useStyles = createStyles(({ css, responsive, token }) => ({
     );
     display: grid;
     grid-template-columns: ${token.sidebarWidth}px 1fr ${token.tocWidth + 24}px;
-    grid-template-rows: ${token.headerHeight}px auto 1fr fit-content;
+    grid-template-rows: ${token.headerHeight}px auto 1fr auto;
     grid-template-areas:
       'head head head'
       'sidebar title .'
