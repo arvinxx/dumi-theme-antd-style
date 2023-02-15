@@ -1,4 +1,4 @@
-import { AnchorItem, ApiHeaderConfig, Feature } from '../types';
+import { AnchorItem, ApiHeaderConfig, IFeature } from '../types';
 import { SiteStore } from './useSiteStore';
 
 /**
@@ -90,12 +90,12 @@ export const siteTitleSel = (s: SiteStore) => s.siteData.themeConfig.name;
 /**
  * Features 选择器
  */
-export const featuresSel = (s: SiteStore): Feature[] => {
+export const featuresSel = (s: SiteStore): IFeature[] => {
   if (!isHeroPageSel(s)) return [];
 
   const features = s.siteData.themeConfig.features;
   // 在themeConfig 没有配置的话，尝试兜底到 frontmatter 中的配置
-  if (!features) return (s.routeMeta.frontmatter.features as Feature[]) || [];
+  if (!features) return (s.routeMeta.frontmatter.features as IFeature[]) || [];
 
   return localeValueSel(s, features) || [];
 };

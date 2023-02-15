@@ -1,4 +1,4 @@
-export interface Feature {
+export interface IFeature {
   title: string;
   description?: string;
   avatar?: string;
@@ -11,15 +11,15 @@ export interface Feature {
 
 export interface ApiHeaderConfig {
   pkg: string;
-  match: ['/components'];
+  match: string[];
   sourceUrl?: string | false;
   docUrl?: string | false;
 }
 
-export type Features =
-  | Feature[]
+export type IFeatures =
+  | IFeature[]
   | {
-      [key: string]: Feature[];
+      [key: string]: IFeature[];
     };
 
 export interface AnchorItem {

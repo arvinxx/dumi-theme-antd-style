@@ -4,10 +4,10 @@ import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { Feature } from '../../types';
+import { IFeature } from '../../types';
 import { useStyles } from './Item.style';
 
-const FeatureItem: FC<Feature> = ({
+const FeatureItem: FC<IFeature> = ({
   imageStyle,
   row,
   column,
