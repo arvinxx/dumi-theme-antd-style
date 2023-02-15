@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.1...v0.9.2) (2023-02-15)
+
+### 🐛 Bug Fixes
+
+- 修正 footer 展示内容 ([64568eb](https://github.com/arvinxx/dumi-theme-antd-style/commit/64568eb))
+
 ## [0.9.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.0...v0.9.1) (2023-02-15)
 
 ### 🐛 Bug Fixes
