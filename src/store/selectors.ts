@@ -51,7 +51,10 @@ export const apiHeaderSel = (s: SiteStore): ApiHeader => {
           .replace('{title}', fm.title)
           .replace('{locale}', localeId);
 
-  return { pkg, sourceUrl, docUrl };
+  // 如果配置了 pkg， 则使用配置的 pkg，否则使用 package.json 中的 name
+  const displayPackage = pkg || s.siteData.pkg.name;
+
+  return { pkg: displayPackage, sourceUrl, docUrl };
 };
 
 const localeValueSel = (s: SiteStore, value: any) => {
