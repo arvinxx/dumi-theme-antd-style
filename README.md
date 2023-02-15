@@ -69,7 +69,7 @@ pnpm i dumi-theme-antd-style -D
 
 配置详情查看 [文档配置](https://dumi-theme-antd-style.arvinx.app/config)。
 
-## 迭代记录
+## 更新日志
 
 详情：[CHANGELOG](./CHANGELOG.md)
 
