@@ -2,9 +2,11 @@ import { createStyles } from 'antd-style';
 import { lighten, rgba } from 'polished';
 
 export const useStyles = createStyles(
-  ({ token, prefixCls, responsive, css, stylish, isDarkMode, cx }, rowNum: number) => {
+  (
+    { token, prefixCls, responsive, css, stylish, isDarkMode, cx },
+    { rowNum, hasLink }: { rowNum: number; hasLink?: boolean },
+  ) => {
     const prefix = `${prefixCls}-features`;
-
     const coverCls = `${prefix}-cover`;
     const descCls = `${prefix}-description`;
     const titleCls = `${prefix}-title`;
@@ -17,6 +19,7 @@ export const useStyles = createStyles(
     const genSize = (size: number) => css`
       width: ${size}px;
       height: ${size}px;
+      font-size: ${size * (22 / 24)}px;
     `;
 
     const withTransition = css`
@@ -71,7 +74,7 @@ export const useStyles = createStyles(
           }
 
           .${titleCls} {
-            font-size: 14px;
+            font-size: ${hasLink ? 14 : 20}px;
           }
         }
       `,
@@ -79,6 +82,7 @@ export const useStyles = createStyles(
         titleCls,
         withTransition,
         css`
+          pointer-events: none;
           font-size: 20px;
           line-height: ${token.lineHeightHeading3};
           margin: 16px 0;
@@ -91,6 +95,7 @@ export const useStyles = createStyles(
         css`
           color: ${token.colorTextSecondary};
 
+          pointer-events: none;
           quotient {
             color: ${token.colorTextDescription};
             display: block;
@@ -146,8 +151,7 @@ export const useStyles = createStyles(
         imgCls,
         withTransition,
         css`
-          width: 20px;
-          height: 20px;
+          ${genSize(20)};
           color: ${token.colorWhite};
         `,
       ),

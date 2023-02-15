@@ -1,4 +1,7 @@
+import type { CSSProperties } from 'react';
+
 export type ImageContainerType = 'light' | 'primary' | 'soon';
+
 export interface IFeature {
   title: string;
   description?: string;
@@ -11,6 +14,7 @@ export interface IFeature {
    * 图片容器样式类型
    */
   imageType?: ImageContainerType;
+  imageStyle?: CSSProperties;
 
   row?: number;
   column?: number;
@@ -27,11 +31,7 @@ export interface ApiHeaderConfig {
   docUrl?: string | false;
 }
 
-export type IFeatures =
-  | IFeature[]
-  | {
-      [key: string]: IFeature[];
-    };
+export type IFeatures = IFeature[] | Record<string, IFeature[]>;
 
 export interface AnchorItem {
   id: string;

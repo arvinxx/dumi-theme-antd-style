@@ -1,11 +1,23 @@
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Tag } from 'antd';
-import { Link } from 'dumi';
+import { history, Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { IFeature } from '../../types';
 import { useStyles } from './Item.style';
+
+const Image: FC<{ image: string; className?: string; title: string }> = ({
+  image,
+  className,
+  title,
+}) => {
+  return image.startsWith('http') ? (
+    <img className={className} src={image} alt={title} />
+  ) : (
+    <Center className={className}>{image}</Center>
+  );
+};
 
 const FeatureItem: FC<IFeature> = ({
   imageType,
@@ -16,9 +28,10 @@ const FeatureItem: FC<IFeature> = ({
   image,
   title,
   link,
+  imageStyle,
 }) => {
   const rowNum = row || 7;
-  const { styles, theme } = useStyles(rowNum);
+  const { styles, theme } = useStyles({ rowNum, hasLink: !!link });
 
   return (
     <div
@@ -31,13 +44,13 @@ const FeatureItem: FC<IFeature> = ({
       onClick={() => {
         if (!link) return;
 
-        window.open(link);
+        history.push(link);
       }}
     >
       <div className={styles.cell}>
         {image && (
-          <Center image-style={imageType} className={styles.imgContainer}>
-            <img className={styles.img} src={image} alt={title} />
+          <Center image-style={imageType} className={styles.imgContainer} style={imageStyle}>
+            <Image className={styles.img} image={image} title={title} />
           </Center>
         )}
         {title && (
