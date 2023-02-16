@@ -17,19 +17,32 @@ const primaryColors = [
   '#4796ff',
 ];
 
-const blueColors = [
-  '#001a29',
-  '#002e47',
-  '#004568',
-  '#005c8c',
-  '#0074b2',
-  '#008dda',
-  '#29a7ff',
-  '#00a5fb',
-  '#00a4f2',
-  '#00a2e9',
-  '#00a0e0',
+const cyanColors = [
+  'rgba(0, 225, 242, 0.12)',
+  'rgba(0, 232, 245, 0.22)',
+  'rgba(0, 237, 250, 0.32)',
+  'rgba(0, 243, 255, 0.42)',
+  'rgba(0, 247, 255, 0.53)',
+  'rgba(0, 246, 254, 0.65)',
+  'rgba(0, 247, 253, 0.77)',
+  'rgba(0, 245, 255, 0.75)',
+  'rgba(0, 244, 255, 0.73)',
+  'rgba(0, 239, 253, 0.72)',
+  'rgba(0, 237, 253, 0.7)',
 ];
+// const cyanColors = [
+//   '#001a29',
+//   '#002e47',
+//   '#004568',
+//   '#005c8c',
+//   '#0074b2',
+//   '#008dda',
+//   '#29a7ff',
+//   '#00a5fb',
+//   '#00a4f2',
+//   '#00a2e9',
+//   '#00a0e0',
+// ];
 
 const greenColors = [
   '#031d00',
@@ -127,16 +140,27 @@ export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorErrorText: redColors[9],
     colorErrorTextActive: redColors[10],
 
-    colorInfoBg: blueColors[1],
-    colorInfoBgHover: blueColors[2],
-    colorInfoBorder: blueColors[3],
-    colorInfoBorderHover: blueColors[4],
-    colorInfoHover: blueColors[5],
-    colorInfo: blueColors[6],
-    colorInfoActive: blueColors[7],
-    colorInfoTextHover: blueColors[8],
-    colorInfoText: blueColors[9],
-    colorInfoTextActive: blueColors[10],
+    colorInfoBg: primaryColors[1],
+    colorInfoBgHover: primaryColors[2],
+    colorInfoBorder: primaryColors[3],
+    colorInfoBorderHover: primaryColors[4],
+    colorInfoHover: primaryColors[5],
+    colorInfo: primaryColors[6],
+    colorInfoActive: primaryColors[7],
+    colorInfoTextHover: primaryColors[8],
+    colorInfoText: primaryColors[9],
+    colorInfoTextActive: primaryColors[10],
+
+    'cyan-1': cyanColors[1],
+    'cyan-2': cyanColors[2],
+    'cyan-3': cyanColors[3],
+    'cyan-4': cyanColors[4],
+    'cyan-5': cyanColors[5],
+    'cyan-6': cyanColors[6],
+    'cyan-7': cyanColors[7],
+    'cyan-8': cyanColors[8],
+    'cyan-9': cyanColors[9],
+    'cyan-10': cyanColors[10],
   };
 };
 
@@ -150,7 +174,7 @@ export const darkTheme: ThemeConfig = {
   },
   components: {
     Alert: {
-      colorInfo: blueColors[5],
+      colorInfo: primaryColors[5],
       colorError: redColors[5],
       colorSuccess: greenColors[5],
       colorWarning: yellowColors[5],
