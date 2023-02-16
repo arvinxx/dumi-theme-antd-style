@@ -1,3 +1,4 @@
+import { ThemeConfig } from 'antd';
 import { MappingAlgorithm } from 'antd-style';
 
 const primaryColors = [
@@ -12,6 +13,20 @@ const primaryColors = [
   '#005ac0',
   '#004ca1',
   '#003e84',
+];
+
+const blueColors = [
+  '#ffffff',
+  '#dfedfe',
+  '#c0dafb',
+  '#9fc8fa',
+  '#7db5fa',
+  '#57a2fb',
+  '#178eff',
+  '#007adc',
+  '#0067b7',
+  '#005494',
+  '#004274',
 ];
 
 const redColors = [
@@ -60,8 +75,6 @@ export const lightAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
   return {
     ...mapToken!,
 
-    colorBgLayout: 'hsl(220,23%,97%)', // Layout 颜色
-
     colorPrimaryBg: primaryColors[1],
     colorPrimaryBgHover: primaryColors[2],
     colorPrimaryBorder: primaryColors[3],
@@ -105,5 +118,36 @@ export const lightAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorSuccessTextHover: greenColors[8],
     colorSuccessText: greenColors[9],
     colorSuccessTextActive: greenColors[10],
+
+    colorInfoBg: blueColors[1],
+    colorInfoBgHover: blueColors[2],
+    colorInfoBorder: blueColors[3],
+    colorInfoBorderHover: blueColors[4],
+    colorInfoHover: blueColors[5],
+    colorInfo: blueColors[6],
+    colorInfoActive: blueColors[7],
+    colorInfoTextHover: blueColors[8],
+    colorInfoText: blueColors[9],
+    colorInfoTextActive: blueColors[10],
   };
+};
+
+export const lightTheme: ThemeConfig = {
+  token: {
+    colorBgLayout: 'hsl(220,23%,97%)', // Layout 颜色
+    colorTextBase: 'hsl(220,2%,25%)',
+
+    colorLinkHover: primaryColors[5],
+    colorLink: primaryColors[6],
+    colorLinkActive: primaryColors[7],
+  },
+  components: {
+    Alert: {
+      colorInfo: blueColors[7],
+      colorError: redColors[7],
+      colorSuccess: greenColors[7],
+      colorWarning: yellowColors[7],
+    },
+  },
+  algorithm: lightAlgorithm,
 };

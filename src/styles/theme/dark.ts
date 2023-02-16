@@ -1,5 +1,6 @@
 import { theme } from 'antd';
 import { MappingAlgorithm } from 'antd-style';
+import { ThemeConfig } from 'antd/lib';
 
 // 这一版的暗色浅色系列已经差不多了
 const primaryColors = [
@@ -14,6 +15,20 @@ const primaryColors = [
   '#3187ff',
   '#3c8fff',
   '#4796ff',
+];
+
+const blueColors = [
+  '#001a29',
+  '#002e47',
+  '#004568',
+  '#005c8c',
+  '#0074b2',
+  '#008dda',
+  '#29a7ff',
+  '#00a5fb',
+  '#00a4f2',
+  '#00a2e9',
+  '#00a0e0',
 ];
 
 const greenColors = [
@@ -45,17 +60,17 @@ const yellowColors = [
 ];
 
 const redColors = [
-  '#360406',
-  '#4e0e0f',
-  '#681a19',
-  '#832524',
-  '#9f312f',
-  '#bc3d3a',
-  '#da4a45',
-  '#ee4342',
-  '#ff3d41',
-  '#ff5050',
-  '#ff605e',
+  '#36040a',
+  '#510d16',
+  '#6d1723',
+  '#8b2231',
+  '#aa2d3f',
+  '#cb394e',
+  '#ed445d',
+  '#fd3b5b',
+  '#ff465f',
+  '#ff5365',
+  '#ff5e6c',
 ];
 
 export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
@@ -78,19 +93,6 @@ export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorPrimaryTextHover: primaryColors[8],
     colorPrimaryText: primaryColors[9],
     colorPrimaryTextActive: primaryColors[10],
-
-    colorInfoBg: primaryColors[1],
-    colorInfoBgHover: primaryColors[2],
-    colorInfoBorder: primaryColors[3],
-    colorInfoBorderHover: primaryColors[4],
-
-    colorInfoHover: primaryColors[7],
-    colorInfo: primaryColors[6],
-    colorInfoActive: primaryColors[5],
-
-    colorInfoTextHover: primaryColors[8],
-    colorInfoText: primaryColors[9],
-    colorInfoTextActive: primaryColors[10],
 
     colorSuccessBg: greenColors[1],
     colorSuccessBgHover: greenColors[2],
@@ -124,5 +126,35 @@ export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorErrorTextHover: redColors[8],
     colorErrorText: redColors[9],
     colorErrorTextActive: redColors[10],
+
+    colorInfoBg: blueColors[1],
+    colorInfoBgHover: blueColors[2],
+    colorInfoBorder: blueColors[3],
+    colorInfoBorderHover: blueColors[4],
+    colorInfoHover: blueColors[5],
+    colorInfo: blueColors[6],
+    colorInfoActive: blueColors[7],
+    colorInfoTextHover: blueColors[8],
+    colorInfoText: blueColors[9],
+    colorInfoTextActive: blueColors[10],
   };
+};
+
+export const darkTheme: ThemeConfig = {
+  token: {
+    colorTextBase: '#c7ddff',
+
+    colorLinkHover: primaryColors[7],
+    colorLink: primaryColors[6],
+    colorLinkActive: primaryColors[5],
+  },
+  components: {
+    Alert: {
+      colorInfo: blueColors[5],
+      colorError: redColors[5],
+      colorSuccess: greenColors[5],
+      colorWarning: yellowColors[5],
+    },
+  },
+  algorithm: darkAlgorithm,
 };
