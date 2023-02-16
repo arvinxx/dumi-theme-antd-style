@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.10](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.9...v0.9.10) (2023-02-16)
+
+### 🐛 修复
+
+- 修正 antd-style 移除 styled 方法的 Breaking Change ([353df4b](https://github.com/arvinxx/dumi-theme-antd-style/commit/353df4b))
+
 ## [0.9.9](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.8...v0.9.9) (2023-02-16)
 
 ## [0.9.8](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.7...v0.9.8) (2023-02-16)
