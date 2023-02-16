@@ -1,5 +1,6 @@
 import { Typography } from 'antd';
-import { createStyles, styled } from 'antd-style';
+import { createStyles } from 'antd-style';
+import { styled } from 'styled-components';
 
 export const Label = styled(Typography.Text)`
   width: 80px;
