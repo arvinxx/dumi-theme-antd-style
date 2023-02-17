@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.12](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.11...v0.9.12) (2023-02-17)
+
+### 🐛 修复
+
+- 补充 module 入口 ([bf9fd94](https://github.com/arvinxx/dumi-theme-antd-style/commit/bf9fd94))
+
 ## [0.9.11](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.10...v0.9.11) (2023-02-17)
 
 ### 🐛 修复
