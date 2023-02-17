@@ -193,6 +193,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
                   {options.map((item, i) => {
                     return (
                       <SelectItem
+                        prefixCls={cls}
                         key={item.value}
                         value={item.value}
                         label={renderItem ? renderItem(item, i) : item.label}

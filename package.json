@@ -56,6 +56,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7",
+    "@emotion/styled": "^11",
     "@floating-ui/react": "^0.17",
     "animated-scroll-to": "^2",
     "antd-style": "alpha",
@@ -68,13 +69,14 @@
     "react-layout-kit": "^1",
     "react-syntax-highlighter": "^15",
     "shiki-es": "^0.2",
-    "styled-components": "beta",
     "use-merge-value": "^1",
     "zustand": "^4"
   },
   "devDependencies": {
     "@ant-design/icons": "^5",
     "@commitlint/cli": "^17",
+    "@emotion/babel-plugin": "^11",
+    "@emotion/react": "^11",
     "@emotion/styled": "^11.10.5",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^13",

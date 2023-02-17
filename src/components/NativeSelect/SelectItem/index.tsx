@@ -5,7 +5,7 @@ import { useStyles } from './style';
 interface SelectItemProps {
   value: any;
   label: any;
-  prefixCls?: string;
+  prefixCls: string;
   isSelected?: boolean;
   isActive?: boolean;
   ref?: ForwardedRef<HTMLButtonElement>;
@@ -14,7 +14,7 @@ interface SelectItemProps {
 
 const SelectItem: FC<SelectItemProps> = forwardRef(
   ({ value, label, prefixCls, isSelected, isActive, disabled, ...props }, ref) => {
-    const { styles, cx } = useStyles({ prefixCls, selected: isSelected });
+    const { styles, cx } = useStyles(prefixCls);
 
     return (
       <button

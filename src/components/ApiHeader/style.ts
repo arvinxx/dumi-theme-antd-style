@@ -1,10 +1,4 @@
-import { Typography } from 'antd';
 import { createStyles } from 'antd-style';
-import { styled } from 'styled-components';
-
-export const Label = styled(Typography.Text)`
-  width: 80px;
-` as any;
 
 export const useStyles = createStyles(({ css, token, responsive: r, stylish }) => ({
   title: css`
@@ -13,6 +7,9 @@ export const useStyles = createStyles(({ css, token, responsive: r, stylish }) =
       margin-block: 0;
       font-size: 32px !important;
     }
+  `,
+  label: css`
+    width: 80px;
   `,
   desc: css`
     font-size: ${token.fontSizeLG}px;

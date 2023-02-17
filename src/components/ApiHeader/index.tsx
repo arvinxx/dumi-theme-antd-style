@@ -11,7 +11,7 @@ import NpmFilled from './NpmFilled';
 import PackagePhobia from './PackagePhobia';
 import Unpkg from './Unpkg';
 
-import { Label, useStyles } from './style';
+import { useStyles } from './style';
 
 interface ApiTitleProps {
   title: string;
@@ -93,9 +93,13 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
         )}
         <Flexbox style={{ marginTop: 16 }} gap={mobile ? 16 : 24}>
           <Flexbox horizontal={!mobile} gap={mobile ? 12 : 0}>
-            <Label type={'secondary'} style={{ display: 'flex', alignItems: 'center' }}>
+            <Typography.Text
+              className={styles.label}
+              type={'secondary'}
+              style={{ display: 'flex', alignItems: 'center' }}
+            >
               引入方法
-            </Label>
+            </Typography.Text>
             <Code>{`import { ${componentName} } from '${pkg}';`}</Code>
           </Flexbox>
           <Divider dashed style={{ margin: '2px 0' }} />
