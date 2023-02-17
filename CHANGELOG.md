@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.11](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.10...v0.9.11) (2023-02-17)
+
+### 🐛 修复
+
+- 将 styled-components 替换为 @emotion/styled， 减少产物体积 ([616d464](https://github.com/arvinxx/dumi-theme-antd-style/commit/616d464))
+
 ## [0.9.10](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.9...v0.9.10) (2023-02-16)
 
 ### 🐛 修复
