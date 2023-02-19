@@ -17,7 +17,14 @@ export const useStyles = createStyles(({ css, token, cx, prefixCls }) => {
       `,
     ),
 
-    prism: cx(`${prefix}-prism`),
+    prism: cx(
+      `${prefix}-prism`,
+      css`
+        code[class*='language-'] {
+          background: none !important;
+        }
+      `,
+    ),
 
     loading: css`
       position: absolute;

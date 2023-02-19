@@ -3,6 +3,7 @@ import { createStyles } from 'antd-style';
 export const useStyles = createStyles(({ token, css, cx, prefixCls }) => {
   const prefix = `${prefixCls}-highlighter`;
   const buttonHoverCls = `${prefix}-hover-btn`;
+  const langHoverCls = `${prefix}-hover-lang`;
 
   return {
     container: cx(
@@ -16,6 +17,10 @@ export const useStyles = createStyles(({ token, css, cx, prefixCls }) => {
 
         &:hover {
           .${buttonHoverCls} {
+            opacity: 1;
+          }
+
+          .${langHoverCls} {
             opacity: 1;
           }
         }
@@ -40,6 +45,18 @@ export const useStyles = createStyles(({ token, css, cx, prefixCls }) => {
         right: 8px;
         top: 8px;
         z-index: 50;
+      `,
+    ),
+    lang: cx(
+      langHoverCls,
+      css`
+        color: ${token.colorTextPlaceholder};
+        opacity: 0;
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 50;
+        transition: opacity 0.1s;
       `,
     ),
   };
