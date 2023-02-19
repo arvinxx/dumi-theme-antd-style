@@ -12,7 +12,7 @@ import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import Foot from '../../components/Footer';
+import Foot, { FooterProps } from '../../components/Footer';
 import { useSiteStore } from '../../store';
 import { useStyles } from './style';
 
@@ -25,7 +25,7 @@ const Footer: FC = () => {
 
   return (
     <Foot
-      theme={theme.appearance}
+      theme={theme.appearance as FooterProps['theme']}
       columns={[
         {
           title: '相关资源',
