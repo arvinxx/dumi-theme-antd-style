@@ -66,4 +66,7 @@ export default defineConfig({
     html, body { background: #0E1116; }
   }`,
   ],
+  codeSplitting: {
+    jsStrategy: 'granularChunks',
+  },
 });
