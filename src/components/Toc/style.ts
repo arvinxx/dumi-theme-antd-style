@@ -49,6 +49,7 @@ export const useStyles = createStyles(({ token, prefixCls, responsive, css }) =>
       box-shadow: ${token.boxShadowSecondary};
       width: 100%;
       z-index: 201;
+      background: ${rgba(token.colorBgContainer, 0.8)};
 
       .${prefixCls}-collapse-header {
         padding: 8px 16px !important;
