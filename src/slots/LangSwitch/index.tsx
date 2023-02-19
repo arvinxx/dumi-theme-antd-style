@@ -1,6 +1,6 @@
 import { Button } from 'antd';
-import { history, Link, useIntl, useLocation, useSiteData } from 'dumi';
-import { useEffect, useState, type FC } from 'react';
+import { history, Link, useLocation, useSiteData } from 'dumi';
+import { memo, useEffect, useState, type FC } from 'react';
 
 import NativeSelect from '../../components/NativeSelect';
 import { useSiteStore } from '../../store';
@@ -82,14 +82,13 @@ const SingleSwitch: FC<{ locale: ILocaleItem; current: ILocaleItem }> = ({ local
 const LangSwitch: FC = () => {
   const locales = useSiteStore((s) => s.siteData.locales);
   const current = useSiteStore((s) => s.locale);
-  const { locale } = useIntl();
 
   // do not render in single language
   if (locales.length <= 1) return null;
 
   return locales.length > 2 ? (
     <NativeSelect
-      value={locales.findIndex((l) => l.id === locale)}
+      value={locales.findIndex((l) => l.id === current.id)}
       onChange={(index) => {
         console.log(
           getTargetLocalePath({
@@ -123,8 +122,8 @@ const LangSwitch: FC = () => {
     />
   ) : (
     // single language switch
-    <SingleSwitch locale={locales.find(({ id }) => id !== locale)!} current={current} />
+    <SingleSwitch locale={locales.find(({ id }) => id !== current.id)!} current={current} />
   );
 };
 
-export default LangSwitch;
+export default memo(LangSwitch);

@@ -88,6 +88,7 @@
     "@types/testing-library__jest-dom": "^5",
     "@umijs/lint": "^4",
     "@umijs/test": "^4",
+    "ahooks": "^3",
     "antd": "^5",
     "commitlint": "^17",
     "commitlint-config-gitmoji": "^2",
@@ -113,6 +114,7 @@
     "semantic-release": "^20",
     "semantic-release-config-gitmoji": "^1",
     "stylelint": "^14",
+    "tilg": "^0.1",
     "ts-jest": "^29",
     "ts-node": "^10",
     "typescript": "^4"

@@ -1,4 +1,6 @@
-export default () => (
+import { memo } from 'react';
+
+export default memo(() => (
   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 108 108">
     <defs>
       <linearGradient id="main">
@@ -12,4 +14,4 @@ export default () => (
       transform="matrix(1.25 0 0 1.25 -8.75 -7.5)"
     ></path>
   </svg>
-);
+));

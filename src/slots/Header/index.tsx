@@ -1,5 +1,4 @@
-import isEqual from 'fast-deep-equal';
-import { memo, useState, type FC } from 'react';
+import { memo, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import LangSwitch from 'dumi/theme/slots/LangSwitch';
@@ -16,66 +15,58 @@ import { useSiteStore } from '../../store/useSiteStore';
 import { useStyle } from './style';
 
 const Header: FC = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const frontmatter = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
+  const hasHeader = useSiteStore((s) => !!s.routeMeta.frontmatter);
 
   const { mobile } = useResponsive();
   const { styles } = useStyle();
 
-  return (
-    frontmatter && (
-      <div
-        className={styles.header}
-        data-static={Boolean(frontmatter.hero) || undefined}
-        data-mobile-active={showMenu || undefined}
-        onClick={() => setShowMenu(false)}
+  return !hasHeader ? null : (
+    <div className={styles.header}>
+      <Flexbox
+        horizontal
+        distribution={'space-between'}
+        align={'center'}
+        width={'auto'}
+        className={styles.content}
       >
-        <Flexbox
-          horizontal
-          distribution={'space-between'}
-          align={'center'}
-          width={'auto'}
-          className={styles.content}
-        >
-          {mobile ? (
-            <>
-              <Flexbox>
-                <Burger />
-              </Flexbox>
-              <Flexbox horizontal className={styles.left}>
-                <Logo />
-              </Flexbox>
-              <Flexbox>
+        {mobile ? (
+          <>
+            <Flexbox>
+              <Burger />
+            </Flexbox>
+            <Flexbox horizontal className={styles.left}>
+              <Logo />
+            </Flexbox>
+            <Flexbox>
+              <ThemeSwitch />
+            </Flexbox>
+          </>
+        ) : (
+          <>
+            <Flexbox horizontal className={styles.left}>
+              <Logo />
+            </Flexbox>
+            <Flexbox style={{ marginLeft: 48, alignSelf: 'end' }}>
+              <Navbar />
+            </Flexbox>
+            <section className={styles.right}>
+              <div />
+              <Flexbox
+                gap={16}
+                horizontal
+                align={'center'}
+                className="dumi-default-header-right-aside"
+              >
+                <SearchBar />
+                <LangSwitch />
+                <GithubButton />
                 <ThemeSwitch />
               </Flexbox>
-            </>
-          ) : (
-            <>
-              <Flexbox horizontal className={styles.left}>
-                <Logo />
-              </Flexbox>
-              <Flexbox style={{ marginLeft: 48, alignSelf: 'end' }}>
-                <Navbar />
-              </Flexbox>
-              <section className={styles.right}>
-                <div />
-                <Flexbox
-                  gap={16}
-                  horizontal
-                  align={'center'}
-                  className="dumi-default-header-right-aside"
-                >
-                  <SearchBar />
-                  <LangSwitch />
-                  <GithubButton />
-                  <ThemeSwitch />
-                </Flexbox>
-              </section>
-            </>
-          )}
-        </Flexbox>
-      </div>
-    )
+            </section>
+          </>
+        )}
+      </Flexbox>
+    </div>
   );
 };
 

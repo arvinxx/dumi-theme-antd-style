@@ -1,7 +1,7 @@
 import { EditOutlined, GithubFilled } from '@ant-design/icons';
 import { Divider, Space, Typography } from 'antd';
 import { useResponsive } from 'antd-style';
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, ReactNode, useMemo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';
@@ -47,39 +47,42 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
       },
     ].filter((i) => i) as Item[];
 
-    const packages = [
-      {
-        label: 'NPM',
-        icon: <NpmFilled />,
-        children: 'NPM',
-        url: `https://www.npmjs.com/package/${pkg}`,
-      },
-      {
-        label: '预览产物',
-        icon: <Unpkg />,
-        children: 'UNPKG',
-        url: `https://unpkg.com/browse/${pkg}/`,
-      },
-      {
-        label: '查阅产物体积',
-        icon: <BundlephobiaFilled />,
-        children: 'BundlePhobia',
-        url: `https://bundlephobia.com/package/${pkg}`,
-      },
-      {
-        label: '查阅安装包体积',
-        icon: <PackagePhobia />,
-        children: 'PackagePhobia',
-        url: `https://packagephobia.com/result?p=${pkg}`,
-      },
+    const packages = useMemo(
+      () => [
+        {
+          label: 'NPM',
+          icon: <NpmFilled />,
+          children: 'NPM',
+          url: `https://www.npmjs.com/package/${pkg}`,
+        },
+        {
+          label: '预览产物',
+          icon: <Unpkg />,
+          children: 'UNPKG',
+          url: `https://unpkg.com/browse/${pkg}/`,
+        },
+        {
+          label: '查阅产物体积',
+          icon: <BundlephobiaFilled />,
+          children: 'BundlePhobia',
+          url: `https://bundlephobia.com/package/${pkg}`,
+        },
+        {
+          label: '查阅安装包体积',
+          icon: <PackagePhobia />,
+          children: 'PackagePhobia',
+          url: `https://packagephobia.com/result?p=${pkg}`,
+        },
 
-      {
-        label: '分析依赖图',
-        icon: <Graph />,
-        children: 'Anvaka Graph',
-        url: `https://npm.anvaka.com/#/view/2d/${pkg}`,
-      },
-    ];
+        {
+          label: '分析依赖图',
+          icon: <Graph />,
+          children: 'Anvaka Graph',
+          url: `https://npm.anvaka.com/#/view/2d/${pkg}`,
+        },
+      ],
+      [pkg],
+    );
 
     return (
       <Flexbox>
@@ -107,7 +110,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
             <Space split={<Divider type={'vertical'} />} wrap>
               {packages.map((item) => (
                 <a
-                  key={item.url}
+                  key={item.label}
                   href={item.url}
                   target={'_blank'}
                   rel="noreferrer"
@@ -123,7 +126,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
 
             <Space split={<Divider type={'vertical'} />} className={styles.meta}>
               {items.map((item) => (
-                <a key={item.label} href={item.url} target={'_blank'} rel="noreferrer">
+                <a key={item.url} href={item.url} target={'_blank'} rel="noreferrer">
                   <Flexbox horizontal align={'center'} gap={8} className={styles.text}>
                     <>{item.icon}</>
                     <>{item.children}</>

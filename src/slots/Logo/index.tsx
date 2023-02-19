@@ -12,6 +12,7 @@ const Logo: FC = () => {
   const locale = useSiteStore((s) => s.locale, isEqual);
   const { styles, cx } = useStyles();
   const { mobile } = useResponsive();
+
   return (
     themeConfig && (
       <Link className={cx(styles)} to={'base' in locale ? locale.base : '/'}>

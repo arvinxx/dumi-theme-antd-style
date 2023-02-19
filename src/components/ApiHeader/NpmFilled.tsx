@@ -1,4 +1,6 @@
-export default () => (
+import { memo } from 'react';
+
+export default memo(() => (
   <svg
     width="14px"
     height="14px"
@@ -12,4 +14,4 @@ export default () => (
       fill="#C12127"
     ></path>
   </svg>
-);
+));
