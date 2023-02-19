@@ -17,11 +17,6 @@ export const useStyles = createStyles(
 
     img {
       margin-inline-end: 10px;
-      height: 40px;
-
-      ${responsive.mobile} {
-        height: 32px;
-      }
     }
   `,
 );

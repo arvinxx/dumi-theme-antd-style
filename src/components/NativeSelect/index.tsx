@@ -153,6 +153,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
         type={'button'}
         ref={refs.setReference}
         className={styles.button}
+        aria-label={'selected-item'}
         style={style}
         {...getReferenceProps({
           onTouchStart() {
