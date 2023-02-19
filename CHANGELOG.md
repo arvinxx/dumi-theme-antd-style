@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.9.14](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.13...v0.9.14) (2023-02-19)
+
 ## [0.9.13](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.12...v0.9.13) (2023-02-19)
 
 ### 👷 构建系统
