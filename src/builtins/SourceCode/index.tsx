@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { FC, lazy, Suspense } from 'react';
 
-import { Highlighter } from '../../components/Highlighter';
 import { useSiteStore } from '../../store';
+
+const Highlighter = lazy(() => import('../../components/Highlighter'));
 
 interface SourceCodeProps {
   lang: string;
@@ -12,9 +13,11 @@ const SourceCode: FC<SourceCodeProps> = ({ children, lang }) => {
   const theme = useSiteStore((s) => s.siteData.themeConfig.syntaxTheme);
 
   return (
-    <Highlighter syntaxThemes={theme} language={lang}>
-      {children}
-    </Highlighter>
+    <Suspense fallback={children}>
+      <Highlighter syntaxThemes={theme} language={lang}>
+        {children}
+      </Highlighter>
+    </Suspense>
   );
 };
 
