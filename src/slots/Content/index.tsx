@@ -18,7 +18,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
   const { mobile } = useResponsive();
 
   return (
-    <Flexbox flex={'1'} gap={mobile ? 0 : 24}>
+    <Flexbox width={'100%'} gap={mobile ? 0 : 24}>
       <div className={cx('dumi-antd-style-content', styles.content)}>
         <Skeleton active paragraph loading={loading} />
         {children}
