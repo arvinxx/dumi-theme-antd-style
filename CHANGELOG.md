@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.10.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.1...v0.10.2) (2023-02-19)
+
 ## [0.10.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.0...v0.10.1) (2023-02-19)
 
 # [0.10.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.16...v0.10.0) (2023-02-19)
