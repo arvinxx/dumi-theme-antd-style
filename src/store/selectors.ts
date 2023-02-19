@@ -134,3 +134,19 @@ export const tocAnchorItemSel = (s: SiteStore) =>
     }
     return result;
   }, []);
+
+/**
+ * 将 sidebar 信息扁平化
+ * @param s
+ */
+export const flattenSidebarSel = (s: SiteStore) => {
+  return s.sidebar.map((i) => i.children).flat();
+};
+
+export const contentBottomSel = (s: SiteStore) => {
+  const dataFlatten = flattenSidebarSel(s);
+  const path = s.location.pathname;
+  const currentIndex = dataFlatten.findIndex((item) => item.link === path);
+
+  return { prev: dataFlatten[currentIndex - 1], currentIndex, next: dataFlatten[currentIndex + 1] };
+};
