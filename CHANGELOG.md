@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.10.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.16...v0.10.0) (2023-02-19)
+
+### ✨ 新特性
+
+- 新增 ContentFooter ，支持文档上下篇切换的交互 ([2dc9af7](https://github.com/arvinxx/dumi-theme-antd-style/commit/2dc9af7))
+
 ## [0.9.16](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.15...v0.9.16) (2023-02-19)
 
 ## [0.9.15](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.9.14...v0.9.15) (2023-02-19)
