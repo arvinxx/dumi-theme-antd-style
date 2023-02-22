@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.2...v0.10.3) (2023-02-22)
+
+### 🐛 修复
+
+- 修正首页白屏的问题 ([31eb2be](https://github.com/arvinxx/dumi-theme-antd-style/commit/31eb2be))
+
 ## [0.10.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.1...v0.10.2) (2023-02-19)
 
 ## [0.10.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.0...v0.10.1) (2023-02-19)
