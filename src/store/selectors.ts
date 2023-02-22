@@ -1,3 +1,4 @@
+import { ISidebarItem } from 'dumi/dist/client/theme-api/types';
 import { AnchorItem, ApiHeaderConfig, IFeature } from '../types';
 import { SiteStore } from './useSiteStore';
 
@@ -139,8 +140,8 @@ export const tocAnchorItemSel = (s: SiteStore) =>
  * 将 sidebar 信息扁平化
  * @param s
  */
-export const flattenSidebarSel = (s: SiteStore) => {
-  return s.sidebar.map((i) => i.children).flat();
+export const flattenSidebarSel = (s: SiteStore): ISidebarItem[] => {
+  return s.sidebar?.map((i) => i.children).flat() || [];
 };
 
 export const contentBottomSel = (s: SiteStore) => {
