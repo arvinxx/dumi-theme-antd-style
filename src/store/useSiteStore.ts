@@ -38,7 +38,7 @@ export interface ISiteData {
 
 export interface SiteStore {
   siteData: ISiteData;
-  sidebar: ISidebarGroup[];
+  sidebar?: ISidebarGroup[];
   routeMeta: IRouteMeta;
   navData: NavData;
   location: Location;
