@@ -7,14 +7,12 @@ import { useSiteStore } from '../../store/useSiteStore';
 const GithubButton: FC = () => {
   const repoUrl = useSiteStore((s) => s.siteData.themeConfig?.github);
 
-  return (
-    repoUrl && (
-      <Tooltip arrow={false} title={'Github'}>
-        <a href={repoUrl} target={'_blank'} rel="noreferrer">
-          <Button icon={<GithubFilled />} />
-        </a>
-      </Tooltip>
-    )
+  return !repoUrl ? null : (
+    <Tooltip arrow={false} title={'Github'}>
+      <a href={repoUrl} target={'_blank'} rel="noreferrer">
+        <Button icon={<GithubFilled />} />
+      </a>
+    </Tooltip>
   );
 };
 
