@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.1...v0.11.2) (2023-02-23)
+
+### 👷 构建系统
+
+- 修正版本号问题 ([65f07b8](https://github.com/arvinxx/dumi-theme-antd-style/commit/65f07b8))
+
 ## [0.11.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.0...v0.11.1) (2023-02-23)
 
 ### 🐛 修复
