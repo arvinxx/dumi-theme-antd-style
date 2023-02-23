@@ -41,3 +41,4 @@ example/.temp/*
 .eslintcache
 techUI*
 example/.dumi
+example/server
