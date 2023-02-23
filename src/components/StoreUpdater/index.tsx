@@ -7,7 +7,7 @@ import {
   useSiteData,
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { memo, useEffect } from 'react';
+import { memo, startTransition, useEffect } from 'react';
 import { SiteStore, useSiteStore } from '../../store/useSiteStore';
 
 const isBrowser = typeof window !== 'undefined';
@@ -31,7 +31,9 @@ const useSyncState = <T extends keyof SiteStore>(
   }
 
   useEffect(() => {
-    updater(key, value);
+    startTransition(() => {
+      updater(key, value);
+    });
   }, [value]);
 };
 
