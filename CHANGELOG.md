@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.11.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.5...v0.11.0) (2023-02-23)
+
+### ✨ 新特性
+
+- 实现 SSR 样式抽取能力 ([760b521](https://github.com/arvinxx/dumi-theme-antd-style/commit/760b521))
+
 ## [0.10.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.4...v0.10.5) (2023-02-23)
 
 ## [0.10.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.3...v0.10.4) (2023-02-22)
