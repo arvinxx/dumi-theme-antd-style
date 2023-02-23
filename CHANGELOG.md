@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.0...v0.11.1) (2023-02-23)
+
+### 🐛 修复
+
+- 适配 antd-style 的实现 ([0f98201](https://github.com/arvinxx/dumi-theme-antd-style/commit/0f98201))
+
 # [0.11.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.10.5...v0.11.0) (2023-02-23)
 
 ### ✨ 新特性
