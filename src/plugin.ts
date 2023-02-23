@@ -1,5 +1,4 @@
 import { extractStyle } from '@ant-design/cssinjs';
-import { extractCritical } from '@emotion/server';
 import createEmotionServer from '@emotion/server/create-instance';
 import { EmotionCache } from '@emotion/utils';
 import chalk from 'chalk';
@@ -40,15 +39,14 @@ const RoutesPlugin = (api: IApi) => {
       content: string;
       path: string;
     },
-    extractCSS = extractCritical,
   ) => {
-    const result = extractCSS(file.content);
+    const result = createEmotionServer(cache).extractCritical(file.content);
 
     const css = result.css ?? '';
 
     if (!!css) {
       api.logger.event(
-        `${chalk.yellow(file.path)} include [${cache.key}] ${chalk.yellow(
+        `${chalk.yellow(file.path)} include ${chalk.blue`[${cache.key}]`} ${chalk.yellow(
           result.ids.length,
         )} styles`,
       );
@@ -80,12 +78,9 @@ const RoutesPlugin = (api: IApi) => {
         global.__CSSINJS_EMOTION_CACHE_MAP__
           .filter((i) => i)
           .forEach((item) => {
-            const { cache, custom } = item;
-            const styleFromCache = getStyleFromEmotionCache(
-              cache,
-              file,
-              custom ? createEmotionServer(cache).extractCritical : undefined,
-            );
+            const { cache } = item;
+
+            const styleFromCache = getStyleFromEmotionCache(cache, file);
 
             if (styleFromCache.file) {
               file.content = addLinkStyle(file.content, styleFromCache.file);
@@ -100,9 +95,7 @@ const RoutesPlugin = (api: IApi) => {
         const antdCssString = styleText.replace(/<style\s[^>]*>/g, '').replace(/<\/style>/g, '');
 
         if (antdCssString) {
-          api.logger.event(
-            `${chalk.yellow(file.path)} include ${chalk.blue('antd')} library styles`,
-          );
+          api.logger.event(`${chalk.yellow(file.path)} include ${chalk.blue`antd`} styles`);
           const antdCssFileName = writeCSSFile('antd', antdCssString, antdCssString);
           file.content = addLinkStyle(file.content, antdCssFileName);
         }
