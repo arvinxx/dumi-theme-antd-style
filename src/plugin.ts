@@ -8,13 +8,18 @@ import type { IApi } from 'dumi';
 import fs from 'fs';
 import { join } from 'path';
 
+declare global {
+  // eslint-disable-next-line no-var
+  var __CSSINJS_EMOTION_CACHE_MAP__: { custom?: boolean; cache: EmotionCache }[];
+}
+
 const getHash = (str: string) => createHash('md5').update(str).digest('base64url');
 
 const RoutesPlugin = (api: IApi) => {
   // 如果没有开启 SSR，则啥也不做
   if (!api.userConfig.ssr) return;
 
-  api.logger.event('detect ssr config, build html with extracted css...');
+  api.logger.info('detect ssr config, when building html will extract css.');
 
   const writeCSSFile = (key: string, hashKey: string, cssString: string) => {
     const fileName = `ssr-${key}-${getHash(hashKey)}.css`;
@@ -22,7 +27,7 @@ const RoutesPlugin = (api: IApi) => {
     const filePath = join(api.paths.absOutputPath, fileName);
 
     if (!fs.existsSync(filePath)) {
-      api.logger.info(chalk.grey(`write to: ${filePath}`));
+      api.logger.event(chalk.grey(`write to: ${filePath}`));
       fs.writeFileSync(filePath, cssString, 'utf8');
     }
 
@@ -42,7 +47,7 @@ const RoutesPlugin = (api: IApi) => {
     const css = result.css ?? '';
 
     if (!!css) {
-      api.logger.info(
+      api.logger.event(
         `${chalk.yellow(file.path)} include [${cache.key}] ${chalk.yellow(
           result.ids.length,
         )} styles`,
@@ -71,34 +76,21 @@ const RoutesPlugin = (api: IApi) => {
       .filter((f) => !f.path.includes(':'))
 
       .map((file) => {
-        // 提取 antd-style 样式
+        // 提取 antd-style emotion 样式
+        global.__CSSINJS_EMOTION_CACHE_MAP__
+          .filter((i) => i)
+          .forEach((item) => {
+            const { cache, custom } = item;
+            const styleFromCache = getStyleFromEmotionCache(
+              cache,
+              file,
+              custom ? createEmotionServer(cache).extractCritical : undefined,
+            );
 
-        // @ts-ignore
-        const customCache = global.__ANTD_STYLE_CACHE__ as EmotionCache;
-
-        if (customCache) {
-          const antdStyle = getStyleFromEmotionCache(
-            customCache,
-            file,
-            createEmotionServer(customCache).extractCritical,
-          );
-
-          if (antdStyle.file) {
-            file.content = addLinkStyle(file.content, antdStyle.file);
-          }
-        }
-
-        // 提取 emotion 默认样式
-        // @ts-ignore
-        const defaultEmotionCache = global.__EMOTION_CACHE__ as EmotionCache;
-
-        if (defaultEmotionCache) {
-          const emotionStyle = getStyleFromEmotionCache(defaultEmotionCache, file);
-
-          if (emotionStyle.file) {
-            file.content = addLinkStyle(file.content, emotionStyle.file);
-          }
-        }
+            if (styleFromCache.file) {
+              file.content = addLinkStyle(file.content, styleFromCache.file);
+            }
+          });
 
         // 提取 antd 样式
         const styleCache = (global as any).__ANTD_CACHE__;
@@ -107,9 +99,11 @@ const RoutesPlugin = (api: IApi) => {
 
         const antdCssString = styleText.replace(/<style\s[^>]*>/g, '').replace(/<\/style>/g, '');
 
-        const antdCssFileName = writeCSSFile('antd', antdCssString, antdCssString);
-
         if (antdCssString) {
+          api.logger.event(
+            `${chalk.yellow(file.path)} include ${chalk.blue('antd')} library styles`,
+          );
+          const antdCssFileName = writeCSSFile('antd', antdCssString, antdCssString);
           file.content = addLinkStyle(file.content, antdCssFileName);
         }
 
