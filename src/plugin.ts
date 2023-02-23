@@ -1,6 +1,7 @@
 import { extractStyle } from '@ant-design/cssinjs';
 import createEmotionServer from '@emotion/server/create-instance';
 import { EmotionCache } from '@emotion/utils';
+import { CacheManager } from 'antd-style';
 import chalk from 'chalk';
 import { createHash } from 'crypto';
 import type { IApi } from 'dumi';
@@ -9,7 +10,7 @@ import { join } from 'path';
 
 declare global {
   // eslint-disable-next-line no-var
-  var __CSSINJS_EMOTION_CACHE_MAP__: { custom?: boolean; cache: EmotionCache }[];
+  var __ANTD_STYLE_CACHE_MANAGER_FOR_SSR__: CacheManager;
 }
 
 const getHash = (str: string) => createHash('md5').update(str).digest('base64url');
@@ -75,17 +76,16 @@ const RoutesPlugin = (api: IApi) => {
 
       .map((file) => {
         // 提取 antd-style emotion 样式
-        global.__CSSINJS_EMOTION_CACHE_MAP__
-          .filter((i) => i)
-          .forEach((item) => {
-            const { cache } = item;
 
-            const styleFromCache = getStyleFromEmotionCache(cache, file);
+        const cacheManager = global.__ANTD_STYLE_CACHE_MANAGER_FOR_SSR__;
 
-            if (styleFromCache.file) {
-              file.content = addLinkStyle(file.content, styleFromCache.file);
-            }
-          });
+        cacheManager.getCacheList().forEach((cache) => {
+          const styleFromCache = getStyleFromEmotionCache(cache, file);
+
+          if (styleFromCache.file) {
+            file.content = addLinkStyle(file.content, styleFromCache.file);
+          }
+        });
 
         // 提取 antd 样式
         const styleCache = (global as any).__ANTD_CACHE__;
