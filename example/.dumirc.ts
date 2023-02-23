@@ -69,4 +69,5 @@ export default defineConfig({
   codeSplitting: {
     jsStrategy: 'granularChunks',
   },
+  ssr: {},
 });
