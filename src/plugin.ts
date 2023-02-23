@@ -75,18 +75,6 @@ const RoutesPlugin = (api: IApi) => {
       .filter((f) => !f.path.includes(':'))
 
       .map((file) => {
-        // 提取 antd-style emotion 样式
-
-        const cacheManager = global.__ANTD_STYLE_CACHE_MANAGER_FOR_SSR__;
-
-        cacheManager.getCacheList().forEach((cache) => {
-          const styleFromCache = getStyleFromEmotionCache(cache, file);
-
-          if (styleFromCache.file) {
-            file.content = addLinkStyle(file.content, styleFromCache.file);
-          }
-        });
-
         // 提取 antd 样式
         const styleCache = (global as any).__ANTD_CACHE__;
 
@@ -99,6 +87,18 @@ const RoutesPlugin = (api: IApi) => {
           const antdCssFileName = writeCSSFile('antd', antdCssString, antdCssString);
           file.content = addLinkStyle(file.content, antdCssFileName);
         }
+
+        // 提取 antd-style emotion 样式
+
+        const cacheManager = global.__ANTD_STYLE_CACHE_MANAGER_FOR_SSR__;
+
+        cacheManager.getCacheList().forEach((cache) => {
+          const styleFromCache = getStyleFromEmotionCache(cache, file);
+
+          if (styleFromCache.file) {
+            file.content = addLinkStyle(file.content, styleFromCache.file);
+          }
+        });
 
         return file;
       }),
