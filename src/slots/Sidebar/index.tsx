@@ -9,7 +9,9 @@ const Sidebar: FC = () => {
   const sidebar = useSiteStore((s) => s.sidebar, isEqual);
   const { styles } = useStyles();
 
-  return !sidebar ? null : (
+  const isEmptySideBar = !sidebar || sidebar.length === 0;
+
+  return isEmptySideBar ? null : (
     <div className={styles.sidebar}>
       {sidebar.map((item, i) => (
         <dl key={String(i)}>
