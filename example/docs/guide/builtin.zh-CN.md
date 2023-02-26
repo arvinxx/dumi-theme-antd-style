@@ -1,10 +1,12 @@
 ---
 order: 4
-title: Builtin 组件
+title: Builtin 主题内置组件
 group: 特性
 ---
 
-# Markdown 高亮
+# 内置组件
+
+## Markdown 高亮
 
 :::info{title=自定义标题}
 这是一条普通信息 `code`
