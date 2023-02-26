@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.13.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.12.0...v0.13.0) (2023-02-26)
+
+### ✨ 新特性
+
+- 支持更加灵活的 ApiHeader 配置能力 ([063062c](https://github.com/arvinxx/dumi-theme-antd-style/commit/063062c))
+
 # [0.12.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.2...v0.12.0) (2023-02-26)
 
 ### ✨ 新特性
