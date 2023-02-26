@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.12.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.2...v0.12.0) (2023-02-26)
+
+### ✨ 新特性
+
+- 默认隔离 demo 与文档站点的主题样式 ([02d36a1](https://github.com/arvinxx/dumi-theme-antd-style/commit/02d36a1))
+
 ## [0.11.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.11.1...v0.11.2) (2023-02-23)
 
 ### 👷 构建系统
