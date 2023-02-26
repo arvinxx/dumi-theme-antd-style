@@ -21,7 +21,7 @@ const Docs: FC = memo(() => {
   const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const isApiPage = useSiteStore(isApiPageSel);
   const siteTitle = useSiteStore(siteTitleSel);
-  const { pkg, docUrl, sourceUrl } = useSiteStore(apiHeaderSel);
+  const apiHeaderProps = useSiteStore(apiHeaderSel);
 
   const { styles, theme } = useStyles();
 
@@ -45,14 +45,7 @@ const Docs: FC = memo(() => {
           <Center>
             <Flexbox style={{ maxWidth: theme.contentMaxWidth, width: '100%' }}>
               <Flexbox style={{ paddingBlock: 0, paddingInline: mobile ? 16 : 48 }}>
-                <ApiHeader
-                  title={fm.title}
-                  description={fm.description}
-                  pkg={pkg}
-                  componentName={fm.atomId || fm.title}
-                  sourceUrl={sourceUrl}
-                  docsUrl={docUrl}
-                />
+                <ApiHeader {...apiHeaderProps} />
               </Flexbox>
             </Flexbox>
           </Center>

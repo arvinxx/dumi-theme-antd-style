@@ -26,6 +26,16 @@ export interface IFeature {
   hero?: boolean;
 }
 
+export interface ApiHeaderProps {
+  title: string;
+  pkg: string;
+  defaultImport?: boolean;
+  description?: string;
+  sourceUrl?: string;
+  docUrl?: string;
+  componentName: string;
+}
+
 export interface ApiHeaderConfig {
   pkg: string;
   match: string[];

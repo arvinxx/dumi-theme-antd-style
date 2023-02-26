@@ -11,15 +11,11 @@ import NpmFilled from './NpmFilled';
 import PackagePhobia from './PackagePhobia';
 import Unpkg from './Unpkg';
 
+import { ApiHeaderProps } from 'dumi-theme-antd-style/src';
 import { useStyles } from './style';
 
-interface ApiTitleProps {
+export interface ApiTitleProps extends ApiHeaderProps {
   title: string;
-  componentName: string;
-  description?: string;
-  pkg: string;
-  sourceUrl?: string;
-  docsUrl?: string;
 }
 
 interface Item {
@@ -30,7 +26,7 @@ interface Item {
 }
 
 export const ApiHeader: FC<ApiTitleProps> = memo(
-  ({ title, componentName, description, pkg, sourceUrl, docsUrl }) => {
+  ({ title, componentName, description, defaultImport, pkg, sourceUrl, docUrl }) => {
     const { styles } = useStyles();
     const { mobile } = useResponsive();
 
@@ -40,10 +36,10 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
         children: '查看源码',
         url: sourceUrl,
       },
-      docsUrl && {
+      docUrl && {
         icon: <EditOutlined />,
         children: '编辑文档',
-        url: docsUrl,
+        url: docUrl,
       },
     ].filter((i) => i) as Item[];
 
@@ -84,6 +80,10 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
       [pkg],
     );
 
+    const importStr = defaultImport
+      ? `import ${componentName} from '${pkg}';`
+      : `import { ${componentName} } from '${pkg}';`;
+
     return (
       <Flexbox>
         <Typography.Title className={styles.title}>{title}</Typography.Title>
@@ -103,7 +103,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
             >
               引入方法
             </Typography.Text>
-            <Code>{`import { ${componentName} } from '${pkg}';`}</Code>
+            <Code>{importStr}</Code>
           </Flexbox>
           <Divider dashed style={{ margin: '2px 0' }} />
           <Flexbox horizontal={!mobile} gap={mobile ? 24 : 0} distribution={'space-between'}>
