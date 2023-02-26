@@ -5,6 +5,7 @@ import { homepage, name } from '../package.json';
 
 import { features } from './config/features';
 
+const isProd = process.env.NODE_ENV === 'production';
 export default defineConfig({
   themeConfig: {
     name: 'Ant Design Style Dumi Theme',
@@ -69,5 +70,6 @@ export default defineConfig({
   codeSplitting: {
     jsStrategy: 'granularChunks',
   },
-  ssr: {},
+  // @ts-ignore
+  ssr: isProd ? {} : false,
 });

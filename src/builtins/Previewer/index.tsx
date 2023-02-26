@@ -2,6 +2,7 @@ import { createStyles } from 'antd-style';
 import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
+import DemoProvider from '../../components/DemoProvider';
 
 const useStyles = createStyles(
   ({ css, token, prefixCls }) => css`
@@ -52,7 +53,9 @@ export default (props: IPreviewerProps) => {
 
   return (
     <div className={styles}>
-      <Previewer {...props} />
+      <DemoProvider inherit={props.inherit}>
+        <Previewer {...props} />
+      </DemoProvider>
     </div>
   );
 };
