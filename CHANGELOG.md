@@ -1,5 +1,7 @@
 # Changelog
 
+# [0.14.0-beta.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.4...v0.14.0-beta.5) (2023-03-01)
+
 # [0.14.0-beta.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.3...v0.14.0-beta.4) (2023-03-01)
 
 ### ✨ 新特性
