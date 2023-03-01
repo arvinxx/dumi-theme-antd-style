@@ -9,7 +9,9 @@ export interface FooterProps {
   theme?: RcProps['theme'];
 }
 const Footer: FC<FooterProps> = ({ columns, bottom, theme }) => {
-  const { styles } = useStyles();
+  const isEmpty = !columns || columns?.length === 0;
+
+  const { styles } = useStyles(isEmpty);
 
   return (
     <div className={styles.container}>

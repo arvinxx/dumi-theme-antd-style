@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({ css, responsive, token }) => {
+export const useStyles = createStyles(({ css, responsive, token }, isEmpty: boolean) => {
   const prefix = `rc-footer`;
 
   return {
@@ -39,7 +39,7 @@ export const useStyles = createStyles(({ css, responsive, token }) => {
           width: 100%;
           max-width: ${token.contentMaxWidth}px;
           margin: auto;
-          padding: 60px 0 20px;
+          padding: ${isEmpty ? '0' : '60px 0 20px'};
         }
 
         &-columns {
@@ -48,8 +48,6 @@ export const useStyles = createStyles(({ css, responsive, token }) => {
         }
 
         &-column {
-          //margin-bottom: 60px;
-
           h2 {
             position: relative;
             margin: 0 auto;
@@ -110,7 +108,7 @@ export const useStyles = createStyles(({ css, responsive, token }) => {
             font-size: 16px;
             line-height: 32px;
             text-align: center;
-            border-top: 1px solid ${token.colorBorderSecondary};
+            border-top: 1px solid ${isEmpty ? 'transparent' : token.colorBorderSecondary};
           }
         }
 

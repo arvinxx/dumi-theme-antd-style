@@ -1,5 +1,32 @@
 # Changelog
 
+# [0.14.0-beta.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.4...v0.14.0-beta.5) (2023-03-01)
+
+# [0.14.0-beta.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.3...v0.14.0-beta.4) (2023-03-01)
+
+### ✨ 新特性
+
+- footer 支持配置 ([71eef12](https://github.com/arvinxx/dumi-theme-antd-style/commit/71eef12))
+
+# [0.14.0-beta.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.2...v0.14.0-beta.3) (2023-03-01)
+
+### 👷 构建系统
+
+- 补充类型定义 ([5effb5a](https://github.com/arvinxx/dumi-theme-antd-style/commit/5effb5a))
+
+# [0.14.0-beta.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.1...v0.14.0-beta.2) (2023-03-01)
+
+### 🐛 修复
+
+- 修正 ApiHeaderConfig 类型定义 ([87fcfda](https://github.com/arvinxx/dumi-theme-antd-style/commit/87fcfda))
+
+# [0.14.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.1...v0.14.0-beta.1) (2023-03-01)
+
+### ✨ 新特性
+
+- 增加 ThemeConfig 类型定义配置文件 ([1bbbbe7](https://github.com/arvinxx/dumi-theme-antd-style/commit/1bbbbe7))
+- 补充 Hero config 配置 ([e6ac81c](https://github.com/arvinxx/dumi-theme-antd-style/commit/e6ac81c))
+
 ## [0.13.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.0...v0.13.1) (2023-03-01)
 
 # [0.13.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.12.0...v0.13.0) (2023-02-26)
