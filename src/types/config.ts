@@ -2,7 +2,7 @@ import { FooterColumn } from 'rc-footer/es/column';
 import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
 
 export interface IFooter {
-  bottom: string;
+  bottom?: string;
   theme?: 'dark' | 'light';
   columns?: FooterColumn[] | false;
 }

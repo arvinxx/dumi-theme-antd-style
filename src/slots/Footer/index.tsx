@@ -19,15 +19,15 @@ const Footer: FC = () => {
   const footer = themeConfig.footerConfig as IFooter;
 
   const columns =
-    footer.columns === false
-      ? []
+    footer?.columns === false
+      ? undefined
       : getColumns({ github: themeConfig.github || (pkg as any).homepage });
 
-  const bottomFooter = typeof footer === 'object' ? footer.bottom : themeConfig.footer;
+  const bottomFooter = footer?.bottom || themeConfig.footer;
 
   return (
     <Foot
-      theme={footer.theme || (theme.appearance as FooterProps['theme'])}
+      theme={footer?.theme || (theme.appearance as FooterProps['theme'])}
       columns={columns}
       bottom={
         mobile ? (
