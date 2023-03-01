@@ -44,6 +44,22 @@ const useStyles = createStyles(
           }
         }
       }
+
+      &-tabs::after {
+        border-color: ${token.colorBorderSecondary};
+      }
+    }
+
+    .dumi-default-tabs-tab {
+      &-btn {
+        color: ${token.colorTextTertiary};
+      }
+
+      &-active {
+        .dumi-default-tabs-tab-btn {
+          color: ${token.colorText};
+        }
+      }
     }
   `,
 );

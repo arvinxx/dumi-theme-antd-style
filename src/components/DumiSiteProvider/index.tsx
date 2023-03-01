@@ -1,24 +1,17 @@
 import { App } from 'antd';
-import { StyleProvider, ThemeProvider } from 'antd-style';
+import { StyleProvider } from 'antd-style';
 import { PropsWithChildren } from 'react';
 
-import { useThemeStore } from '../../store/useThemeStore';
-import { getAntdTheme, getCustomStylish, getCustomToken } from '../../styles';
+import { ThemeProvider } from './ThemeProvider';
 
 export default ({ children }: PropsWithChildren) => {
-  const themeMode = useThemeStore((s) => s.themeMode);
-
   return (
     <StyleProvider speedy={process.env.NODE_ENV === 'production'} prefix={'site'}>
-      <ThemeProvider
-        prefixCls={'site'}
-        themeMode={themeMode}
-        theme={getAntdTheme}
-        customStylish={getCustomStylish}
-        customToken={getCustomToken}
-      >
+      <ThemeProvider>
         <App>{children}</App>
       </ThemeProvider>
     </StyleProvider>
   );
 };
+
+export * from './ThemeProvider';
