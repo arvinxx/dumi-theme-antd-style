@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.14.0-beta.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.1...v0.14.0-beta.2) (2023-03-01)
+
+### 🐛 修复
+
+- 修正 ApiHeaderConfig 类型定义 ([87fcfda](https://github.com/arvinxx/dumi-theme-antd-style/commit/87fcfda))
+
 # [0.14.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.1...v0.14.0-beta.1) (2023-03-01)
 
 ### ✨ 新特性
