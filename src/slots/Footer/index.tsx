@@ -3,6 +3,7 @@ import { useResponsive } from 'antd-style';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
+import { IFooter } from '@/types';
 import Foot, { FooterProps } from '../../components/Footer';
 import { useSiteStore } from '../../store';
 import { getColumns } from './columns';
@@ -15,11 +16,18 @@ const Footer: FC = () => {
   const { mobile } = useResponsive();
   if (!themeConfig.footer) return null;
 
-  const columns = getColumns({ github: themeConfig.github || (pkg as any).homepage });
+  const footer = themeConfig.footerConfig as IFooter;
+
+  const columns =
+    footer.columns === false
+      ? []
+      : getColumns({ github: themeConfig.github || (pkg as any).homepage });
+
+  const bottomFooter = typeof footer === 'object' ? footer.bottom : themeConfig.footer;
 
   return (
     <Foot
-      theme={theme.appearance as FooterProps['theme']}
+      theme={footer.theme || (theme.appearance as FooterProps['theme'])}
       columns={columns}
       bottom={
         mobile ? (
@@ -28,13 +36,13 @@ const Footer: FC = () => {
             <Flexbox
               align={'center'}
               horizontal
-              dangerouslySetInnerHTML={{ __html: themeConfig.footer }}
+              dangerouslySetInnerHTML={{ __html: bottomFooter }}
             ></Flexbox>
           </Center>
         ) : (
           <Center horizontal>
             Copyright © 2022-{new Date().getFullYear()} <Divider type={'vertical'} />
-            <span dangerouslySetInnerHTML={{ __html: themeConfig.footer }} />
+            <span dangerouslySetInnerHTML={{ __html: bottomFooter }} />
           </Center>
         )
       }

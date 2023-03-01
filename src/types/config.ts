@@ -1,4 +1,11 @@
+import { FooterColumn } from 'rc-footer/es/column';
 import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
+
+export interface IFooter {
+  bottom: string;
+  theme?: 'dark' | 'light';
+  columns?: FooterColumn[] | false;
+}
 
 export interface SiteThemeConfig {
   name?: string;
@@ -15,7 +22,9 @@ export interface SiteThemeConfig {
 
   apiHeader?: ApiHeaderConfig | false;
 
-  footer?: string;
+  footer?: string | false;
+
+  footerConfig?: IFooter;
   /**
    * 配置代码高亮主题
    */
