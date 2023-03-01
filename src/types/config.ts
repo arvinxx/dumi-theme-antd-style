@@ -1,4 +1,4 @@
-import { ApiHeaderConfig, IHero } from '../types';
+import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
 
 export interface SiteThemeConfig {
   name?: string;
@@ -16,4 +16,8 @@ export interface SiteThemeConfig {
   apiHeader?: ApiHeaderConfig | false;
 
   footer?: string;
+  /**
+   * 配置代码高亮主题
+   */
+  syntaxTheme?: HighlighterSyntaxTheme;
 }

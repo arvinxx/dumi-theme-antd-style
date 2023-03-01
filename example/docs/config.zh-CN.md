@@ -162,7 +162,7 @@ export default defineConfig({
         dark: vscDarkPlus,
         light: vs,
       },
-    } as HighlighterSyntaxTheme,
+    },
   },
 });
 ```
