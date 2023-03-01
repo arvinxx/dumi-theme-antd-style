@@ -1,22 +1,22 @@
 import { defineConfig } from 'dumi';
+import type { SiteThemeConfig } from 'dumi-theme-antd-style';
 import path from 'path';
 
 import { homepage, name } from '../package.json';
 
-import { features } from './config/features';
+import { featuresZh } from './config/features';
 
 const isProd = process.env.NODE_ENV === 'production';
-export default defineConfig({
-  themeConfig: {
-    name: 'Ant Design Style Dumi Theme',
-    logo: 'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
-    github: homepage,
-    description: {
-      'zh-CN': 'Ant Design Style 文档站主题包',
-      'en-US': 'dumi2 theme similar to antd v5 website',
-    },
-    actions: {
-      'zh-CN': [
+
+const themeConfig: SiteThemeConfig = {
+  name: 'Ant Design Style Dumi Theme',
+  github: homepage,
+  logo: 'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
+
+  hero: {
+    'zh-CN': {
+      description: 'Ant Design Style 文档站主题包',
+      actions: [
         {
           type: 'primary',
           text: '开始使用',
@@ -27,7 +27,11 @@ export default defineConfig({
           link: '/config',
         },
       ],
-      'en-US': [
+      features: featuresZh,
+    },
+    'en-US': {
+      description: 'dumi2 theme similar to antd v5 website',
+      actions: [
         {
           type: 'primary',
           text: 'Start',
@@ -39,15 +43,18 @@ export default defineConfig({
         },
       ],
     },
-    features,
-
-    apiHeader: {
-      pkg: name,
-      sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
-      docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
-    },
-    footer: 'Made with ❤️ by 蚂蚁集团 - AFX & 数字科技',
   },
+
+  apiHeader: {
+    pkg: name,
+    sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
+    docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
+  },
+  footer: 'Made with ❤️ by 蚂蚁集团 - AFX & 数字科技',
+};
+
+export default defineConfig({
+  themeConfig,
 
   favicons: [
     'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',

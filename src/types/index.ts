@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 
-export type { HighlighterSyntaxTheme } from './components/Highlighter';
+export type { HighlighterSyntaxTheme } from '../components/Highlighter';
+export * from './config';
 
 export type ImageContainerType = 'light' | 'primary' | 'soon';
 
@@ -38,15 +39,28 @@ export interface ApiHeaderProps {
 
 export interface ApiHeaderConfig {
   pkg: string;
-  match: string[];
+  match?: string[];
   sourceUrl?: string | false;
   docUrl?: string | false;
 }
-
-export type IFeatures = IFeature[] | Record<string, IFeature[]>;
 
 export interface AnchorItem {
   id: string;
   title: string;
   children?: AnchorItem[];
+}
+
+export interface IAction {
+  type?: 'primary' | 'default';
+  text: string;
+  link: string;
+}
+
+export interface IHero {
+  /**
+   * 配置首页首屏区域的简介文字
+   */
+  description?: string;
+  actions: IAction[];
+  features?: IFeature[];
 }
