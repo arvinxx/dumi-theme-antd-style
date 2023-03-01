@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.14.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.1...v0.14.0-beta.1) (2023-03-01)
+
+### ✨ 新特性
+
+- 增加 ThemeConfig 类型定义配置文件 ([1bbbbe7](https://github.com/arvinxx/dumi-theme-antd-style/commit/1bbbbe7))
+- 补充 Hero config 配置 ([e6ac81c](https://github.com/arvinxx/dumi-theme-antd-style/commit/e6ac81c))
+
 ## [0.13.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.0...v0.13.1) (2023-03-01)
 
 # [0.13.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.12.0...v0.13.0) (2023-02-26)
