@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.13.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.0...v0.13.1) (2023-03-01)
+
 # [0.13.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.12.0...v0.13.0) (2023-02-26)
 
 ### ✨ 新特性
