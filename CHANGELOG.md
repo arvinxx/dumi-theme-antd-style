@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.14.0-beta.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.3...v0.14.0-beta.4) (2023-03-01)
+
+### ✨ 新特性
+
+- footer 支持配置 ([71eef12](https://github.com/arvinxx/dumi-theme-antd-style/commit/71eef12))
+
 # [0.14.0-beta.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.2...v0.14.0-beta.3) (2023-03-01)
 
 ### 👷 构建系统
