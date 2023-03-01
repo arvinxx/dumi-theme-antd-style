@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.14.0-beta.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.2...v0.14.0-beta.3) (2023-03-01)
+
+### 👷 构建系统
+
+- 补充类型定义 ([5effb5a](https://github.com/arvinxx/dumi-theme-antd-style/commit/5effb5a))
+
 # [0.14.0-beta.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0-beta.1...v0.14.0-beta.2) (2023-03-01)
 
 ### 🐛 修复
