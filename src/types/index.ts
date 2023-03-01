@@ -38,7 +38,7 @@ export interface ApiHeaderProps {
 }
 
 export interface ApiHeaderConfig {
-  pkg: string;
+  pkg?: string;
   match?: string[];
   sourceUrl?: string | false;
   docUrl?: string | false;

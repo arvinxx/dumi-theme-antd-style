@@ -39,7 +39,7 @@ export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   };
 
   const {
-    pkg,
+    pkg = s.siteData.pkg.name,
     sourceUrl: sourceUrlMatch,
     docUrl: docUrlMatch,
   } = (s.siteData.themeConfig.apiHeader || {}) as ApiHeaderConfig;
@@ -47,7 +47,7 @@ export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   // 1. 兜底默认使用文档的 apiHeader.pkg
   // 2. 如果 themeConfig 里配置了 pkg， 则使用配置的 pkg
   // 3. 兜底使用 package.json 中的 name
-  const displayPackage = fm.apiHeader?.pkg || pkg || s.siteData.pkg.name;
+  const displayPackage = fm.apiHeader?.pkg || pkg;
 
   // 1. 默认使用文档的 fm.atomId
   // 2. 兜底到文档 title
