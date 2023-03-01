@@ -1,9 +1,9 @@
 ---
-order: 2
 title: Custom Footer
+order: 2
 group:
-title: Configuration
-order: 4
+  title: Configuration
+  order: 4
 ---
 
 # Custom Footer
