@@ -57,6 +57,7 @@ export interface IAction {
 }
 
 export interface IHero {
+  title?: string;
   /**
    * 配置首页首屏区域的简介文字
    */
