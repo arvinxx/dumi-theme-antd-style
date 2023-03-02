@@ -15,9 +15,13 @@ declare global {
 }
 
 /*
- * 为应用开启 SSR 能力
+ * SSR 抽取样式
  */
 const SSRPlugin = (api: IApi) => {
+  api.describe({
+    key: 'dumi-theme-antd-style',
+  });
+
   // 如果没有开启 SSR，则啥也不做
   if (!api.userConfig.ssr) return;
 
