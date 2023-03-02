@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.15.0...v0.15.1) (2023-03-02)
+
+### 🐛 修复
+
+- 修正 markdown 没有 lang 时会报错的问题 ([8182b23](https://github.com/arvinxx/dumi-theme-antd-style/commit/8182b23))
+
 # [0.15.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0...v0.15.0) (2023-03-02)
 
 ### ✨ 新特性
