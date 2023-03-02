@@ -3,19 +3,21 @@ import createEmotionServer from '@emotion/server/create-instance';
 import { EmotionCache } from '@emotion/utils';
 import { CacheManager } from 'antd-style';
 import chalk from 'chalk';
-import { createHash } from 'crypto';
 import type { IApi } from 'dumi';
 import fs from 'fs';
 import { join } from 'path';
+
+import { getHash } from './utils';
 
 declare global {
   // eslint-disable-next-line no-var
   var __ANTD_STYLE_CACHE_MANAGER_FOR_SSR__: CacheManager;
 }
 
-const getHash = (str: string) => createHash('md5').update(str).digest('base64url');
-
-const RoutesPlugin = (api: IApi) => {
+/*
+ * 为应用开启 SSR 能力
+ */
+const SSRPlugin = (api: IApi) => {
   // 如果没有开启 SSR，则啥也不做
   if (!api.userConfig.ssr) return;
 
@@ -105,4 +107,4 @@ const RoutesPlugin = (api: IApi) => {
   );
 };
 
-export default RoutesPlugin;
+export default SSRPlugin;
