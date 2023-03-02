@@ -1,5 +1,15 @@
 # Changelog
 
+# [0.15.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.14.0...v0.15.0) (2023-03-02)
+
+### ✨ 新特性
+
+- 支持开启 SSR 预渲染 ([1fb2667](https://github.com/arvinxx/dumi-theme-antd-style/commit/1fb2667))
+
+### 🐛 修复
+
+- 补充插件 key，修正安装报错 ([e2a0cd6](https://github.com/arvinxx/dumi-theme-antd-style/commit/e2a0cd6))
+
 # [0.14.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.13.1...v0.14.0) (2023-03-01)
 
 ### ✨ 新特性
