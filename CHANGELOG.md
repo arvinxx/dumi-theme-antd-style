@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.16.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.15.1...v0.16.0) (2023-03-03)
+
+### ✨ 新特性
+
+- 支持 codePlacement 语法来控制预览器方向 ([55b461a](https://github.com/arvinxx/dumi-theme-antd-style/commit/55b461a))
+
 ## [0.15.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.15.0...v0.15.1) (2023-03-02)
 
 ### 🐛 修复
