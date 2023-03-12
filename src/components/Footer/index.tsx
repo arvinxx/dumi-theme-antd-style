@@ -8,6 +8,7 @@ export interface FooterProps {
   bottom?: RcProps['bottom'];
   theme?: RcProps['theme'];
 }
+
 const Footer: FC<FooterProps> = ({ columns, bottom, theme }) => {
   const isEmpty = !columns || columns?.length === 0;
 

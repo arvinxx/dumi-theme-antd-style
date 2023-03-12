@@ -1,11 +1,21 @@
 import { CSSProperties, type FC } from 'react';
 
-import FeatureItem from 'dumi-theme-antd-style/components/Features/Item';
 import { IFeature } from '../../types';
+import FeatureItem from './Item';
 import { useStyles } from './style';
 
+/**
+ * @title Features Props
+ */
 export interface FeaturesProps {
+  /**
+   * @title Feature items
+   * @description An array of feature items
+   */
   items: IFeature[];
+  /**
+   * @title Style
+   */
   style?: CSSProperties;
 }
 

@@ -7,12 +7,24 @@ import useControlledState from 'use-merge-value';
 import { AnchorItem } from '../../types';
 import { useStyles } from './style';
 
+/**
+ * @title 目录组件属性
+ */
 export interface TocProps {
+  /**
+   * @title 目录项列表
+   */
   items: AnchorItem[];
+  /**
+   * @title 当前激活的目录项 key 值
+   */
   activeKey?: string;
+  /**
+   * @title 目录项切换的回调函数
+   * @param activeKey - 切换后的目录项 key 值
+   */
   onChange?: (activeKey: string) => void;
 }
-
 const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
   const [activeLink, setActiveLink] = useControlledState<string>('', {
     value: activeKey,
