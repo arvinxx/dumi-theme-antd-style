@@ -5,9 +5,25 @@ nav:
   order: 4
 ---
 
+# 主题配置
+
 `dumi-theme-antd-style` 为了更好地满足自定义诉求，增加了一些特有字段，并将其置于 `dumi` 主题配置项 `themeConfig` 字段中，具体配置字段如下：
 
 ## 基础配置
+
+### name
+
+- 类型：`string`
+- 默认值：`null`
+
+网站名称
+
+### logo
+
+- 类型：`string`
+- 默认值：`null`
+
+网站 logo 图片链接
 
 ### github
 
@@ -16,16 +32,45 @@ nav:
 
 导航栏 Github 图标链接，如不配置该字段，则不展示。
 
-### description
+### hero
+
+- 类型：`IHero | Record<string, IHero>`
+- 默认值：`null`
+
+LP 头部展示，会将配置项透传到 [Hero 组件](/components/hero) 。
+
+如果不配置该字段，则会兜底使用 `index.md` 中的 hero 字段。
+
+```ts
+export default defineConfig({
+  themeConfig: {
+    // 单语言时配置数组即可
+    // hero: { title: 'Ant Design Style', description: 'Ant Design Style' },
+    // 多语言时配置对象，key 为语言名
+    hero: {
+      'zh-CN': {
+        title: 'Ant Design Style',
+        description: 'Ant Design Style',
+      },
+      'en-US': {
+        title: 'Ant Design Style',
+        description: 'Ant Design Style',
+      },
+    },
+  },
+});
+```
+
+#### hero.description
 
 - 类型：`string | Record<string, string>`
 - 默认值：`null`
 
 配置首页首屏区域的简介文字。
 
-### actions
+#### hero.actions
 
-- 类型：`IAction[] | Record<string, IAction[]>`
+- 类型：`IAction[]`
 - 默认值：`null`
 
 ```ts
@@ -38,12 +83,8 @@ interface IAction {
 
 export default defineConfig({
   themeConfig: {
-    // 单语言时配置数组即可
-    // actions: [{text: '开始使用', link: '/guide/introduce'}]
-    // 多语言时配置对象，key 为语言名
-    actions: {
-      'zh-CN': [{ text: '开始使用', link: '/guide/introduce' }],
-      'en-US': [{ text: 'Start', link: '/guide/introduce-en' }],
+    hero: {
+      actions: [{ text: '开始使用', link: '/guide/introduce' }],
     },
   },
 });
@@ -51,39 +92,56 @@ export default defineConfig({
 
 配置首页首屏区域的操作按钮。
 
-### features
+#### hero.features
 
-- 类型：`IFeature[] | Record<string, IFeature[]>`
+- 类型：`IFeature[]`
 - 默认值：`null`
+
+该配置底层使用本主题包的 Feature 组件，详见 [Features](/components/features) 文档。
 
 ```ts
 export default defineConfig({
   themeConfig: {
-    // 单语言时配置数组即可
-    // features: [{ title: '开箱即用'}, { description: '接入简单，安装即使用，全面融入 Ant Design 5.0 风格。'}]
-    // 多语言时配置对象，key 为语言名
-    features: {
-      'zh-CN': [
+    hero: {
+      features: [
         { title: '开箱即用' },
         { description: '接入简单，安装即使用，全面融入 Ant Design 5.0 风格。' },
-      ],
-      'en-US': [
-        { title: 'Simple Use' },
-        {
-          description:
-            'Simple access, installation and use, fully integrated into Ant Design 5.0 style.',
-        },
       ],
     },
   },
 });
 ```
 
-该配置底层使用本主题包的 Feature 组件，详见 [Features](/components/features) 文档。
+### footer
+
+- 类型：`string | false`
+- 默认值：`null`
+
+网站页脚，如果配置为 false ，将完全关闭 footer。
+
+### footerConfig
+
+- 类型：`IFooter`
+- 默认值：`null`
+
+网站页脚的完整配置，会将配置项透传到 [Footer 组件](/components/footer) 。
+
+`IFooter` 详细配置如下：
+
+| 名称    | 类型                      | 描述                         |
+| ------- | ------------------------- | ---------------------------- |
+| bottom  | string                    | 底部内容                     |
+| theme   | `dark`、 `light`          | 主题，可选值为 dark 或 light |
+| columns | `FooterColumn[]`/ `false` | 列配置                       |
 
 ## 高级配置
 
 ### apiHeader
+
+- 类型：`ApiHeaderConfig | false`
+- 默认值：`null`
+
+API 文档页头部配置
 
 搭配组件文档中的 atomId 字段
 
@@ -91,13 +149,6 @@ export default defineConfig({
 - 默认值：`undefined`
 
 ```ts
-interface ApiHeaderConfig {
-  pkg: string;
-  match?: string[];
-  sourceUrl?: string | false;
-  docUrl?: string | false;
-}
-
 export default defineConfig({
   themeConfig: {
     apiHeader: {
@@ -113,15 +164,27 @@ export default defineConfig({
 });
 ```
 
-sourceUrl 和 docUrl 可以尝试匹配的动态字段有：
+其中 `ApiHeaderConfig` 的配置如下：
 
-- `github`: 在 themeConfig 中配置的 github 字段；
-- `atomId`: 在 markdown 文件中标记的 atomId ；
-- `title`: 在 markdown 文件中标记的 title 字段 ；
+| 名称      | 类型               | 描述                                                                |
+| --------- | ------------------ | ------------------------------------------------------------------- |
+| pkg       | string             | 组件库包名，可以从 package.json 中引入名称                          |
+| match     | string[]           | ApiHeader 组件的匹配路由，默认为 ["/api", "/components"]            |
+| sourceUrl | `string` / `false` | 点击 ApiHeader 组件的源代码链接跳转的地址，如果不需要链接则为 false |
+| docUrl    | `string` / `false` | 点击 ApiHeader 组件的文档链接跳转的地址，如果不需要链接则为 false   |
+
+`sourceUrl` 和 `docUrl` 可以尝试匹配的动态字段有：
+
+- `github`: 在 themeConfig 中配置的 `github` 字段；
+- `atomId`: 在 markdown 文件中标记的 `atomId` ；
+- `title`: 在 markdown 文件中标记的 `title` 字段 ；
 
 ### syntaxTheme
 
-配置代码高亮主题
+- 类型：`HighlighterSyntaxTheme`
+- 默认值：`null`
+
+代码高亮主题配置
 
 - 类型：`HighlighterSyntaxTheme`
 - 默认值：`undefined`

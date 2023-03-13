@@ -66,6 +66,7 @@ export default defineConfig({
   alias: {
     'dumi-theme-antd-style': path.join(__dirname, '../src'),
   },
+  mfsu: false,
   extraBabelPlugins: ['@emotion'],
   styles: [
     `html, body { background: transparent;  }
