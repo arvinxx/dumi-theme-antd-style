@@ -1,32 +1,63 @@
 import { EditOutlined, GithubFilled } from '@ant-design/icons';
 import { Divider, Space, Typography } from 'antd';
 import { useResponsive } from 'antd-style';
-import { FC, memo, ReactNode, useMemo } from 'react';
+import { FC, memo, ReactNode } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';
-import BundlephobiaFilled from './BundlephobiaFilled';
-import Graph from './Graph';
-import NpmFilled from './NpmFilled';
-import PackagePhobia from './PackagePhobia';
-import Unpkg from './Unpkg';
 
 import { ApiHeaderProps } from 'dumi-theme-antd-style/src';
 import { useStyles } from './style';
 
+/**
+ * @title API 标题属性
+ * @extends ApiHeaderProps
+ */
 export interface ApiTitleProps extends ApiHeaderProps {
+  /**
+   * @title 标题
+   */
   title: string;
+  /**
+   * @title 服务列表
+   * @description 可选，若存在则展示 API 服务列表
+   */
+  serviceList?: ServiceItem[];
 }
 
-interface Item {
+/**
+ * @title 服务项
+ */
+export interface ServiceItem {
+  /**
+   * @title 服务标签
+   */
   label: string;
+  /**
+   * @title 服务图标
+   */
   icon: ReactNode;
+  /**
+   * @title 服务描述
+   */
   children: string;
+  /**
+   * @title 服务链接
+   */
   url: string;
 }
 
 export const ApiHeader: FC<ApiTitleProps> = memo(
-  ({ title, componentName, description, defaultImport, pkg, sourceUrl, docUrl }) => {
+  ({
+    title,
+    componentName,
+    description,
+    defaultImport,
+    pkg,
+    sourceUrl,
+    docUrl,
+    serviceList = [],
+  }) => {
     const { styles } = useStyles();
     const { mobile } = useResponsive();
 
@@ -41,44 +72,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
         children: '编辑文档',
         url: docUrl,
       },
-    ].filter((i) => i) as Item[];
-
-    const packages = useMemo(
-      () => [
-        {
-          label: 'NPM',
-          icon: <NpmFilled />,
-          children: 'NPM',
-          url: `https://www.npmjs.com/package/${pkg}`,
-        },
-        {
-          label: '预览产物',
-          icon: <Unpkg />,
-          children: 'UNPKG',
-          url: `https://unpkg.com/browse/${pkg}/`,
-        },
-        {
-          label: '查阅产物体积',
-          icon: <BundlephobiaFilled />,
-          children: 'BundlePhobia',
-          url: `https://bundlephobia.com/package/${pkg}`,
-        },
-        {
-          label: '查阅安装包体积',
-          icon: <PackagePhobia />,
-          children: 'PackagePhobia',
-          url: `https://packagephobia.com/result?p=${pkg}`,
-        },
-
-        {
-          label: '分析依赖图',
-          icon: <Graph />,
-          children: 'Anvaka Graph',
-          url: `https://npm.anvaka.com/#/view/2d/${pkg}`,
-        },
-      ],
-      [pkg],
-    );
+    ].filter((i) => i) as ServiceItem[];
 
     const importStr = defaultImport
       ? `import ${componentName} from '${pkg}';`
@@ -108,7 +102,7 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
           <Divider dashed style={{ margin: '2px 0' }} />
           <Flexbox horizontal={!mobile} gap={mobile ? 24 : 0} distribution={'space-between'}>
             <Space split={<Divider type={'vertical'} />} wrap>
-              {packages.map((item) => (
+              {serviceList.map((item) => (
                 <a
                   key={item.label}
                   href={item.url}

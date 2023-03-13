@@ -9,10 +9,10 @@ import Footer from 'dumi/theme/slots/Footer';
 import Header from 'dumi/theme/slots/Header';
 import Sidebar from 'dumi/theme/slots/Sidebar';
 import Toc from 'dumi/theme/slots/Toc';
+// @ts-ignore
+import ApiHeader from 'dumi/theme/slots/ApiHeader';
 
-import { ApiHeader } from '../../components/ApiHeader';
-
-import { apiHeaderSel, isApiPageSel, siteTitleSel, useSiteStore } from '../../store';
+import { isApiPageSel, siteTitleSel, useSiteStore } from '../../store';
 import { useStyles } from './styles';
 
 const Docs: FC = memo(() => {
@@ -21,7 +21,6 @@ const Docs: FC = memo(() => {
   const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const isApiPage = useSiteStore(isApiPageSel);
   const siteTitle = useSiteStore(siteTitleSel);
-  const apiHeaderProps = useSiteStore(apiHeaderSel);
 
   const { styles, theme } = useStyles();
 
@@ -45,7 +44,7 @@ const Docs: FC = memo(() => {
           <Center>
             <Flexbox style={{ maxWidth: theme.contentMaxWidth, width: '100%' }}>
               <Flexbox style={{ paddingBlock: 0, paddingInline: mobile ? 16 : 48 }}>
-                <ApiHeader {...apiHeaderProps} />
+                <ApiHeader />
               </Flexbox>
             </Flexbox>
           </Center>
