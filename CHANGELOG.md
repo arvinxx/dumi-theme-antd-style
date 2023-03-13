@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.17.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.16.0...v0.17.0) (2023-03-13)
+
+### ✨ 新特性
+
+- 添加 ApiHeader slot，支持外部替换 serviceList ([05c1f07](https://github.com/arvinxx/dumi-theme-antd-style/commit/05c1f07))
+
 # [0.16.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.15.1...v0.16.0) (2023-03-03)
 
 ### ✨ 新特性
