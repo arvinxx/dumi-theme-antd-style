@@ -18,13 +18,13 @@ group: 功能组件
 
 | 名称          | 类型            | 描述                             |
 | ------------- | --------------- | -------------------------------- |
-| title         | string          | ApiTitle 组件的标题              |
-| pkg           | string          | ApiTitle 组件所在的包名          |
+| title         | string          | ApiHeader 组件的标题             |
+| pkg           | string          | ApiHeader 组件所在的包名         |
 | defaultImport | boolean         | 是否默认导入组件，默认为 `false` |
-| description   | string          | ApiTitle 组件的描述信息          |
-| sourceUrl     | string          | ApiTitle 组件源代码的链接        |
-| docUrl        | string          | ApiTitle 组件文档的链接          |
-| componentName | string          | ApiTitle 组件的名称              |
+| description   | string          | ApiHeader 组件的描述信息         |
+| sourceUrl     | string          | ApiHeader 组件源代码的链接       |
+| docUrl        | string          | ApiHeader 组件文档的链接         |
+| componentName | string          | ApiHeader 组件的名称             |
 | serviceList   | `ServiceItem[]` | 可选，若存在则展示 API 服务列表  |
 
 ### ServiceItem
