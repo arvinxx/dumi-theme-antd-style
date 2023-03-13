@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.18.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.17.0...v0.18.0) (2023-03-13)
+
+### ✨ 新特性
+
+- 导出主题包的 useSiteStore 与部分 selectors，供外部自定义使用 ([ebf672c](https://github.com/arvinxx/dumi-theme-antd-style/commit/ebf672c))
+
 # [0.17.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.16.0...v0.17.0) (2023-03-13)
 
 ### ✨ 新特性
