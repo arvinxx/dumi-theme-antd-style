@@ -16,8 +16,22 @@ group: 功能组件
 
 ## API
 
-| 属性名      | 描述                                 | 类型                               | 默认值      |
-| ----------- | ------------------------------------ | ---------------------------------- | ----------- |
-| title       | 标题                                 | `string`                           | `undefined` |
-| description | 描述                                 | `string`                           | `undefined` |
-| actions     | 行动点，第一个 action 默认为 primary | `{ text: string; link: string }[]` | `undefined` |
+| 名称          | 类型            | 描述                             |
+| ------------- | --------------- | -------------------------------- |
+| title         | string          | ApiTitle 组件的标题              |
+| pkg           | string          | ApiTitle 组件所在的包名          |
+| defaultImport | boolean         | 是否默认导入组件，默认为 `false` |
+| description   | string          | ApiTitle 组件的描述信息          |
+| sourceUrl     | string          | ApiTitle 组件源代码的链接        |
+| docUrl        | string          | ApiTitle 组件文档的链接          |
+| componentName | string          | ApiTitle 组件的名称              |
+| serviceList   | `ServiceItem[]` | 可选，若存在则展示 API 服务列表  |
+
+### ServiceItem
+
+| 名称     | 类型      | 描述     |
+| -------- | --------- | -------- |
+| label    | string    | 服务标签 |
+| icon     | ReactNode | 服务图标 |
+| children | string    | 服务描述 |
+| url      | string    | 服务链接 |
