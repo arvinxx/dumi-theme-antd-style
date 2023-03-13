@@ -16,4 +16,8 @@ group:
 
 ## API
 
-请查阅类型定义
+| 名称    | 类型                 | 描述                             |
+| ------- | -------------------- | -------------------------------- |
+| columns | `RcProps['columns']` | 列配置                           |
+| bottom  | `RcProps['bottom']`  | 底部内容                         |
+| theme   | `RcProps['theme']`   | 主题，可选值为 `dark` 或 `light` |
