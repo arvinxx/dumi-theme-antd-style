@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.0...v0.19.1) (2023-03-14)
+
+### 🐛 修复
+
+- 补充 Footer 中的 Ant Design 官网 ([89dd147](https://github.com/arvinxx/dumi-theme-antd-style/commit/89dd147))
+
 # [0.19.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.18.0...v0.19.0) (2023-03-14)
 
 ### ✨ 新特性
