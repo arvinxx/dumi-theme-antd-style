@@ -17,6 +17,11 @@ export const getColumns = ({ github }: GetColumnParams) => {
     title: '相关资源',
     items: [
       {
+        title: 'Ant Design',
+        url: 'https://ant.design',
+        openExternal: true,
+      },
+      {
         title: 'Ant Design Pro',
         url: 'https://pro.ant.design',
         openExternal: true,
