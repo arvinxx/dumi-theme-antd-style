@@ -1,5 +1,5 @@
 ---
-title: Custom Footer
+title: Footer
 order: 2
 group:
   title: Configuration

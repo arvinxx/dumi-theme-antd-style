@@ -1,9 +1,7 @@
 ---
+title: Footer
 order: 2
-title: 自定义 Footer
-group:
-  title: 配置
-  order: 4
+group: 自定义
 ---
 
 # 自定义 Footer

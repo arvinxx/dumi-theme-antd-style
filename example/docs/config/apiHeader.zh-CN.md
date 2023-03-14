@@ -11,6 +11,8 @@ nav: 配置
 在 `.dumi/theme/slots` 目录下创建 `ApiHeader` 文件夹，并添加 `index.tsx` 文件。然后添加以下代码，即可自定义 ApiHeader 的展示：
 
 ```tsx | pure
+//.dumi/theme/slots/ApiHeader/index.tsx
+
 import { SmileOutlined } from '@ant-design/icons';
 import { ApiHeader as Header, siteSelectors, useSiteStore } from 'dumi-theme-antd-style';
 import { FC, memo } from 'react';
