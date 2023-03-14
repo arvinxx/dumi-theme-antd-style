@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.19.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.18.0...v0.19.0) (2023-03-14)
+
+### ✨ 新特性
+
+- 支持自定义主题 token 的初始值配置 ([5324555](https://github.com/arvinxx/dumi-theme-antd-style/commit/5324555)), closes [#9](https://github.com/arvinxx/dumi-theme-antd-style/issues/9)
+
 # [0.18.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.17.0...v0.18.0) (2023-03-13)
 
 ### ✨ 新特性
