@@ -12,7 +12,7 @@ nav: 配置
 
 ```tsx | pure
 import { SmileOutlined } from '@ant-design/icons';
-import { ApiHeader as Header, siteSelectors, useSiteStore } from 'dumi-theme-antdstyle';
+import { ApiHeader as Header, siteSelectors, useSiteStore } from 'dumi-theme-antd-style';
 import { FC, memo } from 'react';
 
 const ApiHeader: FC = memo(() => {

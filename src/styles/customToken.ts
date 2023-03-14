@@ -7,10 +7,10 @@ declare module 'antd-style' {
 }
 
 /**
- * @title 站点令牌
+ * @title 站点主题 Token
  * @description 站点的一些基础配置信息
  */
-interface SiteToken {
+export interface SiteToken {
   /**
    * @title 头部高度
    */
@@ -62,7 +62,7 @@ interface SiteToken {
   fontFamilyHighlighter: string;
 }
 
-export const getCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token }) => {
+export const createCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token }) => {
   const gradientColor1 = token.blue;
   const gradientColor2 = isDarkMode ? token.pink : token.cyan;
   const gradientColor3 = token.purple;

@@ -1,9 +1,9 @@
 import animateScrollTo from 'animated-scroll-to';
 import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { memo, StrictMode, useEffect, type FC } from 'react';
+import { memo, PropsWithChildren, StrictMode, useEffect, type FC } from 'react';
 
-import SiteProvider from '../../components/DumiSiteProvider';
+import DumiSiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
 
 import Docs from '../../pages/Docs';
@@ -53,12 +53,17 @@ const DocLayout: FC = memo(() => {
   );
 });
 
+const THemeProvider = ({ children }: PropsWithChildren) => {
+  const siteToken = useSiteStore((s) => s.siteData.themeConfig.siteToken, isEqual);
+  return <DumiSiteProvider token={siteToken}>{children}</DumiSiteProvider>;
+};
+
 export default () => (
   <StrictMode>
-    <SiteProvider>
-      <StoreUpdater />
+    <StoreUpdater />
+    <THemeProvider>
       <GlobalStyle />
       <DocLayout />
-    </SiteProvider>
+    </THemeProvider>
   </StrictMode>
 );

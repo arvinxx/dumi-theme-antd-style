@@ -229,3 +229,32 @@ export default defineConfig({
   },
 });
 ```
+
+### siteToken
+
+- 类型：`SiteConfigToken`
+- 默认值：`undefined`
+
+网站主题 Token 配置，该配置会传递给 [DumiSiteProvider](/components/dumi-site-provider) 组件
+
+```ts
+export default defineConfig({
+  themeConfig: {
+    siteToken: {
+      headerHeight: 64,
+      footerHeight: 300,
+      sidebarWidth: 240,
+      tocWidth: 176,
+      contentMaxWidth: 1152,
+    },
+  },
+});
+```
+
+| 属性名          | 类型     | 默认值 | 描述         |
+| --------------- | -------- | ------ | ------------ |
+| headerHeight    | `number` | `64`   | 网站头部高度 |
+| footerHeight    | `number` | `300`  | 网站底部高度 |
+| sidebarWidth    | `number` | `240`  | 侧边栏宽度   |
+| tocWidth        | `number` | `176`  | 目录宽度     |
+| contentMaxWidth | `number` | `1152` | 内容最大宽度 |

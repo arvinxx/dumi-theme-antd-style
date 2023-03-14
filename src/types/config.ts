@@ -1,3 +1,4 @@
+import { SiteToken } from 'dumi-theme-antd-style/styles';
 import { FooterColumn } from 'rc-footer/es/column';
 import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
 
@@ -62,4 +63,12 @@ export interface SiteThemeConfig {
    * @type HighlighterSyntaxTheme
    */
   syntaxTheme?: HighlighterSyntaxTheme;
+  /**
+   * 网站主题 Token 配置
+   */
+  siteToken?: SiteConfigToken;
 }
+
+export type SiteConfigToken = Partial<
+  Pick<SiteToken, 'headerHeight' | 'footerHeight' | 'sidebarWidth' | 'tocWidth' | 'contentMaxWidth'>
+>;
