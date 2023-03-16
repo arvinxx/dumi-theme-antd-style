@@ -65,6 +65,7 @@
     "@floating-ui/react": "^0.17",
     "animated-scroll-to": "^2",
     "antd-style": "beta",
+    "ahooks": "^3",
     "chalk": "^4",
     "chroma-js": "^2",
     "copy-to-clipboard": "^3",
