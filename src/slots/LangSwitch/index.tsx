@@ -92,7 +92,7 @@ const LangSwitch: FC = () => {
       onChange={(index) => {
         console.log(
           getTargetLocalePath({
-            pathname: history.location.pathname,
+            pathname: location.pathname,
             current,
             target: locales[index],
           }),
@@ -100,7 +100,7 @@ const LangSwitch: FC = () => {
 
         history.push(
           getTargetLocalePath({
-            pathname: history.location.pathname,
+            pathname: location.pathname,
             current,
             target: locales[index],
           }),
