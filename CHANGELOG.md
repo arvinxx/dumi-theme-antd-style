@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.1...v0.19.2) (2023-03-17)
+
+### 🐛 修复
+
+- 修正 contentMaxWidth 不支持字符串的问题 ([7784d4a](https://github.com/arvinxx/dumi-theme-antd-style/commit/7784d4a))
+
 ## [0.19.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.0...v0.19.1) (2023-03-14)
 
 ### 🐛 修复
