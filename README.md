@@ -18,8 +18,8 @@
 
 <!-- npm url -->
 
-[npm-image]: http://img.shields.io/npm/v/dumi-theme-antd-style.svg?style=flat-square&color=deepgreen&label=latest
-[npm-url]: http://npmjs.org/package/dumi-theme-antd-style
+[npm-image]: https://img.shields.io/npm/v/dumi-theme-antd-style.svg?style=flat-square&color=deepgreen&label=latest
+[npm-url]: https://npmjs.org/package/dumi-theme-antd-style
 [npm-size]: https://img.shields.io/bundlephobia/minzip/dumi-theme-antd-style?color=deepgreen&label=gizpped%20size&style=flat-square
 [npm-size-url]: https://packagephobia.com/result?p=dumi-theme-antd-style
 
