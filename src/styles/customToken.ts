@@ -31,7 +31,7 @@ export interface SiteToken {
    * @title 内容最大宽度
    * @description 文本内容的最大宽度 1152
    */
-  contentMaxWidth: number;
+  contentMaxWidth: number | string;
   /**
    * @title 渐变色1
    */

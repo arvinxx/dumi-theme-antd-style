@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({ css, responsive, token }) => ({
+export const useStyles = createStyles(({ css, cx, responsive, token }) => ({
   layout: css`
     background-color: ${token.colorBgLayout};
     background-image: linear-gradient(
@@ -51,18 +51,17 @@ export const useStyles = createStyles(({ css, responsive, token }) => ({
     }
   `,
 
-  content: css`
-    max-width: 960px;
-    width: 100%;
-    margin: 0 24px;
-
-    ${responsive.desktop} {
-      max-width: ${token.contentMaxWidth}px;
-    }
-
-    ${responsive.mobile} {
-      margin: 0;
-    }
-  }
-  `,
+  content: cx(
+    css`
+      max-width: 960px;
+      width: 100%;
+      margin: 0 24px;
+    `,
+    css(
+      responsive({
+        desktop: { maxWidth: token.contentMaxWidth },
+        mobile: { margin: 0 },
+      }),
+    ),
+  ),
 }));
