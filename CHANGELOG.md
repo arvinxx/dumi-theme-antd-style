@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.2...v0.19.3) (2023-03-19)
+
+### 🐛 修复
+
+- 支持 18 以下的 React 版本 ([bde6e23](https://github.com/arvinxx/dumi-theme-antd-style/commit/bde6e23)), closes [#11](https://github.com/arvinxx/dumi-theme-antd-style/issues/11) [#10](https://github.com/arvinxx/dumi-theme-antd-style/issues/10)
+
 ## [0.19.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.1...v0.19.2) (2023-03-17)
 
 ### 🐛 修复
