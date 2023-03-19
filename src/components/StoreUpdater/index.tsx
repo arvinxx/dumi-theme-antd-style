@@ -7,12 +7,31 @@ import {
   useSiteData,
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { memo, startTransition, useEffect } from 'react';
+import { useDebounceEffect } from 'ahooks';
+import React, { memo, useEffect } from 'react';
 import { SiteStore, useSiteStore } from '../../store/useSiteStore';
 
 const isBrowser = typeof window !== 'undefined';
 
 const SSRInit: Record<string, boolean> = {};
+
+const useReact18xUpdater = (effect: React.EffectCallback, deps?: React.DependencyList) => {
+  useEffect(() => {
+    (React as any).startTransition(() => {
+      effect();
+    });
+  }, deps);
+};
+const useLegacyUpdater = (effect: React.EffectCallback, deps?: React.DependencyList) => {
+  useDebounceEffect(
+    () => {
+      effect();
+    },
+    deps,
+    { wait: 32, maxWait: 96 },
+  );
+};
+const useUpdater = typeof (React as any).startTransition === 'function' ? useReact18xUpdater : useLegacyUpdater;
 
 const useSyncState = <T extends keyof SiteStore>(
   key: T,
@@ -30,10 +49,8 @@ const useSyncState = <T extends keyof SiteStore>(
     SSRInit[key] = true;
   }
 
-  useEffect(() => {
-    startTransition(() => {
-      updater(key, value);
-    });
+  useUpdater(() => {
+    updater(key, value);
   }, [value]);
 };
 
