@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({ css, cx, responsive, token }) => ({
+export const useStyles = createStyles(({ css, cx, responsive, token }, hideToc: boolean) => ({
   layout: css`
     background-color: ${token.colorBgLayout};
     background-image: linear-gradient(
@@ -9,12 +9,12 @@ export const useStyles = createStyles(({ css, cx, responsive, token }) => ({
       rgba(255, 255, 255, 0) 10%
     );
     display: grid;
-    grid-template-columns: ${token.sidebarWidth}px 1fr ${token.tocWidth + 24}px;
+    grid-template-columns: ${token.sidebarWidth}px 1fr ${hideToc ? '' : `${token.tocWidth + 24}px`};
     grid-template-rows: ${token.headerHeight}px auto 1fr auto;
     grid-template-areas:
       'head head head'
       'sidebar title .'
-      'sidebar main toc'
+      'sidebar main ${hideToc ? 'main' : 'toc'}'
       'sidebar footer footer';
     min-height: 100vh;
 

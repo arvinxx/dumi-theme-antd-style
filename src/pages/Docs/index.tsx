@@ -12,7 +12,7 @@ import Toc from 'dumi/theme/slots/Toc';
 // @ts-ignore
 import ApiHeader from 'dumi/theme/slots/ApiHeader';
 
-import { isApiPageSel, siteTitleSel, useSiteStore } from '../../store';
+import { isApiPageSel, siteTitleSel, tocAnchorItemSel, useSiteStore } from '../../store';
 import { useStyles } from './styles';
 
 const Docs: FC = memo(() => {
@@ -22,7 +22,10 @@ const Docs: FC = memo(() => {
   const isApiPage = useSiteStore(isApiPageSel);
   const siteTitle = useSiteStore(siteTitleSel);
 
-  const { styles, theme } = useStyles();
+  const noToc = useSiteStore((s) => tocAnchorItemSel(s).length === 0);
+  const hideToc = fm.toc === false || noToc;
+
+  const { styles, theme } = useStyles(hideToc);
 
   return (
     <div className={styles.layout}>
@@ -35,7 +38,7 @@ const Docs: FC = memo(() => {
       </Helmet>
       <Header />
 
-      <Toc />
+      {hideToc ? null : <Toc />}
 
       {mobile ? null : <Sidebar />}
 
