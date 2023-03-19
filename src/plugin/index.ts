@@ -20,7 +20,7 @@ const SSRPlugin = (api: IApi) => {
   api.logger.info('detect ssr config, when building html will extract css.');
 
   const writeCSSFile = (key: string, hashKey: string, cssString: string) => {
-    const fileName = `ssr-${key}-${getHash(hashKey)}.css`;
+    const fileName = `ssr-${key}.${getHash(hashKey)}.css`;
 
     const filePath = join(api.paths.absOutputPath, fileName);
 
@@ -43,8 +43,10 @@ const SSRPlugin = (api: IApi) => {
       .filter((f) => !f.path.includes(':'))
 
       .map((file) => {
+        const antdCache = (global as any).__ANTD_CACHE__;
+
         // 提取 antd-style 样式到独立 css 文件
-        const styles = extractStaticStyle(file.content, { includeAntd: false });
+        const styles = extractStaticStyle(file.content, { antdCache });
 
         styles.forEach((result) => {
           api.logger.event(

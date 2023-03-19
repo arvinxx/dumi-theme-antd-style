@@ -1,4 +1,5 @@
 import animateScrollTo from 'animated-scroll-to';
+import { extractStaticStyle } from 'antd-style';
 import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { memo, PropsWithChildren, StrictMode, useEffect, type FC } from 'react';
@@ -53,10 +54,13 @@ const DocLayout: FC = memo(() => {
   );
 });
 
+// @ts-ignore
+global.__ANTD_CACHE__ = extractStaticStyle.cache;
+
 const ThemeProvider = ({ children }: PropsWithChildren) => {
   const siteToken = useSiteStore((s) => s.siteData.themeConfig.siteToken, isEqual);
   return (
-    <DumiSiteProvider ssrInline token={siteToken}>
+    <DumiSiteProvider cache={extractStaticStyle.cache} token={siteToken}>
       {children}
     </DumiSiteProvider>
   );

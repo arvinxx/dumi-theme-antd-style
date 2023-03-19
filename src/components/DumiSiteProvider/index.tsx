@@ -2,9 +2,9 @@ import { App } from 'antd';
 
 import { ThemeProvider, ThemeProviderProps } from './ThemeProvider';
 
-export default ({ children, token, ssrInline }: ThemeProviderProps) => {
+export default ({ children, ...props }: ThemeProviderProps) => {
   return (
-    <ThemeProvider token={token} ssrInline={ssrInline}>
+    <ThemeProvider {...props}>
       <App>{children}</App>
     </ThemeProvider>
   );
