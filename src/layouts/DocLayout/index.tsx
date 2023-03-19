@@ -53,17 +53,21 @@ const DocLayout: FC = memo(() => {
   );
 });
 
-const THemeProvider = ({ children }: PropsWithChildren) => {
+const ThemeProvider = ({ children }: PropsWithChildren) => {
   const siteToken = useSiteStore((s) => s.siteData.themeConfig.siteToken, isEqual);
-  return <DumiSiteProvider token={siteToken}>{children}</DumiSiteProvider>;
+  return (
+    <DumiSiteProvider ssrInline token={siteToken}>
+      {children}
+    </DumiSiteProvider>
+  );
 };
 
 export default () => (
   <StrictMode>
     <StoreUpdater />
-    <THemeProvider>
+    <ThemeProvider>
       <GlobalStyle />
       <DocLayout />
-    </THemeProvider>
+    </ThemeProvider>
   </StrictMode>
 );

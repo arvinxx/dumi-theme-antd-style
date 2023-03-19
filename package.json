@@ -56,7 +56,6 @@
     ]
   },
   "dependencies": {
-    "@ant-design/cssinjs": "^1",
     "@babel/runtime": "^7",
     "@emotion/css": "^11",
     "@emotion/server": "^11",

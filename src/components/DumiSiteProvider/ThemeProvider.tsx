@@ -8,9 +8,10 @@ import { SiteConfigToken } from '../../types';
 export interface ThemeProviderProps {
   token?: Partial<SiteConfigToken>;
   children?: ReactNode;
+  ssrInline?: boolean;
 }
 
-export const ThemeProvider = ({ children, token }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children, token, ssrInline }: ThemeProviderProps) => {
   const themeMode = useThemeStore((s) => s.themeMode);
 
   const getCustomToken = useCallback(
@@ -27,7 +28,11 @@ export const ThemeProvider = ({ children, token }: ThemeProviderProps) => {
   );
 
   return (
-    <StyleProvider speedy={process.env.NODE_ENV === 'production'} prefix={'site'}>
+    <StyleProvider
+      speedy={process.env.NODE_ENV === 'production'}
+      prefix={'site'}
+      ssrInline={ssrInline}
+    >
       <Provider
         prefixCls={'site'}
         themeMode={themeMode}
