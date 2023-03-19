@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.3...v0.19.4) (2023-03-19)
+
+### 👷 构建系统
+
+- 基于 antd-style 重构 ssr 实现 ([df34526](https://github.com/arvinxx/dumi-theme-antd-style/commit/df34526)), closes [#17](https://github.com/arvinxx/dumi-theme-antd-style/issues/17)
+
 ## [0.19.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.2...v0.19.3) (2023-03-19)
 
 ### 🐛 修复
