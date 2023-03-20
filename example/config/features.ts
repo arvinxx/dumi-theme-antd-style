@@ -33,7 +33,7 @@ export const featuresZh: IFeature[] = [
       '本主题包提供准确、精美的语法高亮特性。底层采用了现代化的语法高亮库 Shiki 与 Prism，并提供了丰富的代码高亮方案，帮助用户更好地阅读代码 <quotient>后续会考虑支持代码块片段高亮、关键词高亮等特性</quotient>',
     link: '/guide/syntax-highlighter',
     image:
-      'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*9iAFQaSgf8sAAAAAAAAAAAAADoN6AQ/original',
+      'https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*1qLNRrRGFsQAAAAAAAAAAAAADoN6AQ/original',
     imageType: 'primary',
     row: 9,
   },
