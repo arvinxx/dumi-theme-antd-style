@@ -1,6 +1,6 @@
 import { ArrowDownOutlined, MenuOutlined } from '@ant-design/icons';
 import { Anchor, Collapse, ConfigProvider } from 'antd';
-import { useResponsive } from 'antd-style';
+import { useResponsive, useTheme } from 'antd-style';
 import { memo, useMemo, type FC } from 'react';
 import useControlledState from 'use-merge-value';
 
@@ -33,6 +33,7 @@ const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
   const { styles } = useStyles();
   const { mobile } = useResponsive();
 
+  const theme = useTheme();
   const activeAnchor = items.find((item) => item.id === activeLink);
 
   const linkItems = useMemo(
@@ -71,6 +72,7 @@ const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
                   onChange={(currentLink) => {
                     setActiveLink(currentLink.replace('#', ''));
                   }}
+                  targetOffset={theme.headerHeight + 12}
                   items={linkItems}
                 />
               </ConfigProvider>

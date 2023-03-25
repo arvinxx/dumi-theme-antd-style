@@ -1,4 +1,3 @@
-import animateScrollTo from 'animated-scroll-to';
 import { extractStaticStyle } from 'antd-style';
 import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
@@ -29,10 +28,8 @@ const DocLayout: FC = memo(() => {
         const elm = document.getElementById(decodeURIComponent(id));
 
         if (elm) {
-          // animated-scroll-to instead of native scroll
-          animateScrollTo(elm.offsetTop - 80, {
-            maxDuration: 300,
-          });
+          elm.scrollIntoView();
+          window.scrollBy({ top: -80 });
         }
       }, 1);
     }
