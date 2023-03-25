@@ -2,6 +2,9 @@
 order: 2
 title: Theme 主题
 group: 特性
+token:
+  contentMaxWidth: 1440
+  sidebarWidth: 200
 ---
 
 # 主题
