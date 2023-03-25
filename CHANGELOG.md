@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.20.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.7...v0.20.0) (2023-03-25)
+
+### ✨ 新特性
+
+- 支持 sidebar:false 的 markdown 配置 ([9c5102c](https://github.com/arvinxx/dumi-theme-antd-style/commit/9c5102c))
+- 支持 tocDepth 的 markdown 配置 ([16c1e89](https://github.com/arvinxx/dumi-theme-antd-style/commit/16c1e89))
+- 支持文档级别的 token 配置 ([438e260](https://github.com/arvinxx/dumi-theme-antd-style/commit/438e260))
+
+### 🐛 修复
+
+- 修正锚点滚动后位置仍然看不到的问题 ([0e6b2ad](https://github.com/arvinxx/dumi-theme-antd-style/commit/0e6b2ad))
+
 ## [0.19.7](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.6...v0.19.7) (2023-03-25)
 
 ### 🐛 修复
