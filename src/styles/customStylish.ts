@@ -17,6 +17,7 @@ export interface SiteStylish {
   heroBlurBall: string;
 
   iconGradientDefault: string;
+  blur: string;
 }
 
 export const getCustomStylish: GetCustomStylish<SiteStylish> = ({ css, token, isDarkMode }) => {
@@ -105,5 +106,10 @@ export const getCustomStylish: GetCustomStylish<SiteStylish> = ({ css, token, is
         ${rgba(token.colorSolid, 0.2)} 0,
         ${rgba(token.colorSolid, 0.1)} 100%
       )`,
+
+    blur: css`
+      backdrop-filter: blur(7px);
+      // background: ${rgba(token.colorBgBase, 0.5)};
+    `,
   };
 };

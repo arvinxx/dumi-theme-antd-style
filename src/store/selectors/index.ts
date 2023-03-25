@@ -4,6 +4,7 @@ import { SiteStore } from '../useSiteStore';
 
 export * from './apiHeader';
 export * from './hero';
+export * from './token';
 
 /**
  * 站点标题选择器
@@ -26,9 +27,19 @@ export const activePathSel = (s: SiteStore) => {
  */
 export const tocAnchorItemSel = (s: SiteStore) =>
   s.routeMeta.toc.reduce<AnchorItem[]>((result, item) => {
-    if (item.depth === 2) {
+    const shouldKeepWith = (depth: number) => {
+      if (!s.routeMeta.frontmatter.tocDepth) return true;
+
+      if (
+        typeof s.routeMeta.frontmatter.tocDepth === 'number' &&
+        s.routeMeta.frontmatter.tocDepth > depth - 1
+      )
+        return true;
+    };
+
+    if (item.depth === 2 && shouldKeepWith(2)) {
       result.push({ ...item });
-    } else if (item.depth === 3) {
+    } else if (item.depth === 3 && shouldKeepWith(3)) {
       const parent = result[result.length - 1];
       if (parent) {
         parent.children = parent.children || [];

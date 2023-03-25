@@ -1,4 +1,3 @@
-import animateScrollTo from 'animated-scroll-to';
 import { extractStaticStyle } from 'antd-style';
 import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
@@ -10,7 +9,7 @@ import { StoreUpdater } from '../../components/StoreUpdater';
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
 
-import { isHeroPageSel, useSiteStore } from '../../store';
+import { isHeroPageSel, tokenSel, useSiteStore } from '../../store';
 import { GlobalStyle } from './styles';
 
 const DocLayout: FC = memo(() => {
@@ -29,10 +28,8 @@ const DocLayout: FC = memo(() => {
         const elm = document.getElementById(decodeURIComponent(id));
 
         if (elm) {
-          // animated-scroll-to instead of native scroll
-          animateScrollTo(elm.offsetTop - 80, {
-            maxDuration: 300,
-          });
+          elm.scrollIntoView();
+          window.scrollBy({ top: -80 });
         }
       }, 1);
     }
@@ -58,7 +55,8 @@ const DocLayout: FC = memo(() => {
 global.__ANTD_CACHE__ = extractStaticStyle.cache;
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const siteToken = useSiteStore((s) => s.siteData.themeConfig.siteToken, isEqual);
+  const siteToken = useSiteStore(tokenSel, isEqual);
+
   return (
     <DumiSiteProvider cache={extractStaticStyle.cache} token={siteToken}>
       {children}
