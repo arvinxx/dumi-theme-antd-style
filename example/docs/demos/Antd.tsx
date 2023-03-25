@@ -3,7 +3,7 @@
  * description: 默认情况下， Demo 与文档站的主题互相隔离
  * compact: true
  */
-import { Alert, Button, theme } from 'antd';
+import { Alert, Button, Input, theme } from 'antd';
 import { Flexbox } from 'react-layout-kit';
 
 export default () => {
@@ -14,6 +14,7 @@ export default () => {
         <Button type={'primary'}>按钮</Button>
         <Button>按钮</Button>
       </Flexbox>
+      <Input placeholder={'请输入'} />
 
       <Alert showIcon banner type={'success'} message={'成功的通知'}></Alert>
       <Alert showIcon banner type={'error'} message={'失败信息'}></Alert>
