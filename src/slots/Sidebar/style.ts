@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 export const useStyles = createStyles(({ css, token }) => ({
   sidebar: css`
     grid-area: sidebar;
-
+    overflow: auto;
     position: sticky;
     top: ${token.headerHeight}px;
     max-height: calc(100vh - ${token.headerHeight}px);
