@@ -10,7 +10,7 @@ import { StoreUpdater } from '../../components/StoreUpdater';
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
 
-import { isHeroPageSel, useSiteStore } from '../../store';
+import { isHeroPageSel, tokenSel, useSiteStore } from '../../store';
 import { GlobalStyle } from './styles';
 
 const DocLayout: FC = memo(() => {
@@ -58,7 +58,8 @@ const DocLayout: FC = memo(() => {
 global.__ANTD_CACHE__ = extractStaticStyle.cache;
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const siteToken = useSiteStore((s) => s.siteData.themeConfig.siteToken, isEqual);
+  const siteToken = useSiteStore(tokenSel, isEqual);
+
   return (
     <DumiSiteProvider cache={extractStaticStyle.cache} token={siteToken}>
       {children}

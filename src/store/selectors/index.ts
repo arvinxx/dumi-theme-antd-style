@@ -4,6 +4,7 @@ import { SiteStore } from '../useSiteStore';
 
 export * from './apiHeader';
 export * from './hero';
+export * from './token';
 
 /**
  * 站点标题选择器
