@@ -64,6 +64,7 @@ export interface IAction {
    * @title 链接
    */
   link: string;
+  openExternal?: boolean;
 }
 /**
  * @title 英雄

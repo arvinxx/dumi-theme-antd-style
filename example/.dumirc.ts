@@ -23,8 +23,9 @@ const themeConfig: SiteThemeConfig = {
           link: '/guide',
         },
         {
-          text: '配置',
-          link: '/config',
+          text: 'Github',
+          link: 'https://github.com/arvinxx/dumi-theme-antd-style',
+          openExternal: true,
         },
       ],
       features: featuresZh,

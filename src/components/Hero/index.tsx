@@ -1,11 +1,11 @@
 import { Button, ConfigProvider } from 'antd';
-import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
+import { IAction } from '@/types';
 import HeroButton from './HeroButton';
-
 import { useStyles } from './style';
+
 /**
  * @title 头图组件属性
  */
@@ -26,9 +26,10 @@ export interface HeroProps {
    * @typedef {Object} Action
    * @property {string} text - 操作按钮的文本
    * @property {string} link - 操作按钮跳转的链接
+   * @property {boolean} openExternal - 是否打开外部链接
    * @type {Action[]}
    */
-  actions?: { text: string; link: string }[];
+  actions?: IAction[];
 }
 
 const Hero: FC<HeroProps> = ({ title, description, actions }) => {
@@ -53,8 +54,13 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
         {Boolean(actions?.length) && (
           <ConfigProvider theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
             <Flexbox horizontal gap={24} className={styles.actions}>
-              {actions!.map(({ text, link }, index) => (
-                <Link key={text} to={link}>
+              {actions!.map(({ text, link, openExternal }, index) => (
+                <a
+                  key={text}
+                  href={link}
+                  target={openExternal ? '_blank' : undefined}
+                  rel="noreferrer"
+                >
                   {index === 0 ? (
                     <HeroButton>{text}</HeroButton>
                   ) : (
@@ -62,7 +68,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
                       {text}
                     </Button>
                   )}
-                </Link>
+                </a>
               ))}
             </Flexbox>
           </ConfigProvider>
