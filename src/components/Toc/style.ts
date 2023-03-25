@@ -1,7 +1,7 @@
 import { createStyles } from 'antd-style';
 import { rgba } from 'polished';
 
-export const useStyles = createStyles(({ token, prefixCls, responsive, css }) => {
+export const useStyles = createStyles(({ token, stylish, prefixCls, responsive, css }) => {
   const fixHeight = 36;
   return {
     container: css`
@@ -13,6 +13,8 @@ export const useStyles = createStyles(({ token, prefixCls, responsive, css }) =>
       max-height: 80vh;
       overflow: auto;
       margin-top: 48px;
+      z-index: 10;
+      border-radius: 8px;
 
       ${responsive.mobile} {
         z-index: 300;
@@ -54,6 +56,9 @@ export const useStyles = createStyles(({ token, prefixCls, responsive, css }) =>
       .${prefixCls}-collapse-header {
         padding: 8px 16px !important;
       }
+    `,
+    anchor: css`
+      ${stylish.blur}
     `,
   };
 });
