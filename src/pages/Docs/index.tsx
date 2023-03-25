@@ -23,9 +23,10 @@ const Docs: FC = memo(() => {
   const siteTitle = useSiteStore(siteTitleSel);
 
   const noToc = useSiteStore((s) => tocAnchorItemSel(s).length === 0);
+  const hideSidebar = fm.sidebar === false;
   const hideToc = fm.toc === false || noToc;
 
-  const { styles, theme } = useStyles(hideToc);
+  const { styles, theme } = useStyles({ hideToc, hideSidebar });
 
   return (
     <div className={styles.layout}>
@@ -40,7 +41,7 @@ const Docs: FC = memo(() => {
 
       {hideToc ? null : <Toc />}
 
-      {mobile ? null : <Sidebar />}
+      {mobile || hideSidebar ? null : <Sidebar />}
 
       {isApiPage ? (
         <Flexbox style={{ gridArea: 'title', paddingBlock: mobile ? 24 : undefined }}>
