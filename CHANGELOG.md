@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.4...v0.19.5) (2023-03-25)
+
+### 🐛 修复
+
+- 修正任意编辑框内输入斜杠时搜索框抢夺焦点的问题 ([bfb290a](https://github.com/arvinxx/dumi-theme-antd-style/commit/bfb290a)), closes [#23](https://github.com/arvinxx/dumi-theme-antd-style/issues/23)
+
 ## [0.19.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.3...v0.19.4) (2023-03-19)
 
 ### 👷 构建系统
