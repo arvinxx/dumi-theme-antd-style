@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.5...v0.19.6) (2023-03-25)
+
+### 🐛 修复
+
+- 修正浏览器高度不够时 Menu 无法完整显示的问题 ([078d511](https://github.com/arvinxx/dumi-theme-antd-style/commit/078d511)), closes [#20](https://github.com/arvinxx/dumi-theme-antd-style/issues/20)
+
 ## [0.19.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.4...v0.19.5) (2023-03-25)
 
 ### 🐛 修复
