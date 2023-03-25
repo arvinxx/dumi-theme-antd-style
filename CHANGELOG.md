@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.7](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.6...v0.19.7) (2023-03-25)
+
+### 🐛 修复
+
+- 修正 link 无法跳转新页面的问题 ([29cb658](https://github.com/arvinxx/dumi-theme-antd-style/commit/29cb658)), closes [#24](https://github.com/arvinxx/dumi-theme-antd-style/issues/24)
+
 ## [0.19.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.5...v0.19.6) (2023-03-25)
 
 ### 🐛 修复
