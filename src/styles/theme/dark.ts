@@ -1,21 +1,14 @@
 import { theme } from 'antd';
 import { MappingAlgorithm } from 'antd-style';
 import { ThemeConfig } from 'antd/lib';
+import { generateColorPalette } from './generator';
 
 // 这一版的暗色浅色系列已经差不多了
-const primaryColors = [
-  '#ffffff',
-  '#002653',
-  '#003572',
-  '#004593',
-  '#0055b6',
-  '#0066dc',
-  '#1677ff',
-  '#257fff',
-  '#3187ff',
-  '#3c8fff',
-  '#4796ff',
-];
+const primaryColors = generateColorPalette('#1677FF')
+  .map((color) => color.hex)
+  .reverse();
+
+// console.log(generateColorPalette('#1677FF'));
 
 const cyanColors = [
   'rgba(0, 225, 242, 0.12)',
@@ -96,7 +89,7 @@ export const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
     colorBgContainer: 'hsl(216,18%,11%)', // 容器颜色
     colorBgElevated: 'hsl(216,13%,15%)', // 悬浮类面板颜色
 
-    colorPrimaryBg: primaryColors[1],
+    colorPrimaryBg: primaryColors[0],
     colorPrimaryBgHover: primaryColors[2],
     colorPrimaryBorder: primaryColors[3],
     colorPrimaryBorderHover: primaryColors[4],

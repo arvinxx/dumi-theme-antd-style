@@ -10,3 +10,7 @@ token:
 # 主题
 
 `dumi-theme-antd-style` 默认同时支持亮色主题与暗色主题。
+
+## 色板
+
+<ColorPalettes></ColorPalettes>
