@@ -13,4 +13,6 @@ token:
 
 ## 色板
 
+本色板基于 OKLch 色彩空间构成
+
 <ColorPalettes></ColorPalettes>

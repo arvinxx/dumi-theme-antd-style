@@ -1,8 +1,10 @@
-import chroma from 'chroma-js';
+import { createStyles } from 'antd-style';
 import { Flexbox } from 'react-layout-kit';
 
-import { createStyles } from 'antd-style';
-import { errorColors, primaryColors, successColors, warningColors } from '../../styles/theme/light';
+import { FC } from 'react';
+import { darkColorPalettes } from '../../styles/theme/dark';
+import { lightColorPalettes } from '../../styles/theme/light';
+import { invertColor } from './invertColor';
 
 const useStyles = createStyles(({ css }) => ({
   title: css`
@@ -18,27 +20,47 @@ const useStyles = createStyles(({ css }) => ({
     font-family: Monaco, Consolas, 'Courier New', monospace;
   `,
 }));
-function invertColor(color: string) {
-  // 使用 Chroma.js 获取颜色的亮度
-  const brightness = chroma(color).get('lab.l');
 
-  // 判断颜色的亮度，如果亮度低于 50，则认为是暗色，生成亮色文本；反之，则生成暗色文本
-  const invertedColor = brightness < 50 ? chroma(color).brighten(2) : chroma(color).darken(2);
-
-  return invertedColor.hex();
+interface Palette {
+  key: string;
+  colors: string[];
 }
+const lightColorMaps: Palette[] = Object.entries(lightColorPalettes).map(([key, value]) => ({
+  key,
+  colors: value,
+}));
 
-const colorMaps = [
-  { key: 'primary', colors: primaryColors },
-  { key: 'error', colors: errorColors },
-  { key: 'warning', colors: warningColors },
-  { key: 'success', colors: successColors },
-];
-export default () => {
+const darkColorMaps: Palette[] = Object.entries(darkColorPalettes).map(([key, value]) => ({
+  key,
+  colors: value,
+}));
+
+const ColorItem = ({ color, index }: { color: string; index: number }) => {
   const { styles } = useStyles();
   return (
+    <Flexbox
+      horizontal
+      align={'center'}
+      gap={24}
+      distribution={'space-between'}
+      style={{ background: color, color: invertColor(color) }}
+      className={styles.color}
+    >
+      <Flexbox style={{ paddingLeft: 8 }}>{index}</Flexbox>
+      <Flexbox style={{ paddingRight: 12 }}>{color}</Flexbox>
+    </Flexbox>
+  );
+};
+
+interface ColorPaletteProps {
+  palette: Palette[];
+}
+const ColorPalette: FC<ColorPaletteProps> = ({ palette }) => {
+  const { styles } = useStyles();
+
+  return (
     <Flexbox horizontal gap={40}>
-      {colorMaps.map((map) => {
+      {palette.map((map) => {
         return (
           <Flexbox key={map.key} align={'center'}>
             <div className={styles.title} style={{ color: map.colors[6] }}>
@@ -46,23 +68,21 @@ export default () => {
             </div>
             <Flexbox className={styles.palette}>
               {map.colors.map((hex, index) => (
-                <Flexbox
-                  horizontal
-                  align={'center'}
-                  gap={24}
-                  distribution={'space-between'}
-                  key={hex}
-                  style={{ background: hex, color: invertColor(hex) }}
-                  className={styles.color}
-                >
-                  <Flexbox style={{ paddingLeft: 8 }}>{index}</Flexbox>
-                  <Flexbox style={{ paddingRight: 12 }}>{hex}</Flexbox>
-                </Flexbox>
+                <ColorItem index={index} color={hex} key={hex} />
               ))}
             </Flexbox>
           </Flexbox>
         );
       })}
+    </Flexbox>
+  );
+};
+
+export default () => {
+  return (
+    <Flexbox gap={24}>
+      <ColorPalette palette={lightColorMaps} />
+      <ColorPalette palette={darkColorMaps} />
     </Flexbox>
   );
 };
