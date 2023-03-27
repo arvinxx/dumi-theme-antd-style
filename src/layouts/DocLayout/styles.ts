@@ -23,4 +23,21 @@ export const GlobalStyle = createGlobalStyle`
     url('https://at.alicdn.com/wf/webfont/exMpJIukiCms/vtu73by4O2gEBcvBuLgeu.woff') format('woff');
     font-display: swap;
   }
+
+  /* 定义滚动槽的样式 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    margin-right: 4px;
+    background-color: transparent; // 定义滚动槽的背景色
+
+    &-thumb {
+      background-color: ${({ theme }) => theme.colorFill}; // 定义滚动块的背景色
+      border-radius: 4px; // 定义滚动块的圆角半径
+    }
+
+    &-corner {
+      display: none;
+    }
+  }
 `;
