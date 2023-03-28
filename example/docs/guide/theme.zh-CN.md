@@ -13,6 +13,6 @@ token:
 
 ## 色板
 
-本色板基于 OKLch 色彩空间构成
+主题色板基于 OKLCH 色彩模型构建。可以基于主色自定义出一套完整的设计系统色板。
 
 <ColorPalettes></ColorPalettes>
