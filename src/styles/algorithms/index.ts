@@ -2,9 +2,10 @@ import { ColorMapToken } from 'antd/es/theme/interface/maps/colors';
 
 import { generateAssociatedColors } from './colorRelationship';
 import {
-  ColorPaletteOptions,
   ColorPalettes,
   generateColorPalette,
+  generateNeutralPalette,
+  NeutralPaletteOptions,
   SeedColors,
   TokenType,
 } from './paletteGenerator';
@@ -28,7 +29,7 @@ const defaultRelationship: TokenRelationship = (type) => {
   };
 };
 
-interface MapTokenAlgorithm extends ColorPaletteOptions {
+interface MapTokenAlgorithm extends NeutralPaletteOptions {
   relationship?: TokenRelationship;
   seedColors?: Partial<SeedColors>;
   infoColorFollowPrimary?: boolean;
@@ -62,6 +63,10 @@ export const genMapTokenAlgorithm = (params?: MapTokenAlgorithm) => {
     warning: generateColorPalette(seedColors.warning, params).map((c) => c.hex),
     success: generateColorPalette(seedColors.success, params).map((c) => c.hex),
     info: generateColorPalette(seedColors.info, params).map((color) => color.hex),
+    neutral: generateNeutralPalette(seedColors.primary, { ...params, neutral: true }).map(
+      (c) => c.hex,
+    ),
+    grey: generateNeutralPalette(seedColors.primary, params).map((c) => c.hex),
   };
 
   let tokens = {} as Partial<Record<keyof ColorMapToken, string>>;

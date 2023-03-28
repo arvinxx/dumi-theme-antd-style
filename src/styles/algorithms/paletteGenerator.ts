@@ -43,6 +43,11 @@ export interface ColorPaletteOptions {
   reverse?: boolean;
 }
 
+export type TokenType = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'grey' | 'neutral';
+
+export type ColorPalettes = Record<TokenType, string[]>;
+export type SeedColors = Record<TokenType, string>;
+
 const defaultLight: AdjustParams = {
   steps: 6,
   targetBrightness: 0.98,
@@ -115,7 +120,28 @@ export const generateColorPalette = (
   return options.reverse ? colorPalette.reverse() : colorPalette;
 };
 
-export type TokenType = 'primary' | 'success' | 'warning' | 'error' | 'info';
+export interface NeutralPaletteOptions {
+  lighter?: Partial<AdjustParams>;
+  darker?: Partial<AdjustParams>;
+  reverse?: boolean;
+  neutral?: boolean;
+}
 
-export type ColorPalettes = Record<TokenType, string[]>;
-export type SeedColors = Record<TokenType, string>;
+export const generateNeutralPalette = (
+  baseColorHex: string,
+  options: NeutralPaletteOptions = {},
+): Color[] => {
+  const baseColor = chroma(baseColorHex);
+  const baseColorOKLCH = baseColor.oklch();
+
+  // 计算中性颜色的色相
+  const neutralHue = baseColorOKLCH[2];
+
+  // 将主色的饱和度降低以获得中性颜色
+  const neutralChromaValue = options.neutral ? baseColorOKLCH[1] * 0.2 : 0;
+
+  // 使用降低饱和度的颜色作为基础色重新生成色板
+  const neutralBaseColor = chroma.oklch(baseColorOKLCH[0], neutralChromaValue, neutralHue);
+
+  return generateColorPalette(neutralBaseColor.hex(), options);
+};

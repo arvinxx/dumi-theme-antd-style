@@ -1,30 +1,17 @@
-import { createStyles } from 'antd-style';
-import { Flexbox } from 'react-layout-kit';
+import { Center, Flexbox } from 'react-layout-kit';
 
-import { FC } from 'react';
+import { Radio } from 'antd';
 import { darkColorPalettes } from '../../styles/theme/dark';
 import { lightColorPalettes } from '../../styles/theme/light';
-import { invertColor } from './invertColor';
+import ColorPalette from './ColorPalette';
 
-const useStyles = createStyles(({ css }) => ({
-  title: css`
-    height: 32px;
-  `,
-  palette: css`
-    border-radius: 6px;
-    overflow: hidden;
-  `,
-  color: css`
-    width: 120px;
-    height: 40px;
-    font-family: Monaco, Consolas, 'Courier New', monospace;
-  `,
-}));
+import { useStore } from './store';
 
 interface Palette {
   key: string;
   colors: string[];
 }
+
 const lightColorMaps: Palette[] = Object.entries(lightColorPalettes).map(([key, value]) => ({
   key,
   colors: value,
@@ -35,54 +22,31 @@ const darkColorMaps: Palette[] = Object.entries(darkColorPalettes).map(([key, va
   colors: value,
 }));
 
-const ColorItem = ({ color, index }: { color: string; index: number }) => {
-  const { styles } = useStyles();
-  return (
-    <Flexbox
-      horizontal
-      align={'center'}
-      gap={24}
-      distribution={'space-between'}
-      style={{ background: color, color: invertColor(color) }}
-      className={styles.color}
-    >
-      <Flexbox style={{ paddingLeft: 8 }}>{index}</Flexbox>
-      <Flexbox style={{ paddingRight: 12 }}>{color}</Flexbox>
-    </Flexbox>
-  );
-};
-
-interface ColorPaletteProps {
-  palette: Palette[];
-}
-const ColorPalette: FC<ColorPaletteProps> = ({ palette }) => {
-  const { styles } = useStyles();
-
-  return (
-    <Flexbox horizontal gap={40}>
-      {palette.map((map) => {
-        return (
-          <Flexbox key={map.key} align={'center'}>
-            <div className={styles.title} style={{ color: map.colors[6] }}>
-              {map.key}
-            </div>
-            <Flexbox className={styles.palette}>
-              {map.colors.map((hex, index) => (
-                <ColorItem index={index} color={hex} key={hex} />
-              ))}
-            </Flexbox>
-          </Flexbox>
-        );
-      })}
-    </Flexbox>
-  );
-};
-
 export default () => {
+  const { mode } = useStore();
   return (
-    <Flexbox gap={24}>
-      <ColorPalette palette={lightColorMaps} />
-      <ColorPalette palette={darkColorMaps} />
+    <Flexbox>
+      <Flexbox align={'center'} horizontal gap={12} style={{ marginBottom: 8, alignSelf: 'end' }}>
+        色彩模型
+        <Radio.Group
+          value={mode}
+          options={[
+            { label: 'OKLCH', value: 'oklch' },
+            { label: 'HEX', value: 'hex' },
+            { label: 'HSL', value: 'hsl' },
+            { label: 'HSV', value: 'hsv' },
+          ]}
+          onChange={(e) => {
+            useStore.setState({ mode: e.target.value });
+          }}
+        />
+      </Flexbox>
+      <Center padding={24} style={{ background: '#fafafa' }}>
+        <ColorPalette palette={lightColorMaps} />
+      </Center>
+      <Center padding={24} style={{ background: '#000' }}>
+        <ColorPalette palette={darkColorMaps} />
+      </Center>
     </Flexbox>
   );
 };

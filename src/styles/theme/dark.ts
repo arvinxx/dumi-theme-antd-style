@@ -56,10 +56,6 @@ export const darkColorPalettes: ColorPalettes = darkMode.palettes;
 const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => ({
   ...theme.darkAlgorithm(seedToken, mapToken),
 
-  colorBgLayout: 'hsl(218,22%,7%)', // Layout 颜色
-  colorBgContainer: 'hsl(216,18%,11%)', // 容器颜色
-  colorBgElevated: 'hsl(216,13%,15%)', // 悬浮类面板颜色
-
   ...darkMode.tokens,
 
   'cyan-1': cyanColors[1],
@@ -76,7 +72,9 @@ const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => ({
 
 export const darkTheme: ThemeConfig = {
   token: {
-    colorTextBase: '#c7ddff',
+    // colorTextBase: '#c7ddff',
+    colorTextBase: '#dcdcf2',
+    colorBgBase: '#050608',
 
     colorLinkHover: darkColorPalettes.primary[7],
     colorLink: darkColorPalettes.primary[6],

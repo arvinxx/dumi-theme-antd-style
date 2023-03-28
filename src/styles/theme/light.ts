@@ -8,8 +8,8 @@ export const lightColorPalettes: ColorPalettes = lightMode.palettes;
 
 export const lightTheme: ThemeConfig = {
   token: {
-    colorBgLayout: 'hsl(220,23%,97%)', // Layout 颜色
-    colorTextBase: 'hsl(220,2%,25%)',
+    colorBgLayout: '#f8f8fa', // Layout 颜色
+    colorTextBase: '#2a2e36',
 
     colorLinkHover: lightColorPalettes.primary[5],
     colorLink: lightColorPalettes.primary[6],
