@@ -63,3 +63,5 @@ export const genMapTokenAlgorithm = (params?: MapTokenAlgorithm) => {
 
   return { palettes, tokens };
 };
+
+export type { ColorPalettes } from './paletteGenerator';

@@ -1,8 +1,7 @@
-import { theme } from 'antd';
+import { theme, ThemeConfig } from 'antd';
 import { MappingAlgorithm } from 'antd-style';
-import { ThemeConfig } from 'antd/lib';
-import { ColorPalettes } from './paletteGenerator';
-import { genMapTokenAlgorithm, TokenRelationship } from './tokenAlgorithm';
+
+import { ColorPalettes, genMapTokenAlgorithm, TokenRelationship } from '../algorithms';
 
 const cyanColors = [
   'rgba(0, 225, 242, 0.12)',

@@ -1,10 +1,9 @@
 import { ThemeConfig } from 'antd';
-import { genMapTokenAlgorithm } from 'dumi-theme-antd-style/styles/theme/tokenAlgorithm';
-import { ColorPalettes } from './paletteGenerator';
+
+import { ColorPalettes, genMapTokenAlgorithm } from '../algorithms';
 
 const lightMode = genMapTokenAlgorithm();
 
-console.log(lightMode);
 export const lightColorPalettes: ColorPalettes = lightMode.palettes;
 
 export const lightTheme: ThemeConfig = {
