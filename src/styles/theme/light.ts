@@ -1,18 +1,11 @@
 import { ThemeConfig } from 'antd';
-import { MappingAlgorithm } from 'antd-style';
 import { genMapTokenAlgorithm } from 'dumi-theme-antd-style/styles/theme/tokenAlgorithm';
 import { ColorPalettes } from './paletteGenerator';
 
 const lightMode = genMapTokenAlgorithm();
 
+console.log(lightMode);
 export const lightColorPalettes: ColorPalettes = lightMode.palettes;
-
-const lightAlgorithm: MappingAlgorithm = (seedToken, mapToken) => {
-  return {
-    ...mapToken!,
-    ...lightMode.tokens,
-  };
-};
 
 export const lightTheme: ThemeConfig = {
   token: {
@@ -24,5 +17,8 @@ export const lightTheme: ThemeConfig = {
     colorLinkActive: lightColorPalettes.primary[7],
   },
 
-  algorithm: lightAlgorithm,
+  algorithm: (seedToken, mapToken) => ({
+    ...mapToken!,
+    ...lightMode.tokens,
+  }),
 };

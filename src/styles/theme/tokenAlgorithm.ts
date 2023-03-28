@@ -26,24 +26,29 @@ const defaultRelationship: TokenRelationship = (type) => {
   };
 };
 
-export const genMapTokenAlgorithm = (
-  params?: ColorPaletteOptions & Partial<SeedColors> & { relationship?: TokenRelationship },
-) => {
-  const {
-    primary = '#1677FF',
-    info = '#1677FF',
-    warning = '#bb8400',
-    success = '#1cc14b',
-    error = '#da4a45',
-    relationship = defaultRelationship,
-  } = params || {};
+interface MapTokenAlgorithm extends ColorPaletteOptions {
+  relationship?: TokenRelationship;
+  seedColors?: Partial<SeedColors>;
+}
+
+export const genMapTokenAlgorithm = (params?: MapTokenAlgorithm) => {
+  const { relationship = defaultRelationship } = params || {};
+
+  const seedColors = {
+    primary: '#1677FF',
+    info: '#1677FF',
+    warning: '#bb8400',
+    success: '#1cc14b',
+    error: '#da4a45',
+    ...params?.seedColors,
+  };
 
   const palettes: ColorPalettes = {
-    primary: generateColorPalette(primary, params).map((color) => color.hex),
-    error: generateColorPalette(error, params).map((c) => c.hex),
-    warning: generateColorPalette(warning, params).map((c) => c.hex),
-    success: generateColorPalette(success, params).map((c) => c.hex),
-    info: generateColorPalette(info, params).map((color) => color.hex),
+    primary: generateColorPalette(seedColors.primary, params).map((color) => color.hex),
+    error: generateColorPalette(seedColors.error, params).map((c) => c.hex),
+    warning: generateColorPalette(seedColors.warning, params).map((c) => c.hex),
+    success: generateColorPalette(seedColors.success, params).map((c) => c.hex),
+    info: generateColorPalette(seedColors.info, params).map((color) => color.hex),
   };
 
   let tokens = {} as Partial<Record<keyof ColorMapToken, string>>;
