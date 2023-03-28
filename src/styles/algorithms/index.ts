@@ -1,4 +1,6 @@
 import { ColorMapToken } from 'antd/es/theme/interface/maps/colors';
+
+import { generateAssociatedColors } from './colorRelationship';
 import {
   ColorPaletteOptions,
   ColorPalettes,
@@ -29,19 +31,30 @@ const defaultRelationship: TokenRelationship = (type) => {
 interface MapTokenAlgorithm extends ColorPaletteOptions {
   relationship?: TokenRelationship;
   seedColors?: Partial<SeedColors>;
+  infoColorFollowPrimary?: boolean;
+  adjustWarning?: boolean;
 }
 
 export const genMapTokenAlgorithm = (params?: MapTokenAlgorithm) => {
-  const { relationship = defaultRelationship } = params || {};
+  const {
+    relationship = defaultRelationship,
+    infoColorFollowPrimary = true,
+    adjustWarning,
+  } = params || {};
+
+  const primary = '#1677FF';
+
+  const funcColors = generateAssociatedColors(primary, adjustWarning);
 
   const seedColors = {
-    primary: '#1677FF',
-    info: '#1677FF',
-    warning: '#bb8400',
-    success: '#1cc14b',
-    error: '#da4a45',
+    primary,
+    ...funcColors,
     ...params?.seedColors,
   };
+
+  if (infoColorFollowPrimary) {
+    seedColors.info = primary;
+  }
 
   const palettes: ColorPalettes = {
     primary: generateColorPalette(seedColors.primary, params).map((color) => color.hex),
