@@ -85,6 +85,7 @@
     "@emotion/react": "^11",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^13",
+    "@types/chroma-js": "^2",
     "@types/jest": "^27",
     "@types/lodash": "^4",
     "@types/react": "^18",

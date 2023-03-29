@@ -6,7 +6,7 @@
 
 ### ✨ 新特性
 
-- 支持 sidebar:false 的 markdown 配置 ([9c5102c](https://github.com/arvinxx/dumi-theme-antd-style/commit/9c5102c))
+- 支持 `sidebar:false` 的 markdown 配置 ([9c5102c](https://github.com/arvinxx/dumi-theme-antd-style/commit/9c5102c))
 - 支持 tocDepth 的 markdown 配置 ([16c1e89](https://github.com/arvinxx/dumi-theme-antd-style/commit/16c1e89))
 - 支持文档级别的 token 配置 ([438e260](https://github.com/arvinxx/dumi-theme-antd-style/commit/438e260))
 
