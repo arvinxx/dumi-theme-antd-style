@@ -1,5 +1,18 @@
 # Changelog
 
+# [0.21.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.20.1...v0.21.0) (2023-03-29)
+
+### ✨ 新特性
+
+- 主题算法支持自定义主色变量 ([61d5d8a](https://github.com/arvinxx/dumi-theme-antd-style/commit/61d5d8a))
+- 初步实现一版 OKLCH 色板 ([6cca155](https://github.com/arvinxx/dumi-theme-antd-style/commit/6cca155))
+- 实现主色与功能色的关联关系 ([64e3350](https://github.com/arvinxx/dumi-theme-antd-style/commit/64e3350))
+- 支持显示色板 ([51c45ed](https://github.com/arvinxx/dumi-theme-antd-style/commit/51c45ed))
+
+### 👷 构建系统
+
+- 调整 chroma.js 作为 deps 依赖 ([6a83037](https://github.com/arvinxx/dumi-theme-antd-style/commit/6a83037))
+
 ## [0.20.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.20.0...v0.20.1) (2023-03-27)
 
 # [0.20.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.19.7...v0.20.0) (2023-03-25)
