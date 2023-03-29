@@ -34,27 +34,27 @@ interface MapTokenAlgorithm extends NeutralPaletteOptions {
   seedColors?: Partial<SeedColors>;
   infoColorFollowPrimary?: boolean;
   adjustWarning?: boolean;
+  brandColor?: string;
 }
 
 export const genMapTokenAlgorithm = (params?: MapTokenAlgorithm) => {
   const {
     relationship = defaultRelationship,
-    infoColorFollowPrimary = true,
+    infoColorFollowPrimary = false,
     adjustWarning,
+    brandColor = '#1677FF',
   } = params || {};
 
-  const primary = '#1677FF';
-
-  const funcColors = generateAssociatedColors(primary, adjustWarning);
+  const funcColors = generateAssociatedColors(brandColor, adjustWarning);
 
   const seedColors = {
-    primary,
+    primary: brandColor,
     ...funcColors,
     ...params?.seedColors,
   };
 
   if (infoColorFollowPrimary) {
-    seedColors.info = primary;
+    seedColors.info = brandColor;
   }
 
   const palettes: ColorPalettes = {
