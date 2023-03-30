@@ -25,7 +25,7 @@ import { GlobalStyle } from './styles';
 const DocLayout: FC = memo(() => {
   const intl = useIntl();
   const { hash } = useLocation();
-  const fm = useSiteStore((s) => s.routeMeta.frontmatter);
+  const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const isHomePage = useSiteStore(isHeroPageSel);
   const loading = useSiteStore((s) => s.siteData.loading);
 
@@ -64,7 +64,7 @@ const DocLayout: FC = memo(() => {
 // @ts-ignore
 global.__ANTD_CACHE__ = extractStaticStyle.cache;
 
-const ThemeProvider = ({ children }: PropsWithChildren) => {
+const SiteProvider = ({ children }: PropsWithChildren) => {
   const siteToken = useSiteStore(tokenSel, isEqual);
 
   return (
@@ -77,10 +77,10 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
 const App = memo(({ initState }: any) => (
   <Provider createStore={() => createStore(initState)}>
     <StoreUpdater />
-    <ThemeProvider>
+    <SiteProvider>
       <GlobalStyle />
       <DocLayout />
-    </ThemeProvider>
+    </SiteProvider>
   </Provider>
 ));
 
