@@ -62,8 +62,7 @@ export const createAntdTheme = (params?: CustomThemeAlgorithmParams): GetAntdThe
     return {
       token: {
         colorPrimary: innerParams.colorPrimary,
-        colorBgLayout: '#f8f8fa', // Layout 颜色
-        colorTextBase: '#2a2e36',
+        // colorTextBase: '#2a2e36',
       },
 
       algorithm: (seedToken, mapToken) => ({
