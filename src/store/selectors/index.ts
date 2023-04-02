@@ -16,9 +16,9 @@ export const activePathSel = (s: SiteStore) => {
 
   const item = s.navData
     .filter((i) => i.link !== '/')
-    .find((i) => s.location.pathname.startsWith(i.activePath!));
+    .find((i) => s.location.pathname.startsWith(i.activePath! || i.link));
 
-  return item?.activePath || '';
+  return item?.activePath || item?.link || '';
 };
 
 /**

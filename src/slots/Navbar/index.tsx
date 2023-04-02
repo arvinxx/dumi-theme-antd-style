@@ -59,7 +59,7 @@ const Navbar: FC = () => {
     <>
       <Tabs
         onChange={(path) => {
-          const url = nav.find((i) => i.activePath === path)?.link;
+          const url = nav.find((i) => i.activePath === path || i.link === path)?.link;
           if (!url) return;
           history.push(url);
         }}
@@ -71,7 +71,7 @@ const Navbar: FC = () => {
               {item.title}
             </Link>
           ),
-          key: item.activePath!,
+          key: item.activePath! || item.link,
         }))}
       />
 
