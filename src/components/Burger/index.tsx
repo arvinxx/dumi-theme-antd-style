@@ -44,14 +44,13 @@ const Burger = () => {
           className={styles.menu}
           items={nav.map((item) => ({
             label: <Link to={item.link}>{item.title}</Link>,
-            key: item.activePath!,
+            key: item.activePath! || item.link,
             children:
-              item.activePath === activePath &&
+              (item.activePath || item.link) === activePath &&
               sidebar?.map((group) => {
                 return (
                   !group.link && {
                     label: group.title,
-
                     type: 'group',
                     children: group.children.map((item) => ({
                       label: (
