@@ -83,7 +83,7 @@ const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
     ) : (
       <div className={styles.container}>
         <h4>Table of Contents</h4>
-        <Anchor items={linkItems} className={styles.anchor} />
+        <Anchor items={linkItems} className={styles.anchor} targetOffset={theme.headerHeight + 12}/>
       </div>
     )) || null
   );
