@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.21.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.0...v0.21.1) (2023-04-04)
+
+### 🐛 修复
+
+- 修正 WEB 端锚点滚动后位置仍然看不到的问题 ([c1d43be](https://github.com/arvinxx/dumi-theme-antd-style/commit/c1d43be)), closes [#32](https://github.com/arvinxx/dumi-theme-antd-style/issues/32)
+
+### 👷 构建系统
+
+- 升级 antd-style 版本 ([444f75a](https://github.com/arvinxx/dumi-theme-antd-style/commit/444f75a))
+
 # [0.21.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.20.1...v0.21.0) (2023-03-29)
 
 ### ✨ 新特性
