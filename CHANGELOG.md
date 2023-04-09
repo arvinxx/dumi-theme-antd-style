@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.2...v0.21.3) (2023-04-09)
+
+### 🐛 修复
+
+- 补充导出 store 类型定义 ([a39e89b](https://github.com/arvinxx/dumi-theme-antd-style/commit/a39e89b))
+
 ## [0.21.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.1...v0.21.2) (2023-04-09)
 
 ### 🐛 修复
