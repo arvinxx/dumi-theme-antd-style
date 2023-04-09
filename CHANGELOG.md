@@ -16,6 +16,12 @@
 
 - 升级 antd-style 版本 ([444f75a](https://github.com/arvinxx/dumi-theme-antd-style/commit/444f75a))
 
+## [0.21.1-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.0...v0.21.1-beta.1) (2023-04-03)
+
+### 🐛 修复
+
+- if activePath is null, use link value ([66f0d36](https://github.com/arvinxx/dumi-theme-antd-style/commit/66f0d36)), closes [#30](https://github.com/arvinxx/dumi-theme-antd-style/issues/30)
+
 # [0.21.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.20.1...v0.21.0) (2023-03-29)
 
 ### ✨ 新特性
