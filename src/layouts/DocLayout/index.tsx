@@ -1,7 +1,7 @@
 import { extractStaticStyle } from 'antd-style';
 import { Helmet, useIntl, useLocation } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { memo, PropsWithChildren, StrictMode, useEffect, type FC } from 'react';
+import { PropsWithChildren, memo, useEffect, type FC } from 'react';
 
 import DumiSiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
@@ -65,11 +65,11 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
 };
 
 export default () => (
-  <StrictMode>
+  <>
     <StoreUpdater />
     <ThemeProvider>
       <GlobalStyle />
       <DocLayout />
     </ThemeProvider>
-  </StrictMode>
+  </>
 );
