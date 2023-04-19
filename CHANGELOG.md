@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.3...v0.21.4) (2023-04-19)
+
+### 🐛 修复
+
+- 移除 StrictMode ([af0940f](https://github.com/arvinxx/dumi-theme-antd-style/commit/af0940f)), closes [#34](https://github.com/arvinxx/dumi-theme-antd-style/issues/34)
+
 ## [0.21.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.2...v0.21.3) (2023-04-09)
 
 ### 🐛 修复
