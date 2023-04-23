@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.22.0-beta.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.22.0-beta.1...v0.22.0-beta.2) (2023-04-23)
+
+### ✨ 新特性
+
+- 支持 dumi 的 socialLinks 配置 ([13b112e](https://github.com/arvinxx/dumi-theme-antd-style/commit/13b112e))
+
 # [0.22.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.4...v0.22.0-beta.1) (2023-04-23)
 
 ### ✨ 新特性
