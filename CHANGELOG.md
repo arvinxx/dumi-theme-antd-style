@@ -1,5 +1,15 @@
 # Changelog
 
+# [0.22.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.4...v0.22.0-beta.1) (2023-04-23)
+
+### ✨ 新特性
+
+- 支持并优化 Tabs 样式 ([63fff30](https://github.com/arvinxx/dumi-theme-antd-style/commit/63fff30))
+
+### 🐛 修复
+
+- 修正 tabs 模式下 toc 报错的问题 ([b58686a](https://github.com/arvinxx/dumi-theme-antd-style/commit/b58686a))
+
 ## [0.21.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.3...v0.21.4) (2023-04-19)
 
 ### 🐛 修复
