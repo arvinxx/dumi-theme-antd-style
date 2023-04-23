@@ -24,7 +24,7 @@ export const activePathSel = (s: SiteStore) => {
 export const tocAnchorItemSel = (s: SiteStore) => {
   let { toc, frontmatter } = s.routeMeta;
   if (s.tabMeta?.toc) toc = s.tabMeta.toc;
-  if (s.tabMeta?.frontmatter) frontmatter = s.tabMeta.frontmatter;
+  if (s.tabMeta?.frontmatter) frontmatter = s.tabMeta.frontmatter as any;
 
   return toc.reduce<AnchorItem[]>((result, item) => {
     const shouldKeepWith = (depth: number) => {

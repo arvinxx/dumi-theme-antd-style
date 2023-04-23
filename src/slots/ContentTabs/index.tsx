@@ -17,7 +17,7 @@ const ContentTabs: FC<IContentTabsProps> = memo(({ tabs, tabKey: key, onChange }
   const { styles } = useStyles();
   // TODO: tab.Extra & tab.Action render
 
-  return Boolean(tabs?.length) ? (
+  return !!tabs && Boolean(tabs?.length) ? (
     <Tabs
       data-page-tabs
       activeKey={key || 'default'}
