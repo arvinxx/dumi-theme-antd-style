@@ -1,4 +1,5 @@
 import { Button, ConfigProvider } from 'antd';
+import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
@@ -55,9 +56,9 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
           <ConfigProvider theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
             <Flexbox horizontal gap={24} className={styles.actions}>
               {actions!.map(({ text, link, openExternal }, index) => (
-                <a
+                <Link
                   key={text}
-                  href={link}
+                  to={link}
                   target={openExternal ? '_blank' : undefined}
                   rel="noreferrer"
                 >
@@ -68,7 +69,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
                       {text}
                     </Button>
                   )}
-                </a>
+                </Link>
               ))}
             </Flexbox>
           </ConfigProvider>
