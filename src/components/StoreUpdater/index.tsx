@@ -1,3 +1,4 @@
+import { useDebounceEffect } from 'ahooks';
 import {
   useLocale,
   useLocation,
@@ -5,9 +6,9 @@ import {
   useRouteMeta,
   useSidebarData,
   useSiteData,
+  useTabMeta,
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { useDebounceEffect } from 'ahooks';
 import React, { memo, useEffect } from 'react';
 import { SiteStore, useSiteStore } from '../../store/useSiteStore';
 
@@ -31,7 +32,8 @@ const useLegacyUpdater = (effect: React.EffectCallback, deps?: React.DependencyL
     { wait: 32, maxWait: 96 },
   );
 };
-const useUpdater = typeof (React as any).startTransition === 'function' ? useReact18xUpdater : useLegacyUpdater;
+const useUpdater =
+  typeof (React as any).startTransition === 'function' ? useReact18xUpdater : useLegacyUpdater;
 
 const useSyncState = <T extends keyof SiteStore>(
   key: T,
@@ -64,6 +66,7 @@ export const StoreUpdater = memo(() => {
   const siteData = useSiteData();
   const sidebar = useSidebarData();
   const routeMeta = useRouteMeta();
+  const tabMeta = useTabMeta();
   const navData = useNavData();
   const location = useLocation();
   const locale = useLocale();
@@ -84,6 +87,7 @@ export const StoreUpdater = memo(() => {
   useSyncState('sidebar', sidebar);
   useSyncState('routeMeta', routeMeta);
   useSyncState('location', location);
+  useSyncState('tabMeta', tabMeta);
   useSyncState('locale', locale);
 
   useSyncState('navData', navData, () => {
