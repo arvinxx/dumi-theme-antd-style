@@ -12,6 +12,10 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
     background-color: ${token.colorBgContainer};
     box-shadow: ${token.boxShadowTertiary};
 
+    &:has([data-page-tabs='true']) {
+      padding-top: 8px;
+    }
+
     ${responsive.mobile} {
       padding: 8px 16px;
       border-radius: 0;
