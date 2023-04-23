@@ -40,6 +40,7 @@ export interface SiteStore {
   siteData: ISiteData;
   sidebar?: ISidebarGroup[];
   routeMeta: IRouteMeta;
+  tabMeta?: NonNullable<IRouteMeta['tabs']>[0]['meta'];
   navData: NavData;
   location: Location;
   locale: ILocale;

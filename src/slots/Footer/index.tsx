@@ -5,12 +5,13 @@ import { Center, Flexbox } from 'react-layout-kit';
 
 import { IFooter } from '@/types';
 import Foot, { FooterProps } from '../../components/Footer';
-import { useSiteStore } from '../../store';
+import { githubSel, useSiteStore } from '../../store';
 import { getColumns } from './columns';
 import { useStyles } from './style';
 
 const Footer: FC = () => {
   const { themeConfig, pkg } = useSiteStore((s) => s.siteData);
+  const githubUrl = useSiteStore(githubSel);
 
   const { styles, theme } = useStyles();
   const { mobile } = useResponsive();
@@ -21,7 +22,7 @@ const Footer: FC = () => {
   const columns =
     footer?.columns === false
       ? undefined
-      : getColumns({ github: themeConfig.github || (pkg as any).homepage });
+      : getColumns({ github: githubUrl || (pkg as any).homepage });
 
   const bottomFooter = footer?.bottom || themeConfig.footer;
 

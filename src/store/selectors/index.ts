@@ -4,12 +4,8 @@ import { SiteStore } from '../useSiteStore';
 
 export * from './apiHeader';
 export * from './hero';
+export * from './siteBasicInfo';
 export * from './token';
-
-/**
- * 站点标题选择器
- */
-export const siteTitleSel = (s: SiteStore) => s.siteData.themeConfig.name;
 
 export const activePathSel = (s: SiteStore) => {
   if (s.location.pathname === '/') return '/';
@@ -25,16 +21,16 @@ export const activePathSel = (s: SiteStore) => {
  * toc 锚点选择器
  * @param s
  */
-export const tocAnchorItemSel = (s: SiteStore) =>
-  s.routeMeta.toc.reduce<AnchorItem[]>((result, item) => {
-    const shouldKeepWith = (depth: number) => {
-      if (!s.routeMeta.frontmatter.tocDepth) return true;
+export const tocAnchorItemSel = (s: SiteStore) => {
+  let { toc, frontmatter } = s.routeMeta;
+  if (s.tabMeta?.toc) toc = s.tabMeta.toc;
+  if (s.tabMeta?.frontmatter) frontmatter = s.tabMeta.frontmatter;
 
-      if (
-        typeof s.routeMeta.frontmatter.tocDepth === 'number' &&
-        s.routeMeta.frontmatter.tocDepth > depth - 1
-      )
-        return true;
+  return toc.reduce<AnchorItem[]>((result, item) => {
+    const shouldKeepWith = (depth: number) => {
+      if (!frontmatter.tocDepth) return true;
+
+      if (typeof frontmatter.tocDepth === 'number' && frontmatter.tocDepth > depth - 1) return true;
     };
 
     if (item.depth === 2 && shouldKeepWith(2)) {
@@ -48,6 +44,7 @@ export const tocAnchorItemSel = (s: SiteStore) =>
     }
     return result;
   }, []);
+};
 
 /**
  * 将 sidebar 信息扁平化
