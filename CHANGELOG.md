@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.22.0...v0.22.1) (2023-04-23)
+
+### 🐛 修复
+
+- 修正 Hero 链接打开不正确的问题 ([17360aa](https://github.com/arvinxx/dumi-theme-antd-style/commit/17360aa)), closes [#37](https://github.com/arvinxx/dumi-theme-antd-style/issues/37)
+
 # [0.22.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.21.4...v0.22.0) (2023-04-23)
 
 ### ✨ 新特性
