@@ -2,10 +2,10 @@ import { GithubFilled } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { memo, type FC } from 'react';
 
-import { useSiteStore } from '../../store/useSiteStore';
+import { githubSel, useSiteStore } from '../../store';
 
 const GithubButton: FC = () => {
-  const repoUrl = useSiteStore((s) => s.siteData.themeConfig?.github);
+  const repoUrl = useSiteStore(githubSel);
 
   return !repoUrl ? null : (
     <Tooltip arrow={false} title={'Github'}>

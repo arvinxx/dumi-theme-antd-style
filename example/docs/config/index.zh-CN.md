@@ -25,13 +25,6 @@ nav:
 
 网站 logo 图片链接
 
-### github
-
-- 类型：`string`
-- 默认值：`null`
-
-导航栏 Github 图标链接，如不配置该字段，则不展示。
-
 ### hero
 
 - 类型：`IHero | Record<string, IHero>`
@@ -133,6 +126,17 @@ export default defineConfig({
 | bottom  | string                    | 底部内容                     |
 | theme   | `dark`、 `light`          | 主题，可选值为 dark 或 light |
 | columns | `FooterColumn[]`/ `false` | 列配置                       |
+
+### socialLinks
+
+与 dumi 保持一致。
+
+### socialLinks.github
+
+- 类型：`string`
+- 默认值：`null`
+
+导航栏 Github 图标链接，如不配置该字段，则不展示。
 
 ## 高级配置
 

@@ -1,5 +1,5 @@
-import { SiteToken } from 'dumi-theme-antd-style/styles';
 import { FooterColumn } from 'rc-footer/es/column';
+import { SiteToken } from '../styles';
 import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
 
 /**
@@ -67,6 +67,16 @@ export interface SiteThemeConfig {
    * 网站主题 Token 配置
    */
   siteToken?: SiteConfigToken;
+  socialLinks?: {
+    github?: string;
+    weibo?: string;
+    twitter?: string;
+    gitlab?: string;
+    facebook?: string;
+    zhihu?: string;
+    yueque?: string;
+    linkedin?: string;
+  };
 }
 
 export type SiteConfigToken = Partial<

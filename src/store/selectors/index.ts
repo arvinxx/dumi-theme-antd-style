@@ -4,12 +4,8 @@ import { SiteStore } from '../useSiteStore';
 
 export * from './apiHeader';
 export * from './hero';
+export * from './siteBasicInfo';
 export * from './token';
-
-/**
- * 站点标题选择器
- */
-export const siteTitleSel = (s: SiteStore) => s.siteData.themeConfig.name;
 
 export const activePathSel = (s: SiteStore) => {
   if (s.location.pathname === '/') return '/';

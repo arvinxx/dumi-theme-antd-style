@@ -1,5 +1,6 @@
 import { ApiHeaderConfig, ApiHeaderProps } from '../../types';
 import { SiteStore } from '../useSiteStore';
+import { githubSel } from './siteBasicInfo';
 
 export * from './hero';
 /**
@@ -19,7 +20,7 @@ export const isApiPageSel = (s: SiteStore) => {
 };
 
 export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
-  const REPO_BASE = s.siteData.themeConfig.github;
+  const REPO_BASE = githubSel(s);
   const fm = s.routeMeta.frontmatter;
   const localeId = s.locale.id;
 
