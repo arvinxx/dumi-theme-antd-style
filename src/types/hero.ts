@@ -19,6 +19,10 @@ export interface IFeature {
    */
   link?: string;
   /**
+   * 支持打开外部链接，新窗口跳转
+   */
+  openExternal?: boolean;
+  /**
    * @title 图片 url
    */
   image?: string;
@@ -64,6 +68,9 @@ export interface IAction {
    * @title 链接
    */
   link: string;
+  /**
+   * 新窗口打开链接
+   */
   openExternal?: boolean;
 }
 /**
