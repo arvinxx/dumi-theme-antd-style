@@ -63,6 +63,12 @@ export interface SiteThemeConfig {
    * @type HighlighterSyntaxTheme
    */
   syntaxTheme?: HighlighterSyntaxTheme;
+
+  /**
+   * 是否隐藏首页的 nav tab，配置为 `false` 则不展示首页的 tab
+   */
+  hideHomeNav?: boolean;
+
   /**
    * 网站主题 Token 配置
    */

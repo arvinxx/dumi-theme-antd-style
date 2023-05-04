@@ -91,7 +91,9 @@ export const StoreUpdater = memo(() => {
   useSyncState('locale', locale);
 
   useSyncState('navData', navData, () => {
-    useSiteStore.setState({ navData: [homeNav, ...navData] });
+    const data = siteData.themeConfig.hideHomeNav ? navData : [homeNav, ...navData];
+
+    useSiteStore.setState({ navData: data });
   });
 
   return null;
