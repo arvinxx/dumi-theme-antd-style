@@ -1,10 +1,14 @@
 ---
 order: 4
-title: Builtin 主题内置组件
-group: 特性
+title: Builtin 内置组件
+group:
+  title: 特性
+  order: 2
 ---
 
 # 内置组件
+
+使用 [dumi 的内置组件](https://d.umijs.org/guide/markdown#container) ，优化内置组件样式。
 
 ## Markdown 高亮
 

@@ -1,8 +1,10 @@
 ---
-title: ApiHeader
+title: ApiHeader API 概要
 description: ApiHeader 可以清楚地呈现出 API 的基础使用方式
 order: 10
-group: 特性
+group:
+  title: 进阶特性
+  order: 3
 atomId: Button
 apiHeader:
   pkg: antd

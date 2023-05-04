@@ -1,7 +1,7 @@
 ---
 order: 4
 title: SyntaxHighlighter 代码高亮
-group: 特性
+group: 进阶特性
 ---
 
 # SyntaxHighlighter 代码高亮

@@ -1,7 +1,7 @@
 ---
 order: 2
 title: Theme 主题
-group: 特性
+group: 进阶特性
 toc: false
 token:
   contentMaxWidth: 1440

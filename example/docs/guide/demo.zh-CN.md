@@ -1,7 +1,7 @@
 ---
 title: Demo 研发
 order: 6
-group: 特性
+group: 进阶特性
 demo:
   cols: 2
 ---
