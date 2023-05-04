@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.24.0-beta.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.23.0...v0.24.0-beta.1) (2023-05-04)
+
+### ✨ 新特性
+
+- Feature 组件支持外部打开链接 ([62e2c29](https://github.com/arvinxx/dumi-theme-antd-style/commit/62e2c29))
+- 支持隐藏首页配置 ([619b9ed](https://github.com/arvinxx/dumi-theme-antd-style/commit/619b9ed))
+
 # [0.23.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.22.1...v0.23.0) (2023-05-04)
 
 ### ✨ 新特性
