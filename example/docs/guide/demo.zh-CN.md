@@ -1,6 +1,6 @@
 ---
 title: Demo 研发
-order: 6
+order: 1
 group: 进阶特性
 demo:
   cols: 2
@@ -12,6 +12,8 @@ demo:
 
 <code src="../demos/Antd.tsx"></code>
 <code src="../demos/AntdInherit.tsx"></code>
+
+如果需要让站点的主题全部都跟随 demo 的主题，可以通过添加 `siteToken: { demoInheritSiteTheme: true }` 属性来指定。详细可以查看：[siteToken](/config#sitetoken) 配置介绍
 
 ## 自定义方向
 

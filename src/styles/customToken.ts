@@ -60,6 +60,11 @@ export interface SiteToken {
    * @title 代码高亮字体
    */
   fontFamilyHighlighter: string;
+
+  /**
+   * 是否让 Demo 继承站点主题
+   */
+  demoInheritSiteTheme: boolean;
 }
 
 export const createCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token }) => {
@@ -89,5 +94,6 @@ export const createCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token
         ${rgba(colorSolid, isDarkMode ? 0.2 : 0.2)} 0,
         ${rgba(colorSolid, isDarkMode ? 0.1 : 0.4)} 100%
       )`,
+    demoInheritSiteTheme: false,
   };
 };
