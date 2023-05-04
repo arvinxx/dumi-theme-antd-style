@@ -80,5 +80,13 @@ export interface SiteThemeConfig {
 }
 
 export type SiteConfigToken = Partial<
-  Pick<SiteToken, 'headerHeight' | 'footerHeight' | 'sidebarWidth' | 'tocWidth' | 'contentMaxWidth'>
+  Pick<
+    SiteToken,
+    | 'headerHeight'
+    | 'footerHeight'
+    | 'sidebarWidth'
+    | 'tocWidth'
+    | 'contentMaxWidth'
+    | 'demoInheritSiteTheme'
+  >
 >;

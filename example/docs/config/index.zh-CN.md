@@ -239,9 +239,10 @@ export default defineConfig({
 - 类型：`SiteConfigToken`
 - 默认值：`undefined`
 
-网站主题 Token 配置，该配置会传递给 [DumiSiteProvider](/components/dumi-site-provider) 组件
+网站主题 Token 配置，该配置会传递给 [DumiSiteProvider](/components/dumi-site-provider) 组件。
 
 ```ts
+// 默认值
 export default defineConfig({
   themeConfig: {
     siteToken: {
@@ -250,15 +251,19 @@ export default defineConfig({
       sidebarWidth: 240,
       tocWidth: 176,
       contentMaxWidth: 1152,
+      demoInheritSiteTheme: false, // 默认的 demo 主题不会跟随网站主题变化
     },
   },
 });
 ```
 
-| 属性名          | 类型     | 默认值 | 描述         |
-| --------------- | -------- | ------ | ------------ |
-| headerHeight    | `number` | `64`   | 网站头部高度 |
-| footerHeight    | `number` | `300`  | 网站底部高度 |
-| sidebarWidth    | `number` | `240`  | 侧边栏宽度   |
-| tocWidth        | `number` | `176`  | 目录宽度     |
-| contentMaxWidth | `number` | `1152` | 内容最大宽度 |
+token 介绍如下：
+
+| 属性名               | 类型      | 默认值  | 描述                       |
+| -------------------- | --------- | ------- | -------------------------- |
+| headerHeight         | `number`  | `64`    | 网站头部高度               |
+| footerHeight         | `number`  | `300`   | 网站底部高度               |
+| sidebarWidth         | `number`  | `240`   | 侧边栏宽度                 |
+| tocWidth             | `number`  | `176`   | 目录宽度                   |
+| contentMaxWidth      | `number`  | `1152`  | 内容最大宽度               |
+| demoInheritSiteTheme | `boolean` | `false` | 让 demo 主题跟随站点的主题 |
