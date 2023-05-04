@@ -29,6 +29,7 @@ const FeatureItem: FC<IFeature> = ({
   title,
   link,
   imageStyle,
+  openExternal,
 }) => {
   const rowNum = row || 7;
   const { styles, theme } = useStyles({ rowNum, hasLink: !!link });
@@ -44,7 +45,11 @@ const FeatureItem: FC<IFeature> = ({
       onClick={() => {
         if (!link) return;
 
-        history.push(link);
+        if (openExternal) {
+          window.open(link);
+        } else {
+          history.push(link);
+        }
       }}
     >
       <div className={styles.cell}>
