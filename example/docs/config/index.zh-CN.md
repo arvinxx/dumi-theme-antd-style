@@ -138,6 +138,13 @@ export default defineConfig({
 
 导航栏 Github 图标链接，如不配置该字段，则不展示。
 
+### hideHomeNav
+
+- 类型：`boolean`
+- 默认值：`false`
+
+是否隐藏首页的 nav tab，配置为 `true` 则不展示首页的 nav。
+
 ## 高级配置
 
 ### apiHeader
