@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.23.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.22.1...v0.23.0) (2023-05-04)
+
+### ✨ 新特性
+
+- 支持站点主题全局继承功能 ([886a77b](https://github.com/arvinxx/dumi-theme-antd-style/commit/886a77b)), closes [#42](https://github.com/arvinxx/dumi-theme-antd-style/issues/42)
+
 ## [0.22.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.22.0...v0.22.1) (2023-04-23)
 
 ### 🐛 修复
