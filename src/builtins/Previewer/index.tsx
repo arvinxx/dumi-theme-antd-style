@@ -2,6 +2,7 @@ import { createStyles } from 'antd-style';
 import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
+import LazyLoad from 'react-lazy-load';
 import DemoProvider from '../../components/DemoProvider';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => {
@@ -123,9 +124,11 @@ export default (props: IPreviewerProps) => {
 
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
-      <DemoProvider inherit={props.inherit || theme.demoInheritSiteTheme}>
-        <Previewer {...props} />
-      </DemoProvider>
+      <LazyLoad>
+        <DemoProvider inherit={props.inherit || theme.demoInheritSiteTheme}>
+          <Previewer {...props} />
+        </DemoProvider>
+      </LazyLoad>
     </div>
   );
 };
