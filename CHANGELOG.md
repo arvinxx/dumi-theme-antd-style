@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.25.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.24.0...v0.25.0) (2023-05-06)
+
+### ✨ 新特性
+
+- support lazy load demo ([89b24d1](https://github.com/arvinxx/dumi-theme-antd-style/commit/89b24d1)), closes [#44](https://github.com/arvinxx/dumi-theme-antd-style/issues/44)
+
 # [0.24.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.23.0...v0.24.0) (2023-05-04)
 
 ### ✨ 新特性
