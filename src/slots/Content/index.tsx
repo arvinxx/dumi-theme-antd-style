@@ -21,7 +21,13 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
     <Flexbox width={'100%'} gap={mobile ? 0 : 24}>
       <div className={cx('dumi-antd-style-content', styles.content)}>
         <Skeleton active paragraph loading={loading} />
-        {children}
+        <div
+          style={{
+            display: loading ? 'none' : undefined,
+          }}
+        >
+          {children}
+        </div>
       </div>
 
       <ContentFooter />
