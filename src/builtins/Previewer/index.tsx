@@ -1,7 +1,9 @@
+import { Card } from 'antd';
 import { createStyles } from 'antd-style';
 import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
+import { useMemo, useState } from 'react';
 import LazyLoad from 'react-lazy-load';
 import DemoProvider from '../../components/DemoProvider';
 
@@ -122,13 +124,40 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
 export default (props: IPreviewerProps) => {
   const { styles, cx, theme } = useStyles();
 
+  const [loading, setLoading] = useState(true);
+
+  const height = useMemo(() => {
+    if (typeof props.iframe === 'number') {
+      return props.iframe;
+    }
+    if (props.height) {
+      return props.height;
+    }
+    return 300;
+  }, [props.iframe, props.height]);
+
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
-      <LazyLoad>
+      <LazyLoad
+        elementType="section"
+        onContentVisible={() => {
+          setLoading(false);
+        }}
+      >
         <DemoProvider inherit={props.inherit || theme.demoInheritSiteTheme}>
           <Previewer {...props} />
         </DemoProvider>
       </LazyLoad>
+      {loading && (
+        <Card
+          className="loading"
+          loading
+          style={{
+            height,
+            width: '100%',
+          }}
+        />
+      )}
     </div>
   );
 };
