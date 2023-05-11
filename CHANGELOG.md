@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.25.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.0...v0.25.1) (2023-05-11)
+
+### 🐛 修复
+
+- LazyLoad add loading dom ([7d45403](https://github.com/arvinxx/dumi-theme-antd-style/commit/7d45403)), closes [#45](https://github.com/arvinxx/dumi-theme-antd-style/issues/45)
+
 # [0.25.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.24.0...v0.25.0) (2023-05-06)
 
 ### ✨ 新特性
