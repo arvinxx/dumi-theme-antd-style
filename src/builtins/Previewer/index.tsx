@@ -1,11 +1,10 @@
-import { Card } from 'antd';
 import { createStyles } from 'antd-style';
 import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
-import { useMemo, useState } from 'react';
-import LazyLoad from 'react-lazy-load';
+import { useMemo } from 'react';
 import DemoProvider from '../../components/DemoProvider';
+import { IntersectionLoad } from '../../components/LazyLoad';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => {
   return {
@@ -124,8 +123,6 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
 export default (props: IPreviewerProps) => {
   const { styles, cx, theme } = useStyles();
 
-  const [loading, setLoading] = useState(true);
-
   const height = useMemo(() => {
     if (typeof props.iframe === 'number') {
       return props.iframe;
@@ -138,26 +135,11 @@ export default (props: IPreviewerProps) => {
 
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
-      <LazyLoad
-        elementType="section"
-        onContentVisible={() => {
-          setLoading(false);
-        }}
-      >
+      <IntersectionLoad height={height} elementType="section">
         <DemoProvider inherit={props.inherit || theme.demoInheritSiteTheme}>
           <Previewer {...props} />
         </DemoProvider>
-      </LazyLoad>
-      {loading && (
-        <Card
-          className="loading"
-          loading
-          style={{
-            height,
-            width: '100%',
-          }}
-        />
-      )}
+      </IntersectionLoad>
     </div>
   );
 };
