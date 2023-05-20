@@ -64,6 +64,7 @@
     "@floating-ui/react": "^0.17",
     "ahooks": "^3",
     "animated-scroll-to": "^2",
+    "antd": "^5",
     "antd-style": "^3",
     "chalk": "^4",
     "chroma-js": "^2",
@@ -122,7 +123,6 @@
   },
   "peerDependencies": {
     "@ant-design/icons": ">=4",
-    "antd": "^5",
     "dumi": "^2.0.0",
     "react": ">=16.8",
     "react-dom": ">=16.8"
