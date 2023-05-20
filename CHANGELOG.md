@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.25.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.1...v0.25.2) (2023-05-20)
+
+### 🐛 修复
+
+- fix LazyLoad componentDidMount dom no use error ([2094543](https://github.com/arvinxx/dumi-theme-antd-style/commit/2094543)), closes [#54](https://github.com/arvinxx/dumi-theme-antd-style/issues/54)
+- 将 antd 作为 deps，修正不使用 antd 的组件库无法正常打开文档的问题 ([acfbad7](https://github.com/arvinxx/dumi-theme-antd-style/commit/acfbad7)), closes [#51](https://github.com/arvinxx/dumi-theme-antd-style/issues/51)
+
 ## [0.25.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.0...v0.25.1) (2023-05-11)
 
 ### 🐛 修复
