@@ -34,6 +34,10 @@ function getTargetLocalePath({
 
 const languageMap: Record<string, string> = {
   'zh-CN': '🇨🇳',
+  'zh-TW': '🇹🇼',
+  'zh-HK': '🇭🇰',
+  'zh-MO': '🇲🇴',
+  'zh-SG': '🇸🇬',
   'en-US': '🇺🇸',
   'jp-JP': '🇯🇵',
   'ko-KR': '🇰🇷',
@@ -49,6 +53,9 @@ const languageMap: Record<string, string> = {
 
 const displayLangMap: Record<string, string> = {
   'zh-CN': '中',
+  'zh-TW': '繁',
+  'zh-HK': '繁',
+  'zh-MO': '繁',
   'en-US': 'EN',
 };
 
