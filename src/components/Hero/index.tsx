@@ -1,9 +1,8 @@
+import { IAction } from '@/types';
 import { Button, ConfigProvider } from 'antd';
-import { Link } from 'dumi';
+import { history } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
-
-import { IAction } from '@/types';
 import HeroButton from './HeroButton';
 import { useStyles } from './style';
 
@@ -35,7 +34,6 @@ export interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ title, description, actions }) => {
   const { styles, cx } = useStyles();
-
   return (
     <Flexbox horizontal distribution={'center'} className={styles.container}>
       <div className={styles.canvas}></div>
@@ -55,12 +53,17 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
         {Boolean(actions?.length) && (
           <ConfigProvider theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
             <Flexbox horizontal gap={24} className={styles.actions}>
-              {actions!.map(({ text, link, openExternal }, index) => (
-                <Link
-                  key={text}
-                  to={link}
-                  target={openExternal ? '_blank' : undefined}
-                  rel="noreferrer"
+              {actions!.map(({ text, link }, index) => (
+                <div
+                  key={`${text}-${index}`}
+                  onClick={() => {
+                    const isoutLink = /^(https?:)?\/\//i.test(link);
+                    if (!isoutLink) {
+                      history.push(link);
+                    } else {
+                      window.open(link);
+                    }
+                  }}
                 >
                   {index === 0 ? (
                     <HeroButton>{text}</HeroButton>
@@ -69,7 +72,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
                       {text}
                     </Button>
                   )}
-                </Link>
+                </div>
               ))}
             </Flexbox>
           </ConfigProvider>
