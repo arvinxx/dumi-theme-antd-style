@@ -7,6 +7,10 @@ import { ApiHeaderConfig, HighlighterSyntaxTheme, IHero } from '../types';
  */
 export interface IFooter {
   /**
+   * @title 左下内容
+   */
+  leftBottom?: string;
+  /**
    * @title 底部内容
    */
   bottom?: string;
