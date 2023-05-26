@@ -107,7 +107,7 @@
     "father-plugin-dumi-theme": "^1.0.0-rc.1",
     "history": "^5",
     "husky": "^8",
-    "jsdom": "^21",
+    "jsdom": "^22",
     "lint-staged": "^13",
     "prettier": "^2",
     "prettier-plugin-organize-imports": "^3",
