@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import type { ThemeMode } from 'antd-style';
-import { memo, ReactNode, type FC } from 'react';
+import { ReactNode, memo, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { useThemeStore } from '../../store/useThemeStore';
 import NativeSelect from '../NativeSelect';
 
 const IconDark = () => (
@@ -41,20 +40,23 @@ const options = [
   { label: '暗色模式', icon: <IconDark />, value: 'dark' },
 ];
 
-const ThemeSwitch: FC = () => {
-  const themeMode = useThemeStore((s) => s.themeMode);
+interface ThemeSwitchProps {
+  value: ThemeMode;
+  onChange: (value: ThemeMode) => void;
+}
 
+const ThemeSwitch: FC<ThemeSwitchProps> = ({ value, onChange }) => {
   return (
     <span>
       <NativeSelect
         options={options}
-        value={options.findIndex((o) => o.value === themeMode)}
+        value={options.findIndex((o) => o.value === value)}
         onChange={(index) => {
           const mode = options[index].value as unknown as ThemeMode;
-          useThemeStore.setState({ themeMode: mode });
+          onChange(mode);
         }}
-        renderValue={(index) => options[index].icon}
-        renderItem={(item) => <Option label={item.label} icon={item.icon} />}
+        renderValue={(index) => options[index]?.icon}
+        renderItem={(item) => item && <Option label={item.label} icon={item.icon} />}
       />
     </span>
   );

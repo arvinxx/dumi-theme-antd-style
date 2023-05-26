@@ -12,7 +12,20 @@ import ThemeSwitch from '../../components/ThemeSwitch';
 
 import { useResponsive } from 'antd-style';
 import { useSiteStore } from '../../store/useSiteStore';
+import { useThemeStore } from '../../store/useThemeStore';
 import { useStyle } from './style';
+
+const Switcher = () => {
+  const themeMode = useThemeStore((s) => s.themeMode);
+  return (
+    <ThemeSwitch
+      value={themeMode}
+      onChange={(mode) => {
+        useThemeStore.setState({ themeMode: mode });
+      }}
+    />
+  );
+};
 
 const Header: FC = () => {
   const hasHeader = useSiteStore((s) => !!s.routeMeta.frontmatter);
@@ -38,7 +51,7 @@ const Header: FC = () => {
               <Logo />
             </Flexbox>
             <Flexbox>
-              <ThemeSwitch />
+              <Switcher />
             </Flexbox>
           </>
         ) : (
@@ -60,7 +73,7 @@ const Header: FC = () => {
                 <SearchBar />
                 <LangSwitch />
                 <GithubButton />
-                <ThemeSwitch />
+                <Switcher />
               </Flexbox>
             </section>
           </>
