@@ -57,10 +57,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7",
-    "@emotion/css": "^11",
-    "@emotion/server": "^11",
     "@emotion/styled": "^11",
-    "@emotion/utils": "^1",
     "@floating-ui/react": "^0.17",
     "ahooks": "^3",
     "animated-scroll-to": "^2",
