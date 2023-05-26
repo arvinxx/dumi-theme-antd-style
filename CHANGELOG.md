@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.26.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.3...v0.26.0) (2023-05-26)
+
+### ✨ 新特性
+
+- 实现 demo 颗粒度的主题切换 ([89cd105](https://github.com/arvinxx/dumi-theme-antd-style/commit/89cd105))
+
 ## [0.25.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.2...v0.25.3) (2023-05-26)
 
 ## [0.25.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.1...v0.25.2) (2023-05-20)
