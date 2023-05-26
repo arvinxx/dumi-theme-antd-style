@@ -1,7 +1,8 @@
 /**
- * title: 默认的 antd 主题
- * description: 默认情况下， Demo 与文档站的主题互相隔离，Demo 使用 antd 默认的主题
+ * title: 锁定亮色主题
+ * description: 指定 appearance=light ，将会锁定亮色主题，用户也无法切换
  * compact: true
+ * appearance: light
  */
 import { Alert, Button, Input, theme } from 'antd';
 import { Flexbox } from 'react-layout-kit';

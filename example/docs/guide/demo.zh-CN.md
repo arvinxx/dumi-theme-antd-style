@@ -8,10 +8,14 @@ demo:
 
 ## Demo 研发
 
-该主题默认会保证 antd 的默认主题样式，如果需要 demo 集成文档站的主题，可以通过对文档配置 `inherit: true` 属性来指定。
+本主题包下，demo 会自动响应站点亮暗色模式（`themeMode = auto`），并默认使用 antd 原本的亮暗色主题。
 
 <code src="../demos/Antd.tsx"></code>
-<code src="../demos/AntdInherit.tsx"></code>
+<code src="../demos/AntdLight.tsx"></code>
+
+如果需要控制 单个 demo 是否继承文档站的主题，可以通过 demo 元数据的 `inheritSiteTheme`字段配置。
+
+<code src="../demos/inheritSiteTheme.tsx"></code>
 
 如果需要让站点的主题全部都跟随 demo 的主题，可以通过添加 `siteToken: { demoInheritSiteTheme: true }` 属性来指定。详细可以查看：[siteToken](/config#sitetoken) 配置介绍
 
