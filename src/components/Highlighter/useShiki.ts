@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { getHighlighter, Highlighter, Theme } from 'shiki-es';
+import { Highlighter, Theme, getHighlighter, setCDN } from 'shiki-es';
 import useControlledState from 'use-merge-value';
 
 import { languageMap } from './language';
@@ -14,6 +14,9 @@ export interface ShikiOptions {
   onLoadingChange?: (loading: boolean) => void;
   theme?: Partial<ShikiSyntaxTheme>;
 }
+
+// 使用 element cdn 提升加载速度
+setCDN('https://npm.elemecdn.com/shiki-es/dist/assets');
 
 const defaultTheme: ShikiSyntaxTheme = {
   dark: 'github-dark',
