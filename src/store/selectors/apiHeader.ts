@@ -2,7 +2,6 @@ import { ApiHeaderConfig, ApiHeaderProps } from '../../types';
 import { SiteStore } from '../useSiteStore';
 import { githubSel } from './siteBasicInfo';
 
-export * from './hero';
 /**
  * 判断是否需要 ApiHeader
  * @param s
@@ -21,11 +20,13 @@ export const isApiPageSel = (s: SiteStore) => {
 
 export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   const REPO_BASE = githubSel(s);
-  const fm = s.routeMeta.frontmatter;
-  const localeId = s.locale.id;
+  const fm = s.routeMeta?.frontmatter || {};
+  const localeId = s.locale?.id;
 
   // 统一的路径匹配替换方法
   const replaceUrl = (rawStr: string) => {
+    if (!REPO_BASE) return undefined;
+
     return rawStr
       .replace('{github}', REPO_BASE)
       .replace('{atomId}', fm.atomId || '')
@@ -40,10 +41,10 @@ export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   };
 
   const {
-    pkg = s.siteData.pkg.name,
-    sourceUrl: sourceUrlMatch,
-    docUrl: docUrlMatch,
-  } = (s.siteData.themeConfig.apiHeader || {}) as ApiHeaderConfig;
+    pkg = s.siteData?.pkg?.name,
+    sourceUrl: globalSourceUrl,
+    docUrl: globalDocUrl,
+  } = (s.siteData?.themeConfig?.apiHeader || {}) as ApiHeaderConfig;
 
   // 1. 兜底默认使用文档的 apiHeader.pkg
   // 2. 如果 themeConfig 里配置了 pkg， 则使用配置的 pkg
@@ -58,12 +59,11 @@ export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   // 2. 默认使用 false
   const defaultImport = fm.apiHeader?.defaultImport || false;
 
-  const sourceUrl =
-    fm.apiHeader?.sourceUrl ||
-    (haseUrl(sourceUrlMatch) ? replaceUrl(sourceUrlMatch as string) : undefined);
+  const sourceUrlMatch = fm.apiHeader?.sourceUrl || globalSourceUrl;
+  const sourceUrl = haseUrl(sourceUrlMatch) ? replaceUrl(sourceUrlMatch as string) : undefined;
 
-  const docUrl =
-    fm.apiHeader?.docUrl || (haseUrl(docUrlMatch) ? replaceUrl(docUrlMatch as string) : undefined);
+  const docUrlMatch = fm.apiHeader?.docUrl || globalDocUrl;
+  const docUrl = haseUrl(docUrlMatch) ? replaceUrl(docUrlMatch) : undefined;
 
   return {
     title: fm.title,
