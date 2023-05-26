@@ -37,6 +37,7 @@ export interface NativeSelectProps {
   renderValue?: (index: number) => ReactNode;
   renderItem?: (item: OptionType, index: number) => ReactNode;
   style?: CSSProperties;
+  className?: string;
 }
 
 const NativeSelect: FC<NativeSelectProps> = ({
@@ -47,11 +48,12 @@ const NativeSelect: FC<NativeSelectProps> = ({
   renderValue,
   renderItem,
   style,
+  className,
 }) => {
   const cls = prefixCls ?? 'native-select';
   const [selectedIndex, setSelectedIndex] = useControlledState<number>(0, { value, onChange });
 
-  const { styles } = useStyles(cls);
+  const { styles, cx } = useStyles(cls);
   const listRef = useRef<Array<HTMLElement | null>>([]);
   const listContentRef = useRef<Array<string | null>>([]);
   const overflowRef = useRef<SideObject>(null);
@@ -152,7 +154,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
       <button
         type={'button'}
         ref={refs.setReference}
-        className={styles.button}
+        className={cx(styles.button, className)}
         aria-label={'selected-item'}
         style={style}
         {...getReferenceProps({

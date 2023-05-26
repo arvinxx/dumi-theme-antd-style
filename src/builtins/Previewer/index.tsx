@@ -133,10 +133,13 @@ export default (props: IPreviewerProps) => {
     return 300;
   }, [props.iframe, props.height]);
 
+  const inheritSiteTheme = props.inheritSiteTheme || theme.demoInheritSiteTheme;
+
+  const demoAppearance = props.appearance;
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
       <IntersectionLoad height={height} elementType="section">
-        <DemoProvider inherit={props.inherit || theme.demoInheritSiteTheme}>
+        <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
           <Previewer {...props} />
         </DemoProvider>
       </IntersectionLoad>

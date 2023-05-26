@@ -1,9 +1,8 @@
-import styled from '@emotion/styled';
-import type { ThemeMode } from 'antd-style';
-import { CSSProperties, ReactNode, memo, type FC } from 'react';
-import { Flexbox } from 'react-layout-kit';
-
-import NativeSelect from '../NativeSelect';
+import { useThemeMode } from 'antd-style';
+import type { IPreviewerProps } from 'dumi';
+import { type FC } from 'react';
+import { ThemeProvider } from '../../components/DumiSiteProvider';
+import ThemeSwitch from '../../components/ThemeSwitch';
 
 const IconDark = () => (
   <svg viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor">
@@ -23,56 +22,24 @@ const IconAuto = () => (
   </svg>
 );
 
-const IconWrapper = styled.span`
-  width: 12px;
-`;
-
-const Option = ({ icon, label }: { icon: ReactNode; label: ReactNode }) => (
-  <Flexbox horizontal gap={12} align={'center'}>
-    <IconWrapper>{icon} </IconWrapper>
-    {label}
-  </Flexbox>
-);
-
 const defaultOptions = [
-  { label: '跟随系统', icon: <IconAuto />, value: 'auto' },
+  { label: '跟随文档', icon: <IconAuto />, value: 'auto' },
   { label: '亮色模式', icon: <IconLight />, value: 'light' },
   { label: '暗色模式', icon: <IconDark />, value: 'dark' },
 ];
+const PreviewerActionsExtra: FC<IPreviewerProps> = () => {
+  const { themeMode, setThemeMode } = useThemeMode();
 
-interface ThemeSwitchProps {
-  value: ThemeMode;
-  onChange: (value: ThemeMode) => void;
-  options?: typeof defaultOptions;
-  className?: string;
-  style?: CSSProperties;
-  title?: string;
-}
-
-const ThemeSwitch: FC<ThemeSwitchProps> = ({
-  value,
-  onChange,
-  options = defaultOptions,
-  className,
-  style,
-  ...props
-}) => {
   return (
-    <span {...props}>
-      <NativeSelect
-        options={options}
-        value={options.findIndex((o) => o.value === value)}
-        onChange={(index) => {
-          const mode = options[index].value as unknown as ThemeMode;
-          onChange(mode);
-        }}
-        renderValue={(index) => options[index]?.icon}
-        renderItem={(item) => item && <Option label={item.label} icon={item.icon} />}
-        className={className}
-        style={style}
+    <ThemeProvider>
+      <ThemeSwitch
+        title={'切换主题'}
+        options={defaultOptions}
+        value={themeMode}
+        onChange={setThemeMode}
+        style={{ border: 'none', boxShadow: 'none' }}
       />
-    </span>
+    </ThemeProvider>
   );
 };
-
-export default memo(ThemeSwitch);
+export default PreviewerActionsExtra;
