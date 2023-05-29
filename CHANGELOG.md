@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.27.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.3...v0.27.0) (2023-05-29)
+
+### ✨ 新特性
+
+- footerConfig 添加 copyright 配置 ([341021b](https://github.com/arvinxx/dumi-theme-antd-style/commit/341021b)), closes [#58](https://github.com/arvinxx/dumi-theme-antd-style/issues/58)
+
 ## [0.26.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.2...v0.26.3) (2023-05-29)
 
 ## [0.26.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.1...v0.26.2) (2023-05-29)
