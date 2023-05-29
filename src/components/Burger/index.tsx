@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Center } from 'react-layout-kit';
 
 import { activePathSel, useSiteStore } from '../../store';
-import { FillRect, useStyles } from './style';
+import { useStyles } from './style';
 
 const Burger = () => {
   const [opened, setOpened] = useState(false);
@@ -36,7 +36,7 @@ const Burger = () => {
         headerStyle={{ display: 'none' }}
         bodyStyle={{ padding: 0 }}
       >
-        <FillRect style={{ height: 24 }} />
+        <div style={{ height: 24 }} className={styles.rect} />
         <Menu
           mode={'inline'}
           selectedKeys={uniq([activePath, `s-${pathname}`])}
@@ -70,7 +70,7 @@ const Burger = () => {
               }),
           }))}
         />
-        <FillRect style={{ flex: 1 }} />
+        <div style={{ flex: 1 }} className={styles.rect} />
       </Drawer>
     </Center>
   );

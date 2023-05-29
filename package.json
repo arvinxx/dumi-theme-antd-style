@@ -58,7 +58,6 @@
   "dependencies": {
     "@ant-design/icons": "^5",
     "@babel/runtime": "^7",
-    "@emotion/styled": "^11",
     "@floating-ui/react": "^0.17",
     "ahooks": "^3",
     "animated-scroll-to": "^2",

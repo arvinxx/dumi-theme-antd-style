@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import type { ThemeMode } from 'antd-style';
 import { CSSProperties, ReactNode, memo, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -23,13 +22,9 @@ const IconAuto = () => (
   </svg>
 );
 
-const IconWrapper = styled.span`
-  width: 12px;
-`;
-
 const Option = ({ icon, label }: { icon: ReactNode; label: ReactNode }) => (
   <Flexbox horizontal gap={12} align={'center'}>
-    <IconWrapper>{icon} </IconWrapper>
+    <span style={{ width: 12 }}>{icon} </span>
     {label}
   </Flexbox>
 );

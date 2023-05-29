@@ -1,17 +1,15 @@
-import styled from '@emotion/styled';
 import { createStyles } from 'antd-style';
 import { rgba } from 'polished';
-
-export const FillRect = styled.div`
-  background: ${(p) => rgba(p.theme.colorBgContainer, 0.8)};
-
-  width: 100%;
-` as any;
 
 export const useStyles = createStyles(({ token, prefixCls, cx, css }) => {
   const offset = 6;
 
   return {
+    rect: css`
+      background: ${rgba(token.colorBgContainer, 0.8)};
+
+      width: 100%;
+    `,
     icon: cx(
       'site-burger-icon',
       css`
