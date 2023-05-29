@@ -1,5 +1,6 @@
 import { IAction } from '@/types';
 import { Button, ConfigProvider } from 'antd';
+import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 import HeroButton from './HeroButton';
@@ -52,22 +53,29 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
         {Boolean(actions?.length) && (
           <ConfigProvider theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
             <Flexbox horizontal gap={24} className={styles.actions}>
-              {actions!.map(({ text, link }, index) => {
+              {actions!.map(({ text, link, openExternal }, index) => {
                 const isOutLink = /^(https?:)?\/\//i.test(link);
-                let target = '_blank';
-                if (!isOutLink) {
-                  target = '_self';
-                }
-                return (
-                  <a key={`${text}-${index}`} href={link} target={target} rel="noopener noreferrer">
-                    {index === 0 ? (
-                      <HeroButton>{text}</HeroButton>
-                    ) : (
-                      <Button size={'large'} shape={'round'} type={'default'}>
-                        {text}
-                      </Button>
-                    )}
+                const dom =
+                  index === 0 ? (
+                    <HeroButton>{text}</HeroButton>
+                  ) : (
+                    <Button size={'large'} shape={'round'} type={'default'}>
+                      {text}
+                    </Button>
+                  );
+                return isOutLink ? (
+                  <a key={`${text}-${index}`} href={link} target="_blank" rel="noopener noreferrer">
+                    {dom}
                   </a>
+                ) : (
+                  <Link
+                    key={text}
+                    to={link}
+                    target={openExternal ? '_blank' : undefined}
+                    rel="noreferrer"
+                  >
+                    {dom}
+                  </Link>
                 );
               })}
             </Flexbox>
