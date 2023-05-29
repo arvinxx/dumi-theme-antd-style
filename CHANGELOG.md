@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.26.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.1...v0.26.2) (2023-05-29)
+
+### 🐛 修复
+
+- 修复侧边栏出现滚动条时底部部分隐藏的问题 ([af7c69c](https://github.com/arvinxx/dumi-theme-antd-style/commit/af7c69c)), closes [#35](https://github.com/arvinxx/dumi-theme-antd-style/issues/35)
+
 ## [0.26.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.0...v0.26.1) (2023-05-29)
 
 ### 🐛 修复
