@@ -10,7 +10,7 @@ import {
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import React, { memo, useEffect } from 'react';
-import { SiteStore, useSiteStore } from '../../store/useSiteStore';
+import { SiteStore, useStoreApi } from '../../store/useSiteStore';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -40,9 +40,10 @@ const useSyncState = <T extends keyof SiteStore>(
   value: SiteStore[T],
   updateMethod?: (key: T, value: SiteStore[T]) => void,
 ) => {
+  const storeApi = useStoreApi();
   const updater = updateMethod
     ? updateMethod
-    : (key: T, value: SiteStore[T]) => useSiteStore.setState({ [key]: value });
+    : (key: T, value: SiteStore[T]) => storeApi.setState({ [key]: value });
 
   // 如果是 Node 环境，直接更新一次 store
   // 但是为了避免多次更新 store，所以加一个标记
@@ -70,6 +71,7 @@ export const StoreUpdater = memo(() => {
   const navData = useNavData();
   const location = useLocation();
   const locale = useLocale();
+  const storeApi = useStoreApi();
 
   useSyncState('siteData', siteData, () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -77,11 +79,11 @@ export const StoreUpdater = memo(() => {
     const {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       siteData: { setLoading: _, ...prevData },
-    } = useSiteStore.getState();
+    } = storeApi.getState();
 
     if (isEqual(data, prevData)) return;
 
-    useSiteStore.setState({ siteData });
+    storeApi.setState({ siteData });
   });
 
   useSyncState('sidebar', sidebar);
@@ -93,7 +95,7 @@ export const StoreUpdater = memo(() => {
   useSyncState('navData', navData, () => {
     const data = siteData.themeConfig.hideHomeNav ? navData : [homeNav, ...navData];
 
-    useSiteStore.setState({ navData: data });
+    storeApi.setState({ navData: data });
   });
 
   return null;
