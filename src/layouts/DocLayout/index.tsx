@@ -1,5 +1,15 @@
 import { extractStaticStyle } from 'antd-style';
-import { Helmet, useIntl, useLocation } from 'dumi';
+import {
+  Helmet,
+  useIntl,
+  useLocale,
+  useLocation,
+  useNavData,
+  useRouteMeta,
+  useSidebarData,
+  useSiteData,
+  useTabMeta,
+} from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { PropsWithChildren, memo, useEffect, type FC } from 'react';
 
@@ -9,7 +19,7 @@ import { StoreUpdater } from '../../components/StoreUpdater';
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
 
-import { isHeroPageSel, tokenSel, useSiteStore } from '../../store';
+import { Provider, createStore, isHeroPageSel, tokenSel, useSiteStore } from '../../store';
 import { GlobalStyle } from './styles';
 
 const DocLayout: FC = memo(() => {
@@ -64,12 +74,26 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default () => (
-  <>
-    <StoreUpdater />
-    <ThemeProvider>
-      <GlobalStyle />
-      <DocLayout />
-    </ThemeProvider>
-  </>
-);
+export default () => {
+  const siteData = useSiteData();
+  const sidebar = useSidebarData();
+  const routeMeta = useRouteMeta();
+  const tabMeta = useTabMeta();
+  const navData = useNavData();
+  const location = useLocation();
+  const locale = useLocale();
+
+  return (
+    <Provider
+      createStore={() =>
+        createStore({ siteData, navData, locale, location, routeMeta, tabMeta, sidebar })
+      }
+    >
+      <StoreUpdater />
+      <ThemeProvider>
+        <GlobalStyle />
+        <DocLayout />
+      </ThemeProvider>
+    </Provider>
+  );
+};

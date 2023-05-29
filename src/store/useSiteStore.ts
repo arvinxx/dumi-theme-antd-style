@@ -12,7 +12,8 @@ import { PICKED_PKG_FIELDS } from 'dumi/dist/constants';
 import type { Location } from 'history';
 
 import { ComponentType } from 'react';
-import { create } from 'zustand';
+import { create, StoreApi } from 'zustand';
+import { createContext } from 'zustand-utils';
 import { devtools } from 'zustand/middleware';
 
 export type NavData = (INavItem & { children?: INavItem[] | undefined })[];
@@ -81,11 +82,16 @@ const initialState: SiteStore = {
   locale: { id: 'zh-CN', name: '中文', suffix: '' },
 };
 
-export const useSiteStore = create<SiteStore>()(
-  devtools(
-    () => ({
-      ...initialState,
-    }),
-    { name: 'dumi-theme-antd-style' },
-  ),
-);
+export const createStore = (initState: SiteStore) =>
+  create<SiteStore>()(
+    devtools(
+      () => ({
+        ...initialState,
+        ...initState,
+      }),
+      { name: 'dumi-theme-antd-style' },
+    ),
+  );
+
+const { useStore, useStoreApi, Provider } = createContext<StoreApi<SiteStore>>();
+export { useStore as useSiteStore, Provider, useStoreApi };
