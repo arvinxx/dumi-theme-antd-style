@@ -25,7 +25,7 @@ const Footer: FC = () => {
       : getColumns({ github: githubUrl || (pkg as any).homepage });
 
   const bottomFooter = footer?.bottom || themeConfig.footer;
-  const leftBottom = footer?.leftBottom || `Copyright © 2022-${new Date().getFullYear()}`;
+  const copyright = footer?.copyright || `Copyright © 2022-${new Date().getFullYear()}`;
   return (
     <Foot
       theme={footer?.theme || (theme.appearance as FooterProps['theme'])}
@@ -33,7 +33,7 @@ const Footer: FC = () => {
       bottom={
         mobile ? (
           <Center className={styles.container}>
-            {leftBottom}
+            {copyright}
             <Flexbox
               align={'center'}
               horizontal
@@ -42,7 +42,7 @@ const Footer: FC = () => {
           </Center>
         ) : (
           <Center horizontal>
-            {leftBottom}
+            {copyright}
             <Divider type={'vertical'} />
             <span dangerouslySetInnerHTML={{ __html: bottomFooter }} />
           </Center>

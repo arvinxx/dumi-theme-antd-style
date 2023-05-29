@@ -9,7 +9,7 @@ export interface IFooter {
   /**
    * @title 左下内容
    */
-  leftBottom?: string;
+  copyright?: string;
   /**
    * @title 底部内容
    */

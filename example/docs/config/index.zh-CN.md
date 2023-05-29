@@ -121,12 +121,12 @@ export default defineConfig({
 
 `IFooter` 详细配置如下：
 
-| 名称       | 类型                      | 描述                         |
-| ---------- | ------------------------- | ---------------------------- |
-| bottom     | string                    | 底部内容                     |
-| leftBottom | string                    | 底部左边的内容               |
-| theme      | `dark`、 `light`          | 主题，可选值为 dark 或 light |
-| columns    | `FooterColumn[]`/ `false` | 列配置                       |
+| 名称      | 类型                      | 描述                         |
+| --------- | ------------------------- | ---------------------------- |
+| bottom    | string                    | 底部内容                     |
+| copyright | string                    | 版权信息                     |
+| theme     | `dark`、 `light`          | 主题，可选值为 dark 或 light |
+| columns   | `FooterColumn[]`/ `false` | 列配置                       |
 
 ### socialLinks
 
