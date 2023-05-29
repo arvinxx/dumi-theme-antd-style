@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.26.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.2...v0.26.3) (2023-05-29)
+
 ## [0.26.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.1...v0.26.2) (2023-05-29)
 
 ### 🐛 修复
