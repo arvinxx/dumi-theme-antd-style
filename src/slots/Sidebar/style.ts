@@ -7,7 +7,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     position: sticky;
     top: ${token.headerHeight}px;
     max-height: calc(100vh - ${token.headerHeight}px);
-
+    box-sizing: border-box;
     padding-top: 20px;
     padding-bottom: 24px;
     padding-inline: 16px;
