@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.26.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.0...v0.26.1) (2023-05-29)
+
+### 🐛 修复
+
+- 修正外链无法打开新标签的问题 ([53c0f0e](https://github.com/arvinxx/dumi-theme-antd-style/commit/53c0f0e)), closes [#57](https://github.com/arvinxx/dumi-theme-antd-style/issues/57)
+
 # [0.26.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.25.3...v0.26.0) (2023-05-26)
 
 ### ✨ 新特性
