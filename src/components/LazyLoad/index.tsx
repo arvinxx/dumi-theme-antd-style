@@ -73,7 +73,6 @@ export class IntersectionLoad extends Component<Props, State> {
 
   componentWillUnmount() {
     const node = this.wrapper?.current;
-    console.log(node);
     if (node && node instanceof HTMLElement) {
       this.elementObserver?.unobserve(node);
     }

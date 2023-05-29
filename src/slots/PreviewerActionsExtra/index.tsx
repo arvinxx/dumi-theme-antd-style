@@ -1,8 +1,16 @@
-import { useThemeMode } from 'antd-style';
+import { createStyles, useThemeMode } from 'antd-style';
 import type { IPreviewerProps } from 'dumi';
 import { type FC } from 'react';
 import { ThemeProvider } from '../../components/DumiSiteProvider';
 import ThemeSwitch from '../../components/ThemeSwitch';
+
+const useStyles = createStyles(
+  ({ css, token }) => css`
+    &.native-select-button {
+      color: ${token.colorTextTertiary};
+    }
+  `,
+);
 
 const IconDark = () => (
   <svg viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor">
@@ -29,7 +37,7 @@ const defaultOptions = [
 ];
 const PreviewerActionsExtra: FC<IPreviewerProps> = () => {
   const { themeMode, setThemeMode } = useThemeMode();
-
+  const { styles } = useStyles();
   return (
     <ThemeProvider>
       <ThemeSwitch
@@ -38,6 +46,7 @@ const PreviewerActionsExtra: FC<IPreviewerProps> = () => {
         value={themeMode}
         onChange={setThemeMode}
         style={{ border: 'none', boxShadow: 'none' }}
+        className={styles}
       />
     </ThemeProvider>
   );

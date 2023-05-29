@@ -60,7 +60,6 @@
     "@babel/runtime": "^7",
     "@floating-ui/react": "^0.17",
     "ahooks": "^3",
-    "animated-scroll-to": "^2",
     "antd": "^5",
     "antd-style": "^3",
     "chalk": "^4",

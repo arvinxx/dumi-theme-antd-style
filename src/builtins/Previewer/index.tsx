@@ -32,7 +32,11 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
             }
           }
         }
-
+        &-actions {
+          svg {
+            fill: ${token.colorTextTertiary};
+          }
+        }
         &-actions:not(:last-child) {
           border-color: ${token.colorBorderSecondary};
         }
