@@ -43,8 +43,8 @@ const Burger = () => {
           openKeys={[activePath]}
           className={styles.menu}
           items={nav.map((item) => ({
-            label: <Link to={item.link}>{item.title}</Link>,
-            key: item.activePath! || item.link,
+            label: <Link to={item.link!}>{item.title}</Link>,
+            key: item.activePath! || item.link!,
             children:
               (item.activePath || item.link) === activePath &&
               sidebar?.map((group) => {

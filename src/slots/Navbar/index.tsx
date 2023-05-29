@@ -67,11 +67,11 @@ const Navbar: FC = () => {
         className={styles.tabs}
         items={nav.map((item) => ({
           label: (
-            <Link className={styles.link} to={item.link}>
+            <Link className={styles.link} to={item.link!}>
               {item.title}
             </Link>
           ),
-          key: item.activePath! || item.link,
+          key: item.activePath! || item.link!,
         }))}
       />
 
