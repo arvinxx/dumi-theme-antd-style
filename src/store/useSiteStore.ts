@@ -47,51 +47,8 @@ export interface SiteStore {
   locale: ILocale;
 }
 
-const initialState: SiteStore = {
-  siteData: {
-    // @ts-ignore
-    setLoading: undefined,
-    loading: true,
-    pkg: {},
-    components: {},
-    demos: {},
-    locales: [],
-    entryExports: {},
-    // @ts-ignore
-    themeConfig: {},
-  },
-  sidebar: [],
-  navData: [],
-
-  location: {
-    pathname: '',
-    state: '',
-    search: '',
-    hash: '',
-    key: '',
-  },
-
-  routeMeta: {
-    toc: [],
-    texts: [],
-    tabs: undefined,
-    // @ts-ignore
-    frontmatter: {},
-  },
-
-  locale: { id: 'zh-CN', name: '中文', suffix: '' },
-};
-
 export const createStore = (initState: SiteStore) =>
-  create<SiteStore>()(
-    devtools(
-      () => ({
-        ...initialState,
-        ...initState,
-      }),
-      { name: 'dumi-theme-antd-style' },
-    ),
-  );
+  create<SiteStore>()(devtools(() => initState, { name: 'dumi-theme-antd-style' }));
 
 const { useStore, useStoreApi, Provider } = createContext<StoreApi<SiteStore>>();
 export { useStore as useSiteStore, Provider, useStoreApi };

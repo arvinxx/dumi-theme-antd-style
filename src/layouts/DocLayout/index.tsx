@@ -11,7 +11,7 @@ import {
   useTabMeta,
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import { PropsWithChildren, memo, useEffect, type FC } from 'react';
+import { PropsWithChildren, memo, useEffect, useMemo, type FC } from 'react';
 
 import DumiSiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
@@ -74,6 +74,16 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
+const App = memo(({ initState }: any) => (
+  <Provider createStore={() => createStore(initState)}>
+    <StoreUpdater />
+    <ThemeProvider>
+      <GlobalStyle />
+      <DocLayout />
+    </ThemeProvider>
+  </Provider>
+));
+
 export default () => {
   const siteData = useSiteData();
   const sidebar = useSidebarData();
@@ -83,17 +93,10 @@ export default () => {
   const location = useLocation();
   const locale = useLocale();
 
-  return (
-    <Provider
-      createStore={() =>
-        createStore({ siteData, navData, locale, location, routeMeta, tabMeta, sidebar })
-      }
-    >
-      <StoreUpdater />
-      <ThemeProvider>
-        <GlobalStyle />
-        <DocLayout />
-      </ThemeProvider>
-    </Provider>
+  const initState = useMemo(
+    () => ({ siteData, navData, locale, location, routeMeta, tabMeta, sidebar }),
+    [],
   );
+
+  return <App initState={initState} />;
 };
