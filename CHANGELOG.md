@@ -1,10 +1,24 @@
 # Changelog
 
-## [0.26.4-alpha.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.3...v0.26.4-alpha.1) (2023-05-29)
+## [0.27.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.2...v0.27.3) (2023-06-04)
 
 ### 🐛 修复
 
-- 修正首屏 SSR 的内容不正确的 bug ([7856b41](https://github.com/arvinxx/dumi-theme-antd-style/commit/7856b41))
+- **feature**: add regex to match image resources ([7ceb589](https://github.com/arvinxx/dumi-theme-antd-style/commit/7ceb589)), closes [#48](https://github.com/arvinxx/dumi-theme-antd-style/issues/48)
+
+## [0.27.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.1...v0.27.2) (2023-06-04)
+
+## [0.27.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.0...v0.27.1) (2023-06-04)
+
+### 🐛 修复
+
+- 修正 LazyLoading 使得 Demo 加载不出来的问题 ([0a73d5d](https://github.com/arvinxx/dumi-theme-antd-style/commit/0a73d5d)), closes [#63](https://github.com/arvinxx/dumi-theme-antd-style/issues/63)
+
+# [0.27.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.3...v0.27.0) (2023-05-29)
+
+### ✨ 新特性
+
+- footerConfig 添加 copyright 配置 ([341021b](https://github.com/arvinxx/dumi-theme-antd-style/commit/341021b)), closes [#58](https://github.com/arvinxx/dumi-theme-antd-style/issues/58)
 
 ## [0.26.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.2...v0.26.3) (2023-05-29)
 

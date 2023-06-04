@@ -3,8 +3,10 @@ import { IPreviewerProps } from 'dumi/dist/client/theme-api/types';
 import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
 import { useMemo } from 'react';
+
 import DemoProvider from '../../components/DemoProvider';
 import { IntersectionLoad } from '../../components/LazyLoad';
+import { useSiteStore } from '../../store';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => {
   return {
@@ -140,13 +142,23 @@ export default (props: IPreviewerProps) => {
   const inheritSiteTheme = props.inheritSiteTheme || theme.demoInheritSiteTheme;
 
   const demoAppearance = props.appearance;
+  const lazyLoading = useSiteStore((s) => s.siteData.themeConfig.demo?.lazyLoading);
+
+  const content = (
+    <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
+      <Previewer {...props} />
+    </DemoProvider>
+  );
+
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
-      <IntersectionLoad height={height} elementType="section">
-        <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
-          <Previewer {...props} />
-        </DemoProvider>
-      </IntersectionLoad>
+      {lazyLoading ? (
+        <IntersectionLoad height={height} elementType="section">
+          {content}
+        </IntersectionLoad>
+      ) : (
+        content
+      )}
     </div>
   );
 };

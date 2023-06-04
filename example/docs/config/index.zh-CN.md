@@ -121,11 +121,12 @@ export default defineConfig({
 
 `IFooter` 详细配置如下：
 
-| 名称    | 类型                      | 描述                         |
-| ------- | ------------------------- | ---------------------------- |
-| bottom  | string                    | 底部内容                     |
-| theme   | `dark`、 `light`          | 主题，可选值为 dark 或 light |
-| columns | `FooterColumn[]`/ `false` | 列配置                       |
+| 名称      | 类型                      | 描述                         |
+| --------- | ------------------------- | ---------------------------- |
+| bottom    | string                    | 底部内容                     |
+| copyright | string                    | 版权信息                     |
+| theme     | `dark`、 `light`          | 主题，可选值为 dark 或 light |
+| columns   | `FooterColumn[]`/ `false` | 列配置                       |
 
 ### socialLinks
 
@@ -274,3 +275,12 @@ token 介绍如下：
 | tocWidth             | `number`  | `176`   | 目录宽度                   |
 | contentMaxWidth      | `number`  | `1152`  | 内容最大宽度               |
 | demoInheritSiteTheme | `boolean` | `false` | 让 demo 主题跟随站点的主题 |
+
+### demo
+
+#### demo.lazyLoading
+
+demo 支持懒加载，如果文档的 demo 量很大，可以开启以提升文档加载性能。
+
+- 类型：`boolean`
+- 默认值：`false`
