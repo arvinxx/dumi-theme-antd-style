@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.27.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.0...v0.27.1) (2023-06-04)
+
+### 🐛 修复
+
+- 修正 LazyLoading 使得 Demo 加载不出来的问题 ([0a73d5d](https://github.com/arvinxx/dumi-theme-antd-style/commit/0a73d5d)), closes [#63](https://github.com/arvinxx/dumi-theme-antd-style/issues/63)
+
 # [0.27.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.26.3...v0.27.0) (2023-05-29)
 
 ### ✨ 新特性
