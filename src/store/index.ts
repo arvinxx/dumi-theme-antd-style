@@ -1,6 +1,6 @@
 export * from './selectors';
 export * from './useSiteStore';
-import { apiHeaderSel, flattenSidebarSel, tokenSel } from './selectors';
+import { apiHeaderSel, flattenSidebarSel, logoSel, tokenSel } from './selectors';
 
 /**
  * @title 数据选择器
@@ -15,4 +15,5 @@ export const siteSelectors = {
    */
   flattenSidebar: flattenSidebarSel,
   token: tokenSel,
+  logo: logoSel,
 };
