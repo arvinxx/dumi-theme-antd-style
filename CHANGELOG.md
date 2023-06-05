@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.27.4-alpha.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.3...v0.27.4-alpha.1) (2023-06-05)
+
+### 🐛 修复
+
+- 修正首屏 SSR 的内容不正确的 bug ([7856b41](https://github.com/arvinxx/dumi-theme-antd-style/commit/7856b41))
+
 ## [0.27.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.2...v0.27.3) (2023-06-04)
 
 ### 🐛 修复
