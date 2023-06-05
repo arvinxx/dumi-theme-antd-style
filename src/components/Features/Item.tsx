@@ -12,7 +12,10 @@ const Image: FC<{ image: string; className?: string; title: string }> = ({
   className,
   title,
 }) => {
-  return image.startsWith('http') ? (
+  // 正则匹配图片资源
+  const reg = /(\.png|\.jpg|\.jpeg|\.gif|\.svg|\.webp)$/;
+
+  return image.startsWith('http') || reg.test(image) ? (
     <img className={className} src={image} alt={title} />
   ) : (
     <Center className={className}>{image}</Center>
