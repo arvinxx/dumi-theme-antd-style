@@ -1,7 +1,7 @@
 import { EditOutlined, GithubFilled } from '@ant-design/icons';
 import { Divider, Space, Typography } from 'antd';
 import { useResponsive } from 'antd-style';
-import { FC, memo, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';

@@ -142,11 +142,13 @@ export default (props: IPreviewerProps) => {
   const demoAppearance = props.appearance;
   return (
     <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
-      <IntersectionLoad height={height} elementType="section">
-        <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
-          <Previewer {...props} />
-        </DemoProvider>
-      </IntersectionLoad>
+      <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
+        <Previewer {...props}>
+          <IntersectionLoad height={height} elementType="section">
+            {props.children}
+          </IntersectionLoad>
+        </Previewer>
+      </DemoProvider>
     </div>
   );
 };

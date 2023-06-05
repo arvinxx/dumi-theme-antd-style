@@ -107,7 +107,7 @@ export class IntersectionLoad extends Component<Props, State> {
     const { children, className, height, width, elementType } = this.props;
     const { visible } = this.state;
 
-    const elStyles = { width };
+    const elStyles = { width, contentVisibility: 'auto' };
     const elClasses = `LazyLoad${visible ? ' is-visible' : ''}${className ? ` ${className}` : ''}`;
 
     const componentElementType = elementType || 'div';
@@ -123,6 +123,7 @@ export class IntersectionLoad extends Component<Props, State> {
         Children.only(children)
       ) : (
         <Card
+          bordered={false}
           className="loading"
           loading
           style={{
