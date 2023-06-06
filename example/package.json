@@ -6,5 +6,8 @@
     "preview": "dumi preview",
     "setup": "dumi setup",
     "start": "dumi dev"
+  },
+  "devDependencies": {
+    "babel-plugin-antd-style": "^1"
   }
 }

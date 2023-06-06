@@ -73,6 +73,7 @@ export default defineConfig({
     html, body { background: #0E1116; }
   }`,
   ],
+  extraBabelPlugins: [require.resolve('babel-plugin-antd-style')],
   codeSplitting: {
     jsStrategy: 'granularChunks',
   },

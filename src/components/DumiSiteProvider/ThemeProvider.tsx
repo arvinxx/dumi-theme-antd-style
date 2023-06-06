@@ -1,8 +1,8 @@
 import {
   CustomTokenParams,
-  extractStaticStyle,
-  StyleProvider,
   ThemeProvider as Provider,
+  StyleProvider,
+  extractStaticStyle,
 } from 'antd-style';
 import { ReactNode, useCallback } from 'react';
 
