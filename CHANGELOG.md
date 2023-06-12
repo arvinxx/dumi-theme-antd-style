@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.27.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.3...v0.27.4)
+
+<sup>Released on **2023-06-12**</sup>
+
+#### 👷 构建系统
+
+- Update deps.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### Build system
+
+- Update deps ([2b44aba](https://github.com/arvinxx/dumi-theme-antd-style/commit/2b44aba))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [0.27.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.2...v0.27.3) (2023-06-04)
 
 ### 🐛 修复
