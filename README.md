@@ -99,6 +99,9 @@ pnpm i dumi-theme-antd-style -D
 <a href="https://github.com/chenshuai2144" title="chenshuai2144">
   <img src="https://avatars.githubusercontent.com/u/8186664?v=4" width="50" />
 </a>
+<a href="https://github.com/actions-user" title="actions-user">
+  <img src="https://avatars.githubusercontent.com/u/65916846?v=4" width="50" />
+</a>
 <a href="https://github.com/Lands-1203" title="Lands-1203">
   <img src="https://avatars.githubusercontent.com/u/61341868?v=4" width="50" />
 </a>
@@ -107,9 +110,6 @@ pnpm i dumi-theme-antd-style -D
 </a>
 <a href="https://github.com/cc7gs" title="cc7gs">
   <img src="https://avatars.githubusercontent.com/u/36002392?v=4" width="50" />
-</a>
-<a href="https://github.com/actions-user" title="actions-user">
-  <img src="https://avatars.githubusercontent.com/u/65916846?v=4" width="50" />
 </a>
 <a href="https://github.com/Y-io" title="Y-io">
   <img src="https://avatars.githubusercontent.com/u/25784157?v=4" width="50" />
