@@ -66,7 +66,11 @@ const Navbar: FC = () => {
         activeKey={activePath}
         className={styles.tabs}
         items={nav.map((item) => ({
-          label: (
+          label: /^(\w+:)\/\/|^(mailto|tel):/.test(item.link) ? (
+            <a href={item.link} className={styles.link} target="_blank" rel="noreferrer">
+              {item.title}
+            </a>
+          ) : (
             <Link className={styles.link} to={item.link!}>
               {item.title}
             </Link>
