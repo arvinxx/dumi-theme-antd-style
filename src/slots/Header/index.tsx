@@ -1,4 +1,4 @@
-import { memo, type FC } from 'react';
+import { memo, useEffect, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import LangSwitch from 'dumi/theme/slots/LangSwitch';
@@ -11,12 +11,15 @@ import GithubButton from '../../components/GithubButton';
 import ThemeSwitch from '../../components/ThemeSwitch';
 
 import { useResponsive } from 'antd-style';
+import { usePrefersColor } from 'dumi';
 import { useSiteStore } from '../../store/useSiteStore';
 import { useThemeStore } from '../../store/useThemeStore';
 import { useStyle } from './style';
 
 const Switcher = () => {
   const themeMode = useThemeStore((s) => s.themeMode);
+  const [, , setColorMode] = usePrefersColor();
+  useEffect(() => setColorMode(themeMode), [themeMode]);
   return (
     <ThemeSwitch
       value={themeMode}
