@@ -67,7 +67,7 @@ const Navbar: FC = () => {
         activeKey={activePath}
         className={styles.tabs}
         items={nav.map((item) => ({
-          label: regLink.test(item.link) ? (
+          label: regLink.test(item.link || '') ? (
             <a href={item.link} className={styles.link} target="_blank" rel="noreferrer">
               {item.title}
             </a>
