@@ -1,3 +1,30 @@
+# Changelog
+
+## [Version&nbsp;0.28.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.4...v0.28.0)
+
+<sup>Released on **2023-07-08**</sup>
+
+#### ✨ 新特性
+
+- Navbar 支持外链.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- Navbar 支持外链, closes [#72](https://github.com/arvinxx/dumi-theme-antd-style/issues/72) ([13fe23c](https://github.com/arvinxx/dumi-theme-antd-style/commit/13fe23c))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### Version&nbsp;0.27.4
 
 <sup>Released on **2023-06-12**</sup>
