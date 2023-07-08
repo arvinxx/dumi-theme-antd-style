@@ -189,6 +189,11 @@ export default defineConfig({
 
 - `github`: 在 themeConfig 中配置的 `github` 字段；
 - `atomId`: 在 markdown 文件中标记的 `atomId` ；
+- `atomId.${'camel' | 'kebab' | 'snake' | 'pascal' }`: 在 markdown 文件中标记的 `atomId` ；
+  - kebab：小写加中划线；例如 {atomId.kebab}, atomId 设为 test-atomId，实际转换为 test-atom-id
+  - camel：小驼峰；例如 {atomId.camel}, atomId 设为 test-atomId，实际转换为 testAtomId
+  - snake：小写加下划线；例如 {atomId.snake}, atomId 设为 test-atomId，实际转换为 test_atom_id
+  - pascal：大驼峰；例如 {atomId.pascal}, atomId 设为 test-atomId，实际转换为 TestAtomId
 - `title`: 在 markdown 文件中标记的 `title` 字段 ；
 
 ### syntaxTheme

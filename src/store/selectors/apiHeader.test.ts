@@ -122,4 +122,66 @@ describe('apiHeaderSel', () => {
       componentName: 'test-atomId',
     });
   });
+
+  test('atomId插值', () => {
+    const docUrl = (atomId: string, caseStyle: 'camel' | 'kebab' | 'snake' | 'pascal') => {
+      return apiHeaderSel({
+        siteData: {
+          pkg: {
+            name: 'vuepress',
+          },
+          themeConfig: {
+            github: 'https://github.com',
+            apiHeader: {
+              pkg: 'test-pkg',
+              sourceUrl: '{github}/blob/main/{locale}/{title}.vue',
+              docUrl: '{github}/{locale}/{atomId}.md',
+            },
+          },
+        },
+        routeMeta: {
+          frontmatter: {
+            title: 'test-title',
+            description: 'test-description',
+            atomId,
+            apiHeader: {
+              pkg: 'test-fm-pkg',
+              defaultImport: true,
+              sourceUrl: '{github}/blob/main/{locale}/{title}.ts',
+              docUrl: `{github}/{locale}/{atomId.${caseStyle}}.md`,
+            },
+          },
+        },
+        locale: {
+          id: 'zh-CN',
+        },
+      } as unknown as SiteStore).docUrl;
+    };
+
+    const camel = 'testAtomId';
+    expect(docUrl(camel, 'camel')).toEqual('https://github.com/zh-CN/testAtomId.md');
+    expect(docUrl(camel, 'kebab')).toEqual('https://github.com/zh-CN/test-atom-id.md');
+    expect(docUrl(camel, 'snake')).toEqual('https://github.com/zh-CN/test_atom_id.md');
+    expect(docUrl(camel, 'pascal')).toEqual('https://github.com/zh-CN/TestAtomId.md');
+
+    const kebab = 'test-atomId';
+    expect(docUrl(kebab, 'camel')).toEqual('https://github.com/zh-CN/testAtomId.md');
+    expect(docUrl(kebab, 'kebab')).toEqual('https://github.com/zh-CN/test-atom-id.md');
+    expect(docUrl(kebab, 'snake')).toEqual('https://github.com/zh-CN/test_atom_id.md');
+    expect(docUrl(kebab, 'pascal')).toEqual('https://github.com/zh-CN/TestAtomId.md');
+
+    const snake = 'test_atom_id';
+    expect(docUrl(snake, 'camel')).toEqual('https://github.com/zh-CN/testAtomId.md');
+    expect(docUrl(snake, 'kebab')).toEqual('https://github.com/zh-CN/test-atom-id.md');
+    expect(docUrl(snake, 'snake')).toEqual('https://github.com/zh-CN/test_atom_id.md');
+    expect(docUrl(snake, 'pascal')).toEqual('https://github.com/zh-CN/TestAtomId.md');
+
+    const pascal = 'TestAtomId';
+    expect(docUrl(pascal, 'camel')).toEqual('https://github.com/zh-CN/testAtomId.md');
+    expect(docUrl(pascal, 'kebab')).toEqual('https://github.com/zh-CN/test-atom-id.md');
+    expect(docUrl(pascal, 'snake')).toEqual('https://github.com/zh-CN/test_atom_id.md');
+    expect(docUrl(pascal, 'pascal')).toEqual('https://github.com/zh-CN/TestAtomId.md');
+
+    expect(docUrl(pascal, '123' as any)).toEqual('https://github.com/zh-CN/TestAtomId.md');
+  });
 });

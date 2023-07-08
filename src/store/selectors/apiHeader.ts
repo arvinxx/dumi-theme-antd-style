@@ -1,3 +1,4 @@
+import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash';
 import { ApiHeaderConfig, ApiHeaderProps } from '../../types';
 import { SiteStore } from '../useSiteStore';
 import { githubSel } from './siteBasicInfo';
@@ -18,6 +19,17 @@ export const isApiPageSel = (s: SiteStore) => {
   return baseMatch.some((path) => s.location.pathname.startsWith(path));
 };
 
+function convertCase(value: string, caseStyle: string) {
+  const map: Record<'camel' | 'kebab' | 'snake' | 'pascal' | 'default', () => string> = {
+    camel: () => camelCase(value),
+    pascal: () => upperFirst(camelCase(value)),
+    kebab: () => kebabCase(value),
+    snake: () => snakeCase(value),
+    default: () => value,
+  };
+  return (map[caseStyle as keyof typeof map] || map.default)();
+}
+
 export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
   const REPO_BASE = githubSel(s);
   const fm = s.routeMeta?.frontmatter || {};
@@ -30,6 +42,9 @@ export const apiHeaderSel = (s: SiteStore): ApiHeaderProps => {
     return rawStr
       .replace('{github}', REPO_BASE)
       .replace('{atomId}', fm.atomId || '')
+      .replace(/\{atomId\.([^}]+)}/g, (_, caseStyle: string) =>
+        convertCase(fm.atomId || '', caseStyle),
+      )
       .replace('{title}', fm.title)
       .replace('{locale}', localeId);
   };
