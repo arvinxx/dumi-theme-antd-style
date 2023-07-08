@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash';
 import { ApiHeaderConfig, ApiHeaderProps } from '../../types';
 import { SiteStore } from '../useSiteStore';
 import { githubSel } from './siteBasicInfo';
@@ -21,10 +21,10 @@ export const isApiPageSel = (s: SiteStore) => {
 
 function convertCase(value: string, caseStyle: string) {
   const map: Record<'camel' | 'kebab' | 'snake' | 'pascal' | 'default', () => string> = {
-    camel: () => _.camelCase(value),
-    pascal: () => _.upperFirst(_.camelCase(value)),
-    kebab: () => _.kebabCase(value),
-    snake: () => _.snakeCase(value),
+    camel: () => camelCase(value),
+    pascal: () => upperFirst(camelCase(value)),
+    kebab: () => kebabCase(value),
+    snake: () => snakeCase(value),
     default: () => value,
   };
   return (map[caseStyle as keyof typeof map] || map.default)();
