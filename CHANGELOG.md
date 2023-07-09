@@ -1,3 +1,55 @@
+# Changelog
+
+## [Version&nbsp;0.29.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.28.0...v0.29.0)
+
+<sup>Released on **2023-07-08**</sup>
+
+#### ✨ 新特性
+
+- Feature atomId 插值变量风格转换.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- Feature atomId 插值变量风格转换, closes [#78](https://github.com/arvinxx/dumi-theme-antd-style/issues/78) [#74](https://github.com/arvinxx/dumi-theme-antd-style/issues/74) ([7498522](https://github.com/arvinxx/dumi-theme-antd-style/commit/7498522))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+## [Version&nbsp;0.28.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.27.4...v0.28.0)
+
+<sup>Released on **2023-07-08**</sup>
+
+#### ✨ 新特性
+
+- Navbar 支持外链.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- Navbar 支持外链, closes [#72](https://github.com/arvinxx/dumi-theme-antd-style/issues/72) ([13fe23c](https://github.com/arvinxx/dumi-theme-antd-style/commit/13fe23c))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### Version&nbsp;0.27.4
 
 <sup>Released on **2023-06-12**</sup>

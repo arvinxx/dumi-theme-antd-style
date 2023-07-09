@@ -52,6 +52,7 @@ const useStyles = createStyles(({ css, responsive, token, stylish, prefixCls }) 
 const Navbar: FC = () => {
   const { styles } = useStyles();
 
+  const regLink = /^(\w+:)\/\/|^(mailto|tel):/;
   const nav = useSiteStore((s) => s.navData, shallow);
   const activePath = useSiteStore(activePathSel);
 
@@ -60,13 +61,17 @@ const Navbar: FC = () => {
       <Tabs
         onChange={(path) => {
           const url = nav.find((i) => i.activePath === path || i.link === path)?.link;
-          if (!url) return;
+          if (!url || regLink.test(url)) return;
           history.push(url);
         }}
         activeKey={activePath}
         className={styles.tabs}
         items={nav.map((item) => ({
-          label: (
+          label: regLink.test(item.link || '') ? (
+            <a href={item.link} className={styles.link} target="_blank" rel="noreferrer">
+              {item.title}
+            </a>
+          ) : (
             <Link className={styles.link} to={item.link!}>
               {item.title}
             </Link>
