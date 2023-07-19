@@ -50,9 +50,9 @@ export type SeedColors = Record<TokenType, string>;
 
 const defaultLight: AdjustParams = {
   steps: 6,
-  targetBrightness: 0.98,
+  targetBrightness: 1.02,
   saturationAdjustment: 0.4,
-  saturationScale: 1.6,
+  saturationScale: 1.7,
   hueAdjustment: 1,
 };
 
@@ -61,7 +61,7 @@ const defaultDark: AdjustParams = {
   targetBrightness: 0.3,
   saturationAdjustment: 0.6,
   saturationScale: 1.6,
-  hueAdjustment: 1.03,
+  hueAdjustment: 1,
 };
 
 // 生成 OKLCH 色板
