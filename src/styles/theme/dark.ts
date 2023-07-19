@@ -1,7 +1,7 @@
 import { theme, ThemeConfig } from 'antd';
 import { MappingAlgorithm } from 'antd-style';
 
-import { ColorPalettes, genMapTokenAlgorithm, TokenRelationship } from '../algorithms';
+import { ColorPalettes, genDarkMapTokenAlgorithm } from '../algorithms';
 
 const cyanColors = [
   'rgba(0, 225, 242, 0.12)',
@@ -17,39 +17,7 @@ const cyanColors = [
   'rgba(0, 237, 253, 0.7)',
 ];
 
-const darkModeRelationship: TokenRelationship = (type) => {
-  const key = type.toUpperCase()[0] + type.slice(1);
-  return {
-    [`color${key}Bg`]: 1,
-    [`color${key}BgHover`]: 2,
-    [`color${key}Border`]: 3,
-    [`color${key}BorderHover`]: 4,
-    [`color${key}Hover`]: 7,
-    [`color${key}`]: 6,
-    [`color${key}Active`]: 5,
-    [`color${key}TextHover`]: 8,
-    [`color${key}Text`]: 9,
-    [`color${key}TextActive`]: 10,
-  };
-};
-
-const darkMode = genMapTokenAlgorithm({
-  lighter: {
-    steps: 4, // 减少较亮颜色的数量
-    targetBrightness: 0.8, // 降低最大亮度值
-    saturationAdjustment: 0.6, // 减小较亮颜色的饱和度调整
-    // saturationScale: 1,
-  },
-  darker: {
-    steps: 6, // 增加较暗颜色的数量
-    targetBrightness: 0.2, // 降低最小亮度值
-    saturationAdjustment: 0.4, // 增加较暗颜色的饱和度调整
-    hueAdjustment: 1, // 保持暗色调的色相调整因子
-    saturationScale: 1,
-  },
-  reverse: true,
-  relationship: darkModeRelationship,
-});
+const darkMode = genDarkMapTokenAlgorithm();
 
 export const darkColorPalettes: ColorPalettes = darkMode.palettes;
 
@@ -72,8 +40,7 @@ const darkAlgorithm: MappingAlgorithm = (seedToken, mapToken) => ({
 
 export const darkTheme: ThemeConfig = {
   token: {
-    // colorTextBase: '#c7ddff',
-    colorTextBase: '#dcdcf2',
+    colorTextBase: '#c7ddff',
     colorBgBase: '#050608',
 
     colorLinkHover: darkColorPalettes.primary[7],

@@ -53,7 +53,8 @@ export const generateAssociatedColors = (baseColor: string, adjustWarning: boole
   const warningHue = (warningBaseHue + hueOffset) % 360;
   const infoHue = (infoBaseHue + hueOffset) % 360;
 
-  const warningLightness = adjustWarning ? 0.8 + baseLightness * 0.2 : baseLightness;
+  const warningLightness = adjustWarning ? 0.7 + baseLightness * 0.2 : baseLightness;
+
   return {
     success: chroma.oklch(baseLightness, baseChroma, successHue).hex(),
     error: chroma.oklch(baseLightness, baseChroma, errorHue).hex(),
