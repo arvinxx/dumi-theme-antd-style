@@ -12,7 +12,8 @@ import { PICKED_PKG_FIELDS } from 'dumi/dist/constants';
 import type { Location } from 'history';
 
 import { ComponentType } from 'react';
-import { create } from 'zustand';
+import { create, StoreApi } from 'zustand';
+import { createContext } from 'zustand-utils';
 import { devtools } from 'zustand/middleware';
 
 export type NavData = (INavItem & { children?: INavItem[] | undefined })[];
@@ -46,46 +47,8 @@ export interface SiteStore {
   locale: ILocale;
 }
 
-const initialState: SiteStore = {
-  siteData: {
-    // @ts-ignore
-    setLoading: undefined,
-    loading: true,
-    pkg: {},
-    components: {},
-    demos: {},
-    locales: [],
-    entryExports: {},
-    // @ts-ignore
-    themeConfig: {},
-  },
-  sidebar: [],
-  navData: [],
+export const createStore = (initState: SiteStore) =>
+  create<SiteStore>()(devtools(() => initState, { name: 'dumi-theme-antd-style' }));
 
-  location: {
-    pathname: '',
-    state: '',
-    search: '',
-    hash: '',
-    key: '',
-  },
-
-  routeMeta: {
-    toc: [],
-    texts: [],
-    tabs: undefined,
-    // @ts-ignore
-    frontmatter: {},
-  },
-
-  locale: { id: 'zh-CN', name: '中文', suffix: '' },
-};
-
-export const useSiteStore = create<SiteStore>()(
-  devtools(
-    () => ({
-      ...initialState,
-    }),
-    { name: 'dumi-theme-antd-style' },
-  ),
-);
+const { useStore, useStoreApi, Provider } = createContext<StoreApi<SiteStore>>();
+export { useStore as useSiteStore, Provider, useStoreApi };
