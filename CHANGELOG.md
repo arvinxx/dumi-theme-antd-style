@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.2-alpha.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.1...v0.29.2-alpha.1)
+
+<sup>Released on **2023-07-20**</sup>
+
+#### 🐛 修复
+
+- 修正首屏 SSR 的内容不正确的 bug.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- 修正首屏 SSR 的内容不正确的 bug ([31d07c9](https://github.com/arvinxx/dumi-theme-antd-style/commit/31d07c9))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.0...v0.29.1)
 
 <sup>Released on **2023-07-19**</sup>
