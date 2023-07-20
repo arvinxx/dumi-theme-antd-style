@@ -3,7 +3,7 @@ import { SiteStore } from '../useSiteStore';
 
 export const isHeroPageSel = (s: SiteStore) => !!s.routeMeta.frontmatter.hero;
 
-const localeValueSel = (s: SiteStore, value: any) => {
+export const localeValueSel = (s: SiteStore, value: any) => {
   if (!value) return;
 
   if (value[s.locale.id]) return value[s.locale.id];
