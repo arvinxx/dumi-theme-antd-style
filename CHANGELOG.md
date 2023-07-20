@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.2](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.1...v0.29.2)
+
+<sup>Released on **2023-07-20**</sup>
+
+#### 🐛 修复
+
+- 修复使用者无法在主题外部监听全局深色浅色模式切换的问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- 修复使用者无法在主题外部监听全局深色浅色模式切换的问题, closes [#82](https://github.com/arvinxx/dumi-theme-antd-style/issues/82) [#74](https://github.com/arvinxx/dumi-theme-antd-style/issues/74) ([98b8f29](https://github.com/arvinxx/dumi-theme-antd-style/commit/98b8f29))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.0...v0.29.1)
 
 <sup>Released on **2023-07-19**</sup>
