@@ -102,6 +102,9 @@ pnpm i dumi-theme-antd-style -D
 <a href="https://github.com/chenshuai2144" title="chenshuai2144">
   <img src="https://avatars.githubusercontent.com/u/8186664?v=4" width="50" />
 </a>
+<a href="https://github.com/mengxinssfd" title="mengxinssfd">
+  <img src="https://avatars.githubusercontent.com/u/28827520?v=4" width="50" />
+</a>
 <a href="https://github.com/Lands-1203" title="Lands-1203">
   <img src="https://avatars.githubusercontent.com/u/61341868?v=4" width="50" />
 </a>
@@ -116,9 +119,6 @@ pnpm i dumi-theme-antd-style -D
 </a>
 <a href="https://github.com/Y-io" title="Y-io">
   <img src="https://avatars.githubusercontent.com/u/25784157?v=4" width="50" />
-</a>
-<a href="https://github.com/mengxinssfd" title="mengxinssfd">
-  <img src="https://avatars.githubusercontent.com/u/28827520?v=4" width="50" />
 </a>
 <a href="https://github.com/yuuunagi" title="yuuunagi">
   <img src="https://avatars.githubusercontent.com/u/51359328?v=4" width="50" />
