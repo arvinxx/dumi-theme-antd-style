@@ -5,29 +5,27 @@ import path from 'path';
 import { homepage, name } from '../package.json';
 
 import { featuresZh } from './config/features';
+import { footer } from './config/footer';
+
 
 const isProd = process.env.NODE_ENV === 'production';
 
 const themeConfig: SiteThemeConfig = {
-  name: 'Ant Design Style Dumi Theme',
-  logo: 'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
+  name: '帮助中心',
+  logo: 'https://www.dev.multiway-cloud.com/assets/png/logo_origin-ea0ecb9a.png',
 
   hero: {
     'zh-CN': {
-      description: 'Ant Design Style 文档站主题包',
+      description: '快速找到解决方案，轻松解决问题',
       actions: [
         {
           type: 'primary',
           text: '开始使用',
           link: '/guide',
         },
-        {
-          text: 'Github',
-          link: 'https://github.com/arvinxx/dumi-theme-antd-style',
-          openExternal: true,
-        },
       ],
       features: featuresZh,
+      
     },
     'en-US': {
       description: 'dumi2 theme similar to antd v5 website',
@@ -50,7 +48,10 @@ const themeConfig: SiteThemeConfig = {
     sourceUrl: `{github}/tree/master/src/components/{atomId}/index.tsx`,
     docUrl: `{github}/tree/master/example/docs/components/{atomId}.{locale}.md`,
   },
-  footer: 'Made with ❤️ by 蚂蚁集团 - AFX & 数字科技',
+  footerConfig:{
+    columns:footer,
+    bottom: 'Made with ❤️ by 劢微机器人前端团队'
+  },
 };
 
 export default defineConfig({

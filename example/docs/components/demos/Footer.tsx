@@ -1,46 +1,37 @@
 /**
  * iframe: 380
  */
-import {
-  GithubOutlined,
-  HistoryOutlined,
-  IssuesCloseOutlined,
-  MediumOutlined,
-  TwitterOutlined,
-  ZhihuOutlined,
-} from '@ant-design/icons';
 import { DumiSiteProvider, Footer } from 'dumi-theme-antd-style';
+// @ts-ignore
 
 const footer = [
   {
-    title: '相关资源',
+    title: '行业解决方案',
     items: [
       {
-        title: 'Ant Design Pro',
-        url: 'https://pro.ant.design',
+        title: '新能源',
+        url: 'https://www.mw-robot.com/ServerSt_xny.html',
         openExternal: true,
       },
       {
-        title: 'Ant Design Pro Components',
-        url: 'https://procomponents.ant.design',
+        title: '汽车',
+        url: 'https://www.mw-robot.com/ServerSt_qc.html',
         openExternal: true,
       },
       {
-        title: 'Umi',
-        description: 'React 应用开发框架',
-        url: 'https://umijs.org',
+        title: '医药',
+        description: '医药仓库解决方案',
+        url: 'https://www.mw-robot.com/ServerSt_yl.html',
         openExternal: true,
       },
       {
-        title: 'Dumi',
-        description: '组件/文档研发工具',
-        url: 'https://d.umijs.org',
+        title: '食品',
+        url: 'https://www.mw-robot.com/ServerSt_sp.html',
         openExternal: true,
       },
       {
-        title: 'qiankun',
-        description: '微前端框架',
-        url: 'https://qiankun.umijs.org',
+        title: '化工',
+        url: 'https://www.mw-robot.com/ServerSt_hg.html',
         openExternal: true,
       },
     ],

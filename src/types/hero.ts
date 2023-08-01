@@ -6,6 +6,7 @@ export type ImageContainerType = 'light' | 'primary' | 'soon';
  * @title 特性
  */
 export interface IFeature {
+  isTitle?:boolean;
   /**
    * @title 标题
    */
@@ -77,6 +78,10 @@ export interface IAction {
  * @title 英雄
  */
 export interface IHero {
+  /**
+   * @title 是否是标题
+   */
+  isTitle?: boolean;
   /**
    * @title 标题
    */

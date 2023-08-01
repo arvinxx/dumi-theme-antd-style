@@ -24,10 +24,16 @@ const Features: FC<FeaturesProps> = ({ items, style }) => {
 
   if (!Boolean(items?.length)) return null;
 
+  console.log('items', items);
+
   return (
     <div className={styles.container} style={style}>
-      {items!.map((item) => {
-        return <FeatureItem key={item.title} {...item} />;
+      {items!.map((item: any) => {
+        return item.isTitle ? (
+          <h1 style={{ gridArea: 'span 3 / span 3', textAlign: 'center' }}>{item.title}</h1>
+        ) : (
+          <FeatureItem key={item.title} {...item} />
+        );
       })}
     </div>
   );

@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Dumi Theme - <b>Ant Design Style</b>
+  title: Multiway - <b>Help Document</b>
 ---
 
 <embed src="../../README.md"></embed>
