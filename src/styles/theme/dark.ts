@@ -1,5 +1,4 @@
-import { theme, ThemeConfig } from 'antd';
-import { MappingAlgorithm } from 'antd-style';
+import { MappingAlgorithm, ThemeConfig, theme } from 'antd';
 
 import { ColorPalettes, genDarkMapTokenAlgorithm } from '../algorithms';
 
