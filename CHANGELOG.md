@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.3...v0.29.4)
+
+<sup>Released on **2023-08-07**</sup>
+
+#### 🐛 修复
+
+- Fix zustand v4.4 Breaking Change.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- Fix zustand v4.4 Breaking Change, closes [#85](https://github.com/arvinxx/dumi-theme-antd-style/issues/85) ([cf9d07a](https://github.com/arvinxx/dumi-theme-antd-style/commit/cf9d07a))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.3](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.2...v0.29.3)
 
 <sup>Released on **2023-07-20**</sup>
