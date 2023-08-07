@@ -25,7 +25,7 @@ import { GlobalStyle } from './styles';
 const DocLayout: FC = memo(() => {
   const intl = useIntl();
   const { hash } = useLocation();
-  const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
+  const fm = useSiteStore((s) => s.routeMeta.frontmatter);
   const isHomePage = useSiteStore(isHeroPageSel);
   const loading = useSiteStore((s) => s.siteData.loading);
 
