@@ -23,6 +23,28 @@ const Footer: FC = () => {
     ? footer.columns
     : getColumns({ github: githubUrl || (pkg as any).homepage });
 
+  // icons 为图片地址时，转为HTMLElement 函数
+  const updateIconToImgElement = (item: any) => {
+    if (
+      item?.icon &&
+      typeof item.icon === 'string' &&
+      item.icon.match(/\.(png|jpeg|jpg|gif|svg|webp)$/) !== null
+    ) {
+      item.icon = <img src={item.icon} alt="" />;
+    }
+  };
+  // 递归函数
+  const updateIconsRecursively = (item: any) => {
+    updateIconToImgElement(item);
+    if (item?.items && item.items instanceof Array) {
+      item.items.forEach((_item: any) => {
+        updateIconsRecursively(_item);
+      });
+    }
+  };
+  // 处理图片地址
+  columns.forEach(updateIconsRecursively);
+
   const bottomFooter = footer?.bottom || themeConfig.footer;
   const copyright = footer?.copyright || `Copyright © 2022-${new Date().getFullYear()}`;
   return (
