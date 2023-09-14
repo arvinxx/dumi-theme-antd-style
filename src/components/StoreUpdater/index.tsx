@@ -57,11 +57,16 @@ const useSyncState = <T extends keyof SiteStore>(
   }, [value]);
 };
 
-const homeNav = {
-  title: '首页',
+const displayLangHomeNavMap: Record<string, string> = {
+  'zh-CN': '首页',
+  'en-US': 'Home',
+};
+
+const getHomeNav = (id: string) => ({
+  title: displayLangHomeNavMap[id],
   link: '/',
   activePath: '/',
-};
+});
 
 export const StoreUpdater = memo(() => {
   const siteData = useSiteData();
@@ -93,7 +98,7 @@ export const StoreUpdater = memo(() => {
   useSyncState('locale', locale);
 
   useSyncState('navData', navData, () => {
-    const data = siteData.themeConfig.hideHomeNav ? navData : [homeNav, ...navData];
+    const data = siteData.themeConfig.hideHomeNav ? navData : [getHomeNav(locale.id), ...navData];
 
     storeApi.setState({ navData: data });
   });
