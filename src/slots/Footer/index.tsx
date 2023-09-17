@@ -19,10 +19,9 @@ const Footer: FC = () => {
 
   const footer = themeConfig.footerConfig as IFooter;
 
-  const columns =
-    footer?.columns === false
-      ? undefined
-      : getColumns({ github: githubUrl || (pkg as any).homepage });
+  const columns = footer?.columns
+    ? footer.columns
+    : getColumns({ github: githubUrl || (pkg as any).homepage });
 
   const bottomFooter = footer?.bottom || themeConfig.footer;
   const copyright = footer?.copyright || `Copyright © 2022-${new Date().getFullYear()}`;
