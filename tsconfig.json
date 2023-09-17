@@ -10,9 +10,9 @@
     "types": ["vitest/globals"],
     "baseUrl": ".",
     "paths": {
-      "@@/*": ["example/.dumi/tmp/*"],
+      "@@/*": ["example/.dumi/tmp/*", ".dumi/tmp/*"],
       "@/*": ["src"],
-      "dumi/theme/*": ["example/.dumi/tmp/dumi/theme/*"],
+      "dumi/theme/*": ["example/.dumi/tmp/dumi/theme/*", ".dumi/tmp/dumi/theme/*"],
       "dumi-theme-antd-style": ["src"],
       "dumi-theme-antd-style/*": ["src/*", "*"]
     }
