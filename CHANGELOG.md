@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.4...v0.29.5)
+
+<sup>Released on **2023-09-17**</sup>
+
+#### 🐛 修复
+
+- **slots-foolter-index**: 修复 Footer 中支持自定义 columns 数据问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **slots-foolter-index**: 修复 Footer 中支持自定义 columns 数据问题, closes [#87](https://github.com/arvinxx/dumi-theme-antd-style/issues/87) ([1d1c8a4](https://github.com/arvinxx/dumi-theme-antd-style/commit/1d1c8a4))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.4](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.3...v0.29.4)
 
 <sup>Released on **2023-08-07**</sup>
