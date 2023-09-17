@@ -33,7 +33,7 @@
     "docs:build": "npm run build && npm run build --prefix=example",
     "doctor": "father doctor",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && father link-dev-theme",
+    "prepare": "husky install && father link-dev-theme && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "prettier": "prettier -c --write \"**/**\"",
     "release": "semantic-release",
