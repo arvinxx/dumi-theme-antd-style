@@ -91,7 +91,7 @@ pnpm i dumi-theme-antd-style -D
 
 <!-- CONTRIBUTION GROUP -->
 
-> 📊 Total: <kbd>**10**</kbd>
+> 📊 Total: <kbd>**11**</kbd>
 
 <a href="https://github.com/arvinxx" title="arvinxx">
   <img src="https://avatars.githubusercontent.com/u/28616219?v=4" width="50" />
@@ -122,6 +122,9 @@ pnpm i dumi-theme-antd-style -D
 </a>
 <a href="https://github.com/yuuunagi" title="yuuunagi">
   <img src="https://avatars.githubusercontent.com/u/51359328?v=4" width="50" />
+</a>
+<a href="https://github.com/huangjihua" title="huangjihua">
+  <img src="https://avatars.githubusercontent.com/u/3156292?v=4" width="50" />
 </a>
 
 <!-- CONTRIBUTION END -->
