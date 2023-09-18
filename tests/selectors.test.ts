@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { siteSelectors, SiteStore } from 'dumi-theme-antd-style';
 
 describe('tokenSel function', () => {
