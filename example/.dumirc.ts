@@ -60,8 +60,8 @@ export default defineConfig({
     'https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png',
   ],
   locales: [
-    { id: 'zh-CN', name: '中文', suffix: '' },
-    { id: 'en-US', name: 'English', suffix: '-en' },
+    { id: 'en-US', name: 'English' },
+    { id: 'zh-CN', name: '中文' },
   ],
   alias: {
     'dumi-theme-antd-style': path.join(__dirname, '../src'),
