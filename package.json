@@ -81,7 +81,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17",
     "@emotion/react": "^11",
-    "@lobehub/i18n-cli": "^1.14.0",
+    "@lobehub/i18n-cli": "^1",
     "@testing-library/react": "^13",
     "@types/chroma-js": "^2",
     "@types/lodash": "^4",
