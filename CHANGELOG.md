@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.7](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.6...v0.29.7)
+
+<sup>Released on **2023-11-24**</sup>
+
+#### 🐛 修复
+
+- Page-tab internationalization error.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- Page-tab internationalization error, closes [#89](https://github.com/arvinxx/dumi-theme-antd-style/issues/89) ([c27037d](https://github.com/arvinxx/dumi-theme-antd-style/commit/c27037d))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.5...v0.29.6)
 
 <sup>Released on **2023-11-24**</sup>
