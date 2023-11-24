@@ -23,7 +23,11 @@ const ContentTabs: FC<IContentTabsProps> = memo(({ tabs, tabKey: key, onChange }
       activeKey={key || 'default'}
       className={styles.cls}
       items={[
-        { key: 'default', value: 'default', label: '文档' },
+        {
+          key: 'default',
+          value: 'default',
+          label: intl.formatMessage({ id: 'content.tabs.default' })
+        },
         ...tabs.map((tab) => ({
           key: tab.key,
           value: tab.key,
