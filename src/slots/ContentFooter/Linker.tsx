@@ -1,5 +1,5 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import { Link } from 'dumi';
+import { Link, useIntl } from 'dumi';
 import type { FC } from 'react';
 
 import { memo, useMemo } from 'react';
@@ -15,18 +15,19 @@ interface LinkerProps {
 
 const Linker: FC<LinkerProps> = ({ title, link, type }) => {
   const { styles, cx } = useStyles();
+  const intl = useIntl();
   const navContent = useMemo(() => {
     switch (type) {
       case 'prev':
         return (
           <>
-            <ArrowLeftOutlined /> 上一篇
+            <ArrowLeftOutlined /> {intl.formatMessage({ id: 'content.footer.actions.previous' })}
           </>
         );
       case 'next':
         return (
           <>
-            下一篇 <ArrowRightOutlined />
+            {intl.formatMessage({ id: 'content.footer.actions.next' })} <ArrowRightOutlined />
           </>
         );
     }
