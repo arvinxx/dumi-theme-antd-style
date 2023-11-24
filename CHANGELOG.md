@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.6](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.5...v0.29.6)
+
+<sup>Released on **2023-11-24**</sup>
+
+#### 🐛 修复
+
+- 修复顶部首页、上下篇多语言问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- 修复顶部首页、上下篇多语言问题, closes [#92](https://github.com/arvinxx/dumi-theme-antd-style/issues/92) ([cbc6e93](https://github.com/arvinxx/dumi-theme-antd-style/commit/cbc6e93))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.5](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.4...v0.29.5)
 
 <sup>Released on **2023-09-17**</sup>
