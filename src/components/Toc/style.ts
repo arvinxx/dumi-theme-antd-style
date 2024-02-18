@@ -14,7 +14,6 @@ export const useStyles = createStyles(({ token, stylish, prefixCls, responsive, 
       overflow: auto;
       margin-top: 48px;
       z-index: 10;
-      border-radius: 8px;
 
       ${responsive.mobile} {
         z-index: 300;
