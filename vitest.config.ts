@@ -14,6 +14,7 @@ export default defineConfig({
       [name]: new URL('./src/', import.meta.url).pathname,
     },
     coverage: {
+      all: false,
       reporter: ['text', 'text-summary', 'json', 'lcov'],
     },
   },
