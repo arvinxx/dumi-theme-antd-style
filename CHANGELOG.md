@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.29.8](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.7...v0.29.8)
+
+<sup>Released on **2024-02-19**</sup>
+
+#### 🐛 修复
+
+- Remove border-radius of Toc.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- Remove border-radius of Toc, closes [#103](https://github.com/arvinxx/dumi-theme-antd-style/issues/103) ([20fd7f9](https://github.com/arvinxx/dumi-theme-antd-style/commit/20fd7f9))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.7](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.6...v0.29.7)
 
 <sup>Released on **2023-11-24**</sup>
