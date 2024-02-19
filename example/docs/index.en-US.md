@@ -50,3 +50,5 @@ features:
     row: 8
     hero: true
 ---
+
+<embed src="../../README.md"></embed>
