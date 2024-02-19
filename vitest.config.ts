@@ -10,8 +10,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     alias: {
-      '@': './src',
-      [name]: './src',
+      '@': new URL('./src/', import.meta.url).pathname,
+      [name]: new URL('./src/', import.meta.url).pathname,
     },
     coverage: {
       reporter: ['text', 'text-summary', 'json', 'lcov'],

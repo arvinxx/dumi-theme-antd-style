@@ -1,8 +1,9 @@
 {
-  "include": ["src", "tests", ".dumi/**/*", "typings", "example/.dumirc.ts", "*.ts"],
+  "include": ["src", "tests", "typings", "example/.dumirc.ts", "*.ts"],
   "compilerOptions": {
     "strict": true,
     "declaration": true,
+    "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
