@@ -49,5 +49,3 @@ features:
     row: 6
     hero: true
 ---
-
-<embed src="../../README.md"></embed>

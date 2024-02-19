@@ -1,4 +1,4 @@
-import { Helmet } from 'dumi';
+import { Helmet, useOutlet } from 'dumi';
 import { memo, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -8,9 +8,12 @@ import Header from 'dumi/theme/slots/Header';
 import Hero from 'dumi/theme/slots/Hero';
 
 import { siteTitleSel, useSiteStore } from '../../store';
+import { useStyles } from './styles';
 
 const Home: FC = memo(() => {
   const siteTitle = useSiteStore(siteTitleSel);
+  const outlet = useOutlet();
+  const { styles } = useStyles();
 
   return (
     <>
@@ -21,6 +24,7 @@ const Home: FC = memo(() => {
         <Header />
         <Hero />
         <Features />
+        <div className={styles.container}>{outlet}</div>
         <Footer />
       </Flexbox>
     </>
