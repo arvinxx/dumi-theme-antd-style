@@ -105,6 +105,13 @@ export default defineConfig({
 });
 ```
 
+#### hero.showCustomContent
+
+- 类型：`boolean`
+- 默认值：`false`
+
+是否展示自定义内容。首页默认不会展示 markdown 文件中的内容，如果需要展示，可以配置该字段为 `true`。
+
 ### footer
 
 - 类型：`string | false`
