@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "moduleResolution": "Node",
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
     "baseUrl": ".",
