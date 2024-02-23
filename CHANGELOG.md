@@ -1,5 +1,30 @@
 # Changelog
 
+## [Version&nbsp;0.30.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.8...v0.30.0)
+
+<sup>Released on **2024-02-23**</sup>
+
+#### ✨ 新特性
+
+- 支持配置是否在首页显示自定义内容.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- 支持配置是否在首页显示自定义内容, closes [#105](https://github.com/arvinxx/dumi-theme-antd-style/issues/105) ([b829abe](https://github.com/arvinxx/dumi-theme-antd-style/commit/b829abe))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.29.8](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.7...v0.29.8)
 
 <sup>Released on **2024-02-19**</sup>
