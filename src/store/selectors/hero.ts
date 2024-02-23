@@ -3,6 +3,11 @@ import { SiteStore } from '../useSiteStore';
 
 export const isHeroPageSel = (s: SiteStore) => !!s.routeMeta.frontmatter.hero;
 
+// 是否展示首页的自定义内容
+export const showHeroPageCustomContent = (s: SiteStore) =>
+  !!s.routeMeta.frontmatter.hero?.showCustomContent ||
+  !!s.siteData.themeConfig.hero?.showCustomContent;
+
 export const localeValueSel = (s: SiteStore, value: any) => {
   if (!value) return;
 
