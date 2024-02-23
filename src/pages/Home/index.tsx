@@ -1,4 +1,4 @@
-import { Helmet } from 'dumi';
+import { Helmet, useOutlet } from 'dumi';
 import { memo, type FC } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -11,6 +11,7 @@ import { siteTitleSel, useSiteStore } from '../../store';
 
 const Home: FC = memo(() => {
   const siteTitle = useSiteStore(siteTitleSel);
+  const outlet = useOutlet();
 
   return (
     <>
@@ -21,6 +22,7 @@ const Home: FC = memo(() => {
         <Header />
         <Hero />
         <Features />
+        {outlet}
         <Footer />
       </Flexbox>
     </>
