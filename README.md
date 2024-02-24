@@ -108,6 +108,9 @@ pnpm i dumi-theme-antd-style -D
 <a href="https://github.com/Lands-1203" title="Lands-1203">
   <img src="https://avatars.githubusercontent.com/u/61341868?v=4" width="50" />
 </a>
+<a href="https://github.com/FriedRiceNoodles" title="FriedRiceNoodles">
+  <img src="https://avatars.githubusercontent.com/u/53017934?v=4" width="50" />
+</a>
 <a href="https://github.com/blackie4" title="blackie4">
   <img src="https://avatars.githubusercontent.com/u/4090395?v=4" width="50" />
 </a>
@@ -125,9 +128,6 @@ pnpm i dumi-theme-antd-style -D
 </a>
 <a href="https://github.com/yuuunagi" title="yuuunagi">
   <img src="https://avatars.githubusercontent.com/u/51359328?v=4" width="50" />
-</a>
-<a href="https://github.com/FriedRiceNoodles" title="FriedRiceNoodles">
-  <img src="https://avatars.githubusercontent.com/u/53017934?v=4" width="50" />
 </a>
 <a href="https://github.com/Wxh16144" title="Wxh16144">
   <img src="https://avatars.githubusercontent.com/u/32004925?v=4" width="50" />
