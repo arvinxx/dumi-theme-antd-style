@@ -17,17 +17,18 @@ import { useThemeStore } from '../../store/useThemeStore';
 import { useStyle } from './style';
 
 const Switcher = () => {
+  const allowSwitchTheme = useSiteStore((s) => s.siteData.themeConfig.prefersColor.switch);
   const themeMode = useThemeStore((s) => s.themeMode);
   const [, , setColorMode] = usePrefersColor();
   useEffect(() => setColorMode(themeMode), [themeMode]);
-  return (
+  return allowSwitchTheme ? (
     <ThemeSwitch
       value={themeMode}
       onChange={(mode) => {
         useThemeStore.setState({ themeMode: mode });
       }}
     />
-  );
+  ) : null;
 };
 
 const Header: FC = () => {
