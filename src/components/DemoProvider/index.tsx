@@ -1,29 +1,24 @@
-import { theme } from 'antd';
-import { ThemeAppearance, ThemeMode, ThemeProvider, useTheme, useThemeMode } from 'antd-style';
+import { ThemeAppearance, ThemeMode, ThemeProvider, useThemeMode } from 'antd-style';
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';
-
 import useControlledState from 'use-merge-value';
-import { getAntdTheme } from '../../styles';
+
+import { createAntdTheme } from '../../styles';
+import { CustomThemeAlgorithmParams } from '../../styles/algorithms';
 
 interface DemoProviderProps extends PropsWithChildren {
   inheritSiteTheme?: boolean;
   defaultTheme?: boolean;
   demoAppearance?: ThemeAppearance;
+  algorithmParams?: CustomThemeAlgorithmParams;
 }
 
 const DemoProvider: FC<DemoProviderProps> = ({
   children,
   inheritSiteTheme = false,
   demoAppearance,
+  algorithmParams,
 }) => {
-  const { isDarkMode } = useTheme();
-  const defaultAlgorithm = inheritSiteTheme
-    ? isDarkMode
-      ? theme.darkAlgorithm
-      : theme.defaultAlgorithm
-    : undefined;
-
   const { appearance } = useThemeMode();
   const [demoAppear, setAppear] = useState(appearance);
 
@@ -54,10 +49,10 @@ const DemoProvider: FC<DemoProviderProps> = ({
       theme={
         inheritSiteTheme
           ? (appearance) => {
-              const antdTheme = getAntdTheme(appearance);
+              const antdTheme = createAntdTheme(algorithmParams)(appearance);
               return { ...antdTheme, inherit: false };
             }
-          : { inherit: false, algorithm: defaultAlgorithm }
+          : { inherit: false }
       }
       appearance={demoAppearance ?? demoAppear}
       themeMode={demoThemeMode}

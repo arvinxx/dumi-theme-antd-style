@@ -62,8 +62,8 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
         padding: 2px 6px;
 
         //FIXME: 等下一版 token 优化升级
-        color: ${isDarkMode ? token['cyan-7'] : token.colorPrimaryText};
-        background: ${isDarkMode ? token['cyan-1'] : token.colorPrimaryBg};
+        color: ${isDarkMode ? token['cyan-7'] : token.colorInfoText};
+        background: ${isDarkMode ? token['cyan-1'] : token.colorInfoBg};
         border-radius: 4px;
       }
 

@@ -1,13 +1,14 @@
 import {
   CustomTokenParams,
-  extractStaticStyle,
-  StyleProvider,
   ThemeProvider as Provider,
+  StyleProvider,
+  extractStaticStyle,
 } from 'antd-style';
 import { ReactNode, useCallback } from 'react';
+import { shallow } from 'zustand/shallow';
 
 import { useThemeStore } from '../../store/useThemeStore';
-import { createCustomToken, getAntdTheme, getCustomStylish } from '../../styles';
+import { createAntdTheme, createCustomToken, getCustomStylish } from '../../styles';
 import { SiteConfigToken } from '../../types';
 
 export interface ThemeProviderProps {
@@ -18,7 +19,10 @@ export interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children, token, ssrInline, cache }: ThemeProviderProps) => {
-  const themeMode = useThemeStore((s) => s.themeMode);
+  const [themeMode, colorPrimary, infoColorFollowPrimary, adjustWarning] = useThemeStore(
+    (s) => [s.themeMode, s.colorPrimary, s.infoColorFollowPrimary, s.adjustWarning],
+    shallow,
+  );
 
   const getCustomToken = useCallback(
     (params: CustomTokenParams) => {
@@ -43,7 +47,11 @@ export const ThemeProvider = ({ children, token, ssrInline, cache }: ThemeProvid
       <Provider
         prefixCls={'site'}
         themeMode={themeMode}
-        theme={getAntdTheme}
+        theme={createAntdTheme({
+          colorPrimary: colorPrimary,
+          infoColorFollowPrimary,
+          adjustWarning,
+        })}
         customStylish={getCustomStylish}
         customToken={getCustomToken}
       >
