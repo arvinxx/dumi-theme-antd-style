@@ -3,6 +3,7 @@ import { useResponsive } from 'antd-style';
 import type { FC, PropsWithChildren } from 'react';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
+import LastUpdatedTime from './LastUpdatedTime';
 
 // @ts-ignore
 import ContentFooter from 'dumi/theme/slots/ContentFooter';
@@ -18,7 +19,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
   const { mobile } = useResponsive();
 
   return (
-    <Flexbox width={'100%'} gap={mobile ? 0 : 24}>
+    <Flexbox width={'100%'} gap={8}>
       <div className={cx('dumi-antd-style-content', styles.content)}>
         <Skeleton active paragraph loading={loading} />
         <div
@@ -29,7 +30,9 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
           {children}
         </div>
       </div>
-
+      <Flexbox style={{ marginInline: mobile ? 12 : 0 }}>
+        <LastUpdatedTime />
+      </Flexbox>
       <ContentFooter />
     </Flexbox>
   );
