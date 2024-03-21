@@ -153,6 +153,13 @@ export default defineConfig({
 
 是否隐藏首页的 nav tab，配置为 `true` 则不展示首页的 nav。
 
+### hideNameOnHeader
+
+- 类型：`boolean`
+- 默认值：`false`
+
+在[某些场景下](https://github.com/arvinxx/dumi-theme-antd-style/issues/116), 会需要隐藏 header 中的 name 部分，可以通过配置该字段为 `true` 来实现。
+
 ## 高级配置
 
 ### apiHeader
