@@ -1,4 +1,4 @@
-import { FC, ForwardedRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { useStyles } from './style';
 
@@ -8,11 +8,10 @@ interface SelectItemProps {
   prefixCls: string;
   isSelected?: boolean;
   isActive?: boolean;
-  ref?: ForwardedRef<HTMLButtonElement>;
   disabled?: boolean;
 }
 
-const SelectItem: FC<SelectItemProps> = forwardRef(
+const SelectItem = forwardRef<HTMLButtonElement, SelectItemProps>(
   ({ value, label, prefixCls, isSelected, isActive, disabled, ...props }, ref) => {
     const { styles, cx } = useStyles(prefixCls);
 
