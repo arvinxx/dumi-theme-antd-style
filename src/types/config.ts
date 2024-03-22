@@ -74,6 +74,11 @@ export interface SiteThemeConfig {
   hideHomeNav?: boolean;
 
   /**
+   * 是否隐藏header的name部分，配置为 `true` 则不展示header的name部分
+   */
+  hideNameOnHeader?: boolean;
+
+  /**
    * 网站主题 Token 配置
    */
   siteToken?: SiteConfigToken;
