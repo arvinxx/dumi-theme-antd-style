@@ -10,13 +10,10 @@ export const useStyles = createStyles(
     line-height: 1;
     font-weight: 500;
     text-decoration: none;
+    gap: 10px;
 
     ${responsive.mobile} {
       font-size: 18px;
-    }
-
-    img {
-      margin-inline-end: 10px;
     }
   `,
 );

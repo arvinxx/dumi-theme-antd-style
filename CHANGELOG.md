@@ -1,5 +1,56 @@
 # Changelog
 
+## [Version&nbsp;0.31.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.30.1...v0.31.0)
+
+<sup>Released on **2024-03-22**</sup>
+
+#### ✨ 新特性
+
+- 支持通过配置隐藏 header 的 name 部分.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- 支持通过配置隐藏 header 的 name 部分, closes [#117](https://github.com/arvinxx/dumi-theme-antd-style/issues/117) ([8b84f32](https://github.com/arvinxx/dumi-theme-antd-style/commit/8b84f32))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version&nbsp;0.30.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.30.0...v0.30.1)
+
+<sup>Released on **2024-03-22**</sup>
+
+#### 🐛 修复
+
+- 修复 themeConfig.prefersColor.switch 配置不生效的问题, 修复类型错误,使 CI 流程恢复正常.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- 修复 themeConfig.prefersColor.switch 配置不生效的问题, closes [#110](https://github.com/arvinxx/dumi-theme-antd-style/issues/110) ([69882d1](https://github.com/arvinxx/dumi-theme-antd-style/commit/69882d1))
+- 修复类型错误，使 CI 流程恢复正常, closes [#115](https://github.com/arvinxx/dumi-theme-antd-style/issues/115) ([3fb766a](https://github.com/arvinxx/dumi-theme-antd-style/commit/3fb766a))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.30.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.29.8...v0.30.0)
 
 <sup>Released on **2024-02-23**</sup>

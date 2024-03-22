@@ -12,12 +12,13 @@ const Logo: FC = () => {
   const logo = useSiteStore(siteSelectors.logo, shallow);
 
   const { styles, cx } = useStyles();
+  const { name, hideNameOnHeader = false } = themeConfig;
 
   return (
     themeConfig && (
       <Link className={cx(styles)} to={'base' in locale ? locale.base : '/'}>
         {!!logo && <img src={logo} alt={themeConfig.name} height={32} />}
-        {themeConfig.name}
+        {!hideNameOnHeader && name}
       </Link>
     )
   );
