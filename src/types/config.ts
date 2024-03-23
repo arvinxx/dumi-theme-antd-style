@@ -92,6 +92,10 @@ export interface SiteThemeConfig {
     yueque?: string;
     linkedin?: string;
   };
+  /**
+   * 是否展示最后更新时间
+   */
+  lastUpdated?: boolean;
 }
 
 export type SiteConfigToken = Partial<

@@ -17,9 +17,7 @@ const ContentFooter = () => {
       horizontal={!mobile}
       gap={mobile ? 12 : 0}
       distribution={'space-between'}
-      style={{
-        margin: mobile ? 12 : 0,
-      }}
+      style={{ marginInline: mobile ? 12 : 0 }}
     >
       {prev ? <Linker type={'prev'} {...prev} /> : <div />}
 
