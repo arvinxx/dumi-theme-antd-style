@@ -3,6 +3,7 @@ import { getRouteMetaById, matchRoutes, useAppData, useLocation, useRouteData } 
 import type { IRouteMeta, IRoutesById } from 'dumi/dist/client/theme-api/types';
 import { useCallback, useState } from 'react';
 import useSWR from 'swr';
+import { useStoreApi } from '../../store/useSiteStore';
 
 const EMPTY_META = {
   frontmatter: {},
@@ -17,6 +18,7 @@ export const useRouteMeta = () => {
   const { route } = useRouteData();
   const { pathname } = useLocation();
   const { clientRoutes } = useAppData();
+  const storeApi = useStoreApi();
   const getter = useCallback(() => {
     let ret: IRoutesById[string];
 
@@ -47,7 +49,10 @@ export const useRouteMeta = () => {
     return meta;
   };
 
-  const { data } = useSWR(matchedRoute.id, getRouteMetaById, { fallback: EMPTY_META });
-
-  return merge(data);
+  useSWR(matchedRoute.id, getRouteMetaById, {
+    fallback: EMPTY_META,
+    onSuccess: (meta) => {
+      storeApi.setState({ routeMeta: merge(meta) });
+    },
+  });
 };

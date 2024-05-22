@@ -64,12 +64,13 @@ const getHomeNav = (id: string) => ({
 export const StoreUpdater = memo(() => {
   const siteData = useSiteData();
   const sidebar = useSidebarData();
-  const routeMeta = useRouteMeta();
   const tabMeta = useTabMeta();
   const navData = useNavData();
   const location = useLocation();
   const locale = useLocale();
   const storeApi = useStoreApi();
+
+  useRouteMeta();
 
   useSyncState('siteData', siteData, () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -85,7 +86,6 @@ export const StoreUpdater = memo(() => {
   });
 
   useSyncState('sidebar', sidebar);
-  useSyncState('routeMeta', routeMeta);
   useSyncState('location', location);
   useSyncState('tabMeta', tabMeta);
   useSyncState('locale', locale);
