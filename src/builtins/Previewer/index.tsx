@@ -4,6 +4,8 @@ import Previewer from 'dumi/theme-default/builtins/Previewer';
 import { rgba } from 'polished';
 import { useMemo } from 'react';
 
+import { useThemeStore } from 'dumi-theme-antd-style/store/useThemeStore';
+import { shallow } from 'zustand/shallow';
 import DemoProvider from '../../components/DemoProvider';
 import { IntersectionLoad } from '../../components/LazyLoad';
 import { useSiteStore } from '../../store';
@@ -143,9 +145,20 @@ export default (props: IPreviewerProps) => {
 
   const demoAppearance = props.appearance;
   const lazyLoading = useSiteStore((s) => s.siteData.themeConfig.demo?.lazyLoading);
-
+  const [colorPrimary, infoColorFollowPrimary, adjustWarning] = useThemeStore(
+    (s) => [s.colorPrimary, s.infoColorFollowPrimary, s.adjustWarning],
+    shallow,
+  );
   const content = (
-    <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
+    <DemoProvider
+      inheritSiteTheme={inheritSiteTheme}
+      demoAppearance={demoAppearance}
+      algorithmParams={{
+        colorPrimary,
+        adjustWarning,
+        infoColorFollowPrimary,
+      }}
+    >
       <Previewer {...props} />
     </DemoProvider>
   );

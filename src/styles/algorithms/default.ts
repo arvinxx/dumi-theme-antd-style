@@ -1,7 +1,9 @@
 import type { ColorMapToken } from 'antd/es/theme/interface/maps/colors';
 
+import chroma from 'chroma-js';
 import { MapTokenAlgorithmParams, TokenRelationship } from './types';
 import { generateAssociatedColors } from './utils/colorRelationship';
+import { generateColorWithTransparency } from './utils/netural';
 import {
   ColorPalettes,
   TokenType,
@@ -25,6 +27,36 @@ const defaultRelationship: TokenRelationship = (type) => {
     [`color${key}TextActive`]: 10,
   };
 };
+
+const neturalTokenReleatioship = {
+  colorText: 88,
+  colorTextSecondary: 65,
+  colorTextTertiary: 45,
+  colorTextQuaternary: 25,
+
+  colorBorder: 15,
+  colorBorderSecondary: 6,
+
+  colorFill: 12,
+  colorFillSecondary: 6,
+  colorFillTertiary: 4,
+  colorFillQuaternary: 2,
+  colorBgLayout: 4,
+  colorBgContainer: 0,
+  colorBgElevated: 0,
+  colorBgSpotlight: 85,
+};
+
+const transparentToken = [
+  'colorText',
+  'colorTextSecondary',
+  'colorTextTertiary',
+  'colorTextQuaternary',
+  'colorFill',
+  'colorFillSecondary',
+  'colorFillTertiary',
+  'colorFillQuaternary',
+];
 
 export const genMapTokenAlgorithm = (params?: MapTokenAlgorithmParams) => {
   const {
@@ -67,6 +99,30 @@ export const genMapTokenAlgorithm = (params?: MapTokenAlgorithmParams) => {
     Object.entries(relationship(type)).forEach(([key, value]) => {
       tokens[key as keyof ColorMapToken] = palettes[type][value];
     });
+  });
+
+  const naturalColorGenerator = (lightness: number, isTransparent: boolean) => {
+    const baseColor = chroma(brandColor);
+    const baseColorOKLCH = baseColor.oklch();
+
+    // 计算中性颜色的色相
+    const neutralHue = baseColorOKLCH[2];
+
+    // 将主色的饱和度降低以获得中性颜色
+    const neutralChromaValue = baseColorOKLCH[1];
+
+    const lum = 1 - lightness / 100;
+    // 使用降低饱和度的颜色作为基础色重新生成色板
+    const neutralBaseColor = chroma.oklch(lum, neutralChromaValue / 40, neutralHue);
+
+    return isTransparent
+      ? generateColorWithTransparency(neutralBaseColor.hex())
+      : neutralBaseColor.hex();
+  };
+
+  Object.entries(neturalTokenReleatioship).forEach(([key, value]) => {
+    // @ts-ignore
+    tokens[key] = naturalColorGenerator(value, transparentToken.includes(key));
   });
 
   return { palettes, tokens };
