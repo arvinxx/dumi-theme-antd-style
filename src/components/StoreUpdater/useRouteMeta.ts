@@ -1,4 +1,4 @@
-import { getRouteMetaById, useMatchRoute } from 'dumi';
+import { getRouteMetaById, useMatchedRoute } from 'dumi';
 import type { IRouteMeta } from 'dumi/dist/client/theme-api/types';
 import useSWR from 'swr';
 import { useStoreApi } from '../../store/useSiteStore';
@@ -12,7 +12,7 @@ const EMPTY_META = {
 // https://github.com/umijs/dumi/pull/2165
 export const useRouteMeta = () => {
   const storeApi = useStoreApi();
-  const matched = useMatchRoute();
+  const matched = useMatchedRoute();
 
   const merge = (meta: IRouteMeta = EMPTY_META) => {
     if (matched.meta) {
