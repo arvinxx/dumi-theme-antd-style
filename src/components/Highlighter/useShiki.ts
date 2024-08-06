@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import type { BundledTheme, Highlighter, HighlighterGeneric } from 'shiki';
-import { getHighlighter } from 'shiki';
+import { createHighlighter } from 'shiki';
 import useControlledState from 'use-merge-value';
 
 import { languageMap } from './language';
@@ -30,7 +30,7 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
   const initHighlighter = async (theme: ShikiSyntaxTheme) => {
     onLoadingChange?.(true);
 
-    shikiRef.current = await getHighlighter({
+    shikiRef.current = await createHighlighter({
       langs: Object.keys(languageMap) as any,
       themes: Object.values(theme),
     });
