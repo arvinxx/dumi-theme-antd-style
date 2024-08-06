@@ -1,6 +1,6 @@
 {
   "name": "dumi-theme-antd-style",
-  "version": "0.31.0",
+  "version": "0.31.1",
   "description": "dumi-theme-antd-style 是为 dumi2 打造的一款文档站主题包，提供了更加美观、易用的研发与阅读体验",
   "keywords": [
     "npm",
@@ -74,6 +74,7 @@
     "react-layout-kit": "^1",
     "react-syntax-highlighter": "^15",
     "shiki": "^1.2.0",
+    "swr": "^2.2.5",
     "use-merge-value": "^1",
     "zustand": "^4.4.1",
     "zustand-utils": "^1"
@@ -122,7 +123,7 @@
     "vitest": "latest"
   },
   "peerDependencies": {
-    "dumi": "^2.0.0",
+    "dumi": "^2.4.7",
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },

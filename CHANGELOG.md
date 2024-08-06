@@ -1,5 +1,30 @@
 # Changelog
 
+### [Version&nbsp;0.31.1](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.31.0...v0.31.1)
+
+<sup>Released on **2024-08-06**</sup>
+
+#### 🐛 修复
+
+- 修复页面白屏错误.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- 修复页面白屏错误, closes [#122](https://github.com/arvinxx/dumi-theme-antd-style/issues/122) ([08c37bb](https://github.com/arvinxx/dumi-theme-antd-style/commit/08c37bb))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.31.0](https://github.com/arvinxx/dumi-theme-antd-style/compare/v0.30.1...v0.31.0)
 
 <sup>Released on **2024-03-22**</sup>
