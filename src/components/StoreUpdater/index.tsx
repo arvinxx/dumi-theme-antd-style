@@ -1,16 +1,9 @@
 import { useDebounceEffect } from 'ahooks';
-import {
-  useLocale,
-  useLocation,
-  useNavData,
-  useRouteMeta,
-  useSidebarData,
-  useSiteData,
-  useTabMeta,
-} from 'dumi';
+import { useLocale, useLocation, useNavData, useSidebarData, useSiteData, useTabMeta } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import React, { memo, useEffect } from 'react';
 import { SiteStore, useStoreApi } from '../../store/useSiteStore';
+import { useRouteMeta } from './useRouteMeta';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -71,12 +64,13 @@ const getHomeNav = (id: string) => ({
 export const StoreUpdater = memo(() => {
   const siteData = useSiteData();
   const sidebar = useSidebarData();
-  const routeMeta = useRouteMeta();
   const tabMeta = useTabMeta();
   const navData = useNavData();
   const location = useLocation();
   const locale = useLocale();
   const storeApi = useStoreApi();
+
+  useRouteMeta();
 
   useSyncState('siteData', siteData, () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -92,7 +86,6 @@ export const StoreUpdater = memo(() => {
   });
 
   useSyncState('sidebar', sidebar);
-  useSyncState('routeMeta', routeMeta);
   useSyncState('location', location);
   useSyncState('tabMeta', tabMeta);
   useSyncState('locale', locale);

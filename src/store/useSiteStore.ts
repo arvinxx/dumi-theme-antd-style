@@ -1,43 +1,15 @@
-import { AtomAsset } from 'dumi-assets-types';
-import {
-  ILocale,
-  ILocalesConfig,
-  INavItem,
-  IPreviewerProps,
-  IRouteMeta,
-  ISidebarGroup,
-  IThemeConfig,
-} from 'dumi/dist/client/theme-api/types';
-import { PICKED_PKG_FIELDS } from 'dumi/dist/constants';
+import type { ISiteContext } from 'dumi/dist/client/theme-api/context';
+import { ILocale, INavItem, IRouteMeta, ISidebarGroup } from 'dumi/dist/client/theme-api/types';
 import equal from 'fast-deep-equal';
 import type { Location } from 'history';
-import { createWithEqualityFn } from 'zustand/traditional';
-
-import { ComponentType } from 'react';
 import { StoreApi } from 'zustand';
 import { createContext } from 'zustand-utils';
 import { devtools } from 'zustand/middleware';
+import { createWithEqualityFn } from 'zustand/traditional';
 
 export type NavData = (INavItem & { children?: INavItem[] | undefined })[];
 
-export interface ISiteData {
-  pkg: Partial<Record<keyof typeof PICKED_PKG_FIELDS, any>>;
-  entryExports: Record<string, any>;
-  demos: Record<
-    string,
-    {
-      component: ComponentType;
-      asset: IPreviewerProps['asset'];
-      routeId: string;
-    }
-  >;
-
-  components: Record<string, AtomAsset>;
-  locales: ILocalesConfig;
-  themeConfig: IThemeConfig;
-  loading: boolean;
-  setLoading: (status: boolean) => void;
-}
+export type ISiteData = ISiteContext;
 
 export interface SiteStore {
   siteData: ISiteData;
