@@ -47,7 +47,7 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
     (text: string, language: any, isDarkMode: boolean) => {
       try {
         return (
-          shikiRef.current?.codeToHtml(text, {
+          shikiRef.current!.codeToHtml(text, {
             lang: language,
             theme: isDarkMode ? THEME.dark : THEME.light,
           }) || ''
