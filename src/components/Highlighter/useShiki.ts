@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { Highlighter, Theme, getHighlighter, setCDN } from 'shiki-es';
+import type { BundledTheme, Highlighter, HighlighterGeneric } from 'shiki';
+import { createHighlighter } from 'shiki';
 import useControlledState from 'use-merge-value';
 
 import { languageMap } from './language';
 
 export interface ShikiSyntaxTheme {
-  dark: Theme;
-  light: Theme;
+  dark: BundledTheme;
+  light: BundledTheme;
 }
 
 export interface ShikiOptions {
@@ -14,9 +15,6 @@ export interface ShikiOptions {
   onLoadingChange?: (loading: boolean) => void;
   theme?: Partial<ShikiSyntaxTheme>;
 }
-
-// 使用 element cdn 提升加载速度
-setCDN('https://npm.elemecdn.com/shiki-es/dist/assets');
 
 const defaultTheme: ShikiSyntaxTheme = {
   dark: 'github-dark',
@@ -27,12 +25,12 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
   const mergeTheme = useMemo(() => ({ ...defaultTheme, ...theme }), [theme]);
   const [THEME] = useControlledState(defaultTheme, { value: mergeTheme });
 
-  const shikiRef = useRef<Highlighter | null>(null);
+  const shikiRef = useRef<HighlighterGeneric<any, any> | null>(null);
 
   const initHighlighter = async (theme: ShikiSyntaxTheme) => {
     onLoadingChange?.(true);
 
-    shikiRef.current = await getHighlighter({
+    shikiRef.current = await createHighlighter({
       langs: Object.keys(languageMap) as any,
       themes: Object.values(theme),
     });
@@ -49,7 +47,7 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
     (text: string, language: any, isDarkMode: boolean) => {
       try {
         return (
-          shikiRef.current?.codeToHtml(text, {
+          shikiRef.current!.codeToHtml(text, {
             lang: language,
             theme: isDarkMode ? THEME.dark : THEME.light,
           }) || ''
