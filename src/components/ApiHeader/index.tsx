@@ -61,6 +61,9 @@ export const ApiHeader: FC<ApiTitleProps> = memo(
     const { styles } = useStyles();
     const { mobile } = useResponsive();
 
+    // fix: render nothing when 404
+    if (!componentName) return null;
+
     const items = [
       sourceUrl && {
         icon: <GithubFilled />,
