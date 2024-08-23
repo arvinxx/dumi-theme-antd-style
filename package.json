@@ -77,7 +77,8 @@
     "swr": "^2.2.5",
     "use-merge-value": "^1",
     "zustand": "^4.4.1",
-    "zustand-utils": "^1"
+    "zustand-utils": "^1",
+    "@lite-tree/react": "^1.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17",
