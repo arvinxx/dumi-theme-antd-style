@@ -81,7 +81,7 @@ pnpm i dumi-theme-antd-style -D
 
 安装完毕后，使用 dumi 启动站点，dumi 会自动加载主题，即可开始使用。
 
-配置详情查看 [文档配置](https://dumi-theme-antd-style.arvinx.app/config)。
+配置详情查看 [文档配置](https://dumi-theme-antd-style.arvinx.com/config)。
 
 ## 更新日志
 
