@@ -1,5 +1,8 @@
 import { create } from 'zustand';
 
-export const useStore = create(() => ({
+interface Store {
+  mode: string;
+}
+export const useStore = create<Store>(() => ({
   mode: 'oklch',
 }));

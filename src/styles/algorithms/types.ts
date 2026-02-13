@@ -11,3 +11,9 @@ export interface MapTokenAlgorithmParams extends NeutralPaletteOptions {
   adjustWarning?: boolean;
   brandColor?: string;
 }
+
+export interface CustomThemeAlgorithmParams {
+  colorPrimary: string;
+  infoColorFollowPrimary: boolean;
+  adjustWarning: boolean;
+}
