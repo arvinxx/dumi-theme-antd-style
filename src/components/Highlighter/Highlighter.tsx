@@ -31,25 +31,21 @@ const SyntaxHighlighter = memo<SyntaxHighlighterProps>(
         );
       default:
       case 'shiki':
-        return (
+        return loading ? (
           <>
-            {loading ? (
-              <Prism language={language}>{children}</Prism>
-            ) : (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: codeToHtml(children, language, isDarkMode) || '',
-                }}
-                className={styles.shiki}
-              />
-            )}
-            {loading && (
-              <Center horizontal gap={8} className={styles.loading}>
-                <Loading spin style={{ color: theme.colorTextTertiary }} />
-                shiki 着色器准备中...
-              </Center>
-            )}
+            <Prism language={language}>{children}</Prism>
+            <Center horizontal gap={8} className={styles.loading}>
+              <Loading spin style={{ color: theme.colorTextTertiary }} />
+              shiki 着色器准备中...
+            </Center>
           </>
+        ) : (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: codeToHtml(children, language, isDarkMode) ?? '',
+            }}
+            className={styles.shiki}
+          />
         );
     }
   },
